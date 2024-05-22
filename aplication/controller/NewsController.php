@@ -47,7 +47,7 @@ class News
             $files = str_contains($files, ',,') ? str_replace(",,", ",", $files) : $files;
 
 
-            unlink(str_replace("\aplication\controller", "", str_replace("/", "\\", __DIR__)) . "/" . $docName);
+            unlink(str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/" . $docName);
 
             $sSql = "";
 
@@ -131,7 +131,7 @@ class News
             $imagesNamesString = str_replace("\\", "", $resultado['images']);
             if ($images !== null || !empty($images)) {
                 
-                $directoryimage = str_replace("\aplication\controller", "", str_replace("/", "\\", __DIR__)) . "/img/prueba/news";
+                $directoryimage = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/news";
                 if (!is_dir($directoryimage)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
                     mkdir($directoryimage, 0777, true);
@@ -300,7 +300,7 @@ class News
             $currentDate = date("Y-m-d");
 
             if ($images !== null) {
-                $directoryimage = str_replace("\aplication\controller", "", str_replace("/", "\\", __DIR__)) . "/img/prueba/news";
+                $directoryimage = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/news";
 
                 if (!is_dir($directoryimage)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
