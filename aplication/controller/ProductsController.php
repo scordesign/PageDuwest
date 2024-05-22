@@ -50,7 +50,7 @@ class Products
             $files = str_contains($files, ',,') ? str_replace(",,", ",", $files) : $files;
 
 
-            unlink(str_replace("\aplication\controller", "", __DIR__) . "/" . $docName);
+            unlink(str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/" . $docName);
 
             $sSql = "";
 
@@ -140,7 +140,7 @@ class Products
 
             $imagesNamesString = str_replace("\\", "", $resultado['listImg']);
             if ($images !== null || !empty($images)) {
-                $directoryimage = str_replace("\aplication\controller", "", __DIR__) . "/img/prueba/" . $name . "/images";
+                $directoryimage = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images";
                 if (!is_dir($directoryimage)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
                     mkdir($directoryimage, 0777, true);
@@ -164,7 +164,7 @@ class Products
             }
             $filesNamesString = str_replace("\\", "", $resultado['listDocs']);
             if ($files !== null || !empty($files)) {
-                $directoryFile = str_replace("\aplication\controller", "", __DIR__) . "/img/prueba/" . $name . "/files";
+                $directoryFile = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/files";
 
                 if (!is_dir($directoryFile)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
@@ -265,7 +265,7 @@ class Products
             $fileList= json_decode(str_replace("\\", "", $resultado['listDocs']), true);
 
             
-            $this->deletedirectory(str_replace("\aplication\controller", "", __DIR__) . "/img/prueba/".$resultado['name'] );
+            $this->deletedirectory(str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/".$resultado['name'] );
 
             // unlink(str_replace("\aplication\controller", "", __DIR__) . "/img/prueba/".$resultado['name'] );
             // foreach ($imgList as $key => $value) {
@@ -360,7 +360,7 @@ class Products
             $imagesNamesString = "[]";
 
             if ($images !== null) {
-                $directoryimage = str_replace("\aplication\controller", "", __DIR__) . "/img/prueba/" . $name . "/images";
+                $directoryimage = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images";
                 if (!is_dir($directoryimage)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
                     mkdir($directoryimage, 0777, true);
@@ -381,7 +381,7 @@ class Products
             }
             $filesNamesString = "[]";
             if ($files !== null) {
-                $directoryFile = str_replace("\aplication\controller", "", __DIR__) . "/img/prueba/" . $name . "/files";
+                $directoryFile = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/files";
 
                 if (!is_dir($directoryFile)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
