@@ -509,7 +509,8 @@ address {
     margin-top: 12px;
 
 }
-#whatsapp{
+
+#whatsapp {
     display: none;
 }
 
@@ -865,6 +866,7 @@ footer a {
     border: groove;
 
 }
+
 #nuestromovil img {
     display: none;
 }
@@ -914,12 +916,15 @@ footer a {
     width: fit-content;
     left: 70%;
 }
+
 .parrafo-vision h4 {
     display: none;
 }
+
 .parrafo-mision h4 {
     display: none;
 }
+
 .vision {
     backdrop-filter: blur(10px);
     position: relative;
@@ -1064,10 +1069,12 @@ footer a {
 
 
 }
+
 #whatsapp {
     display: none;
 }
-#nuestromovil{
+
+#nuestromovil {
     display: none;
 }
 
@@ -1108,14 +1115,14 @@ footer a {
 }
 
 #modalNotice::-webkit-scrollbar-thumb {
-    background-color:rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255);
     /* Color del thumb (el control deslizante) */
     border-radius: 4px;
     /* Radio de borde del thumb */
 }
 
 /* Firefox */
-#modalNotice::-moz-scrollbar {  
+#modalNotice::-moz-scrollbar {
     width: 8px;
 }
 
@@ -1128,7 +1135,7 @@ footer a {
 #modalNotice {
     scrollbar-width: thin;
     /* Ancho de la barra en IE/Edge */
-    scrollbar-color: rgba(255, 255, 255,0.5) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
     /* Color de la barra y del thumb en IE/Edge */
 }
 
@@ -1430,7 +1437,7 @@ footer a {
     background-size: cover;
 } */
 
-#tm-section-16{
+#tm-section-16 {
     overflow: auto;
     width: 100%;
     background-color: white;
@@ -1439,21 +1446,21 @@ footer a {
     background-size: cover;
 }
 
-.nesOptions{
+.nesOptions {
     position: relative;
     margin-top: 2%;
     margin-left: 3.5%;
     height: 10vh;
 }
 
-.news{
+.news {
     position: relative;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2%;
 }
 
-.divNewImage{
+.divNewImage {
     width: 56%;
     height: 100%;
     border-radius: 5px;
@@ -1462,48 +1469,54 @@ footer a {
     text-align: center;
     background: white;
 }
-.divNewImage img{
+
+.divNewImage img {
     max-width: 100%;
     height: 100%;
 }
-.divNewDesc{
+
+.divNewDesc {
     width: 40%;
     height: 100%;
     border-radius: 5px;
-    margin-left: 2%;    
+    margin-left: 2%;
     padding: 1%;
 }
+
 .divNewDesc p {
     font-size: 17px;
 }
 
-.divNewDesc a{
+.divNewDesc a {
     font-size: 17px;
 }
 
-.backgreen{
+.backgreen {
     background: rgba(0, 104, 56, 1);
     background-image: url(../img/fondo-7.png);
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
-.backgreenLess{
+
+.backgreenLess {
     background: rgba(166, 202, 86, 1);
     background-image: url(../img/fondo-7.png);
     background-repeat: no-repeat;
     background-size: cover;
     color: rgba(0, 104, 56, 1);
-    
+
 }
-.backgreenGray{
+
+.backgreenGray {
     background: rgba(73, 71, 69, 0.6);
     background-image: url(../img/fondo-7.png);
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
-.divNew{
+
+.divNew {
     display: inline-flex;
     height: 30vh;
     width: 100%;
@@ -1518,39 +1531,40 @@ footer a {
     margin: 5%;
 }
 
-#fatherNewModal #myCarouselNew{
+#fatherNewModal #myCarouselNew {
     height: 30vh;
 }
 
-#fatherNewModal #myCarouselNew .carousel-inner{
+#fatherNewModal #myCarouselNew .carousel-inner {
     height: 30vh;
     text-align: center;
     align-items: center;
 }
+
 #fatherNewModal #myCarouselNew .carousel-inner div img {
     max-height: 30vh;
     margin-left: auto;
     margin-right: auto;
 }
 
-#CarruselDirection{
+#CarruselDirection {
     height: 5vh;
     display: inline-flex;
     align-items: center;
     margin-left: 45%;
 }
 
-#CarruselDirection a{
+#CarruselDirection a {
     color: white;
     font-size: 4vh;
     cursor: pointer;
 }
 
-#CarruselDirection img{
- width: auto;
- height: 100%;
- margin-left: 0.5vw;
- margin-right: 0.5vw;
+#CarruselDirection img {
+    width: auto;
+    height: 100%;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
 }
 
 #infoNew h5 {
@@ -1563,21 +1577,21 @@ footer a {
     line-height: calc(0.7vh + 0.7vw);
 }
 
-#miFormulario h4{
+#miFormulario h4 {
     color: black;
 }
 
-.descNew{
+.descNew {
     text-align: justify;
     font-size: calc(0.63vh + 0.63vw);
     line-height: calc(0.7vh + 0.7vw);
 }
 
-.titleNew{
+.titleNew {
     font-size: calc(0.8vh + 0.8vw);
 }
 
-.buttonNew{
+.buttonNew {
     background: rgba(255, 255, 255, 0);
     border-radius: 6px;
     color: white;
@@ -1586,12 +1600,15 @@ footer a {
 
 }
 
-#newsFather{
+#newsFather {
     margin-bottom: 2vh;
 }
 
 
-#tm-section-12 ,#tm-section-13 , #tm-section-14 ,#tm-section-15 {
+#tm-section-12,
+#tm-section-13,
+#tm-section-14,
+#tm-section-15 {
     overflow: auto;
     padding-top: 32vh;
     width: 100%;
@@ -1602,7 +1619,7 @@ footer a {
 }
 
 .products1 {
-    z-index: 100; 
+    z-index: 100;
     width: 100%;
     height: 32vh;
     position: fixed;
@@ -1614,7 +1631,7 @@ footer a {
 }
 
 .products12 {
-    z-index: 100; 
+    z-index: 100;
     width: 100%;
     height: 32vh;
     position: fixed;
@@ -1626,7 +1643,7 @@ footer a {
 }
 
 .products13 {
-    z-index: 100; 
+    z-index: 100;
     width: 100%;
     height: 32vh;
     position: fixed;
@@ -1638,7 +1655,7 @@ footer a {
 }
 
 .products14 {
-    z-index: 100; 
+    z-index: 100;
     width: 100%;
     height: 32vh;
     position: fixed;
@@ -1697,6 +1714,7 @@ footer a {
     padding-top: 2%;
     padding-bottom: 2%;
 }
+
 .logo-supliers1 {
     position: relative;
     display: grid;
@@ -1713,6 +1731,7 @@ footer a {
     padding-top: 1%;
     padding-bottom: 1%;
 }
+
 .logo-supliers2 {
     position: relative;
     display: grid;
@@ -1729,12 +1748,15 @@ footer a {
     padding-top: 1%;
     padding-bottom: 1%;
 }
+
 .logo-supliers img {
     width: 65%;
 }
+
 .logo-supliers1 img {
     width: 100%;
 }
+
 .logo-supliers2 img {
     width: 80%;
 }
@@ -1830,10 +1852,10 @@ footer a {
     width: 100%;
     left: 0%;
     top: 40%;
-    
+
 }
 
-.products15{
+.products15 {
     height: 68%;
 }
 
@@ -1901,7 +1923,8 @@ footer a {
     display: inline-flex;
     margin: 0.5% 1%;
 }
-.functionPrducts{
+
+.functionPrducts {
     width: 100%;
     text-align: center;
 }
@@ -2365,11 +2388,12 @@ text.dummy-text {
 }
 
 @media (max-width: 600px) {
-    #dropDownBar{
+    #dropDownBar {
         background-color: rgba(0, 0, 0, 0.6);
         width: 100%;
         height: 100vh;
     }
+
     .tm-contact-box-pad {
         padding: 30px 25px;
     }
@@ -2414,7 +2438,8 @@ text.dummy-text {
         background-color: rgba(0, 0, 0, 0.6);
 
     }
-    .whatsapp{
+
+    .whatsapp {
         width: 80%;
         text-align: center;
         border: 1px solid greenyellow;
@@ -2426,44 +2451,51 @@ text.dummy-text {
         background-color: rgba(0, 0, 0, 0.6);
     }
 
-    .portafolio img{
+    .portafolio img {
         width: 10%;
-    position: fixed;
-    top: 52.7%;
-    left: 15%;
+        position: fixed;
+        top: 52.7%;
+        left: 15%;
     }
-    .comercial img{
+
+    .comercial img {
         width: 8%;
-    position: fixed;
-    top: 61.7%;
-    left: 15%;
+        position: fixed;
+        top: 61.7%;
+        left: 15%;
     }
-    .contactanos img{
+
+    .contactanos img {
         width: 10%;
-    position: fixed;
-    top: 70.7%;
-    left: 15%;
+        position: fixed;
+        top: 70.7%;
+        left: 15%;
     }
-    .whatsapp img{
+
+    .whatsapp img {
         width: 10%;
-    position: fixed;
-    top: 79.7%;
-    left: 15%;
-    } 
-    .texcel{
+        position: fixed;
+        top: 79.7%;
+        left: 15%;
+    }
+
+    .texcel {
         width: 72%;
         left: 24%;
         position: relative;
         margin-top: -18%;
         margin-left: 3%;
     }
+
     .tm-main-nav {
         background: none;
     }
-    #nuestro{
+
+    #nuestro {
         display: none;
     }
-    #nuestromovil{
+
+    #nuestromovil {
         display: flex;
         justify-content: space-between;
         /* position: relative; */
@@ -2472,29 +2504,33 @@ text.dummy-text {
 
     }
 
-    #nuestromovil img{
+    #nuestromovil img {
         width: 50%;
     }
-    .whocel img{
+
+    .whocel img {
         width: 20%;
 
     }
+
     .tm-main-nav {
-  
+
         /* display: none; */
-   
+
     }
-    #imgFlag{
+
+    #imgFlag {
         position: fixed;
         top: -900%;
         right: -30%;
-        width: 50%; 
-       }
+        width: 50%;
+    }
 
-    #imgFlag img{
+    #imgFlag img {
         display: block;
         height: 3vh;
-        }
+    }
+
     #searchMenu {
 
         display: none;
@@ -2523,7 +2559,7 @@ text.dummy-text {
 
     }
 
-    
+
 
     #whatsapp {
         display: flex;
@@ -2579,6 +2615,7 @@ text.dummy-text {
         width: 100%;
         left: 0%;
     }
+
     .catalogo3 {
         display: none;
     }
@@ -2699,99 +2736,112 @@ text.dummy-text {
         width: 100%;
         text-align: center;
     }
+
     .workUs {
-    
-    bottom: 44%;
-    left: 10%;
-    width: 80%;
-}
-.workUsdv-2 {
-    
-    display: flex;
-    flex-direction: column-reverse;
-}
-.bgWorkUs {
-    width: 100%;
-    height: 33.333%;
-    position: relative;
-    float: left;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-}
-.workUsdv-1 {
-    height: 100%;
-    position: relative;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 0.2%;
-    border-radius: 1em;
-    background-image: url(../img/fondoTrabacaNosotros.png);
-    background-repeat: repeat;
-    background-position: center;
-    background-size: cover;
-    backdrop-filter: blur(4px);
-    margin-top: 12%;
-}
-.workUsdv-2 div {
-    float: right;
-    width: 80%;
-    height: 6%;
-    margin-top: 5.5%;
-    border-radius: 1em;
-    backdrop-filter: blur(4px);
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 17%;
-    padding-top: 2%;
-    letter-spacing: 0.1em;
-}
-.workUsdv-2 img {
-    height: 10%;
-    width: 20%;
-    left: 40%;
-    position: fixed;
-    top: 10%;
-}
-.workUsdv-1 h4{
-    text-transform: capitalize;
-    font-size: 100%;
-    font-weight: lighter;
-}
-.workUsdv-1 p{
-    text-transform: capitalize;
-    font-size: 65%;
-}
-.mision{
-    bottom: -64%;
-}
-.title-vision {
-    top: 8%;
-    text-align: center;
-}
-.tm-section10{
-    overflow: scroll;
-    overflow-y: scroll;
-}
-.parrafo-vision {
-    position: fixed;
-    top: 47%;
-    background-color: rgba(73, 71, 69, 0.6);
-    color: white;
-    height: auto;
-    background-image: url(../img/fondo-suelo-blanco.png);
-    font-size: medium;
-    border-radius: 12px;
-    font-family: 'Century Gothic light', sans-serif;
-    font-size: 5px;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 2%;
-    width: 80%;
-}
-.vision {
-   display: none;
-}
+
+        bottom: 44%;
+        left: 10%;
+        width: 80%;
+    }
+
+    .workUsdv-2 {
+
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .bgWorkUs {
+        width: 100%;
+        height: 33.333%;
+        position: relative;
+        float: left;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+
+    .workUsdv-1 {
+        height: 100%;
+        position: relative;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 0.2%;
+        border-radius: 1em;
+        background-image: url(../img/fondoTrabacaNosotros.png);
+        background-repeat: repeat;
+        background-position: center;
+        background-size: cover;
+        backdrop-filter: blur(4px);
+        margin-top: 12%;
+    }
+
+    .workUsdv-2 div {
+        float: right;
+        width: 80%;
+        height: 6%;
+        margin-top: 5.5%;
+        border-radius: 1em;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        top: 17%;
+        padding-top: 2%;
+        letter-spacing: 0.1em;
+    }
+
+    .workUsdv-2 img {
+        height: 10%;
+        width: 20%;
+        left: 40%;
+        position: fixed;
+        top: 10%;
+    }
+
+    .workUsdv-1 h4 {
+        text-transform: capitalize;
+        font-size: 100%;
+        font-weight: lighter;
+    }
+
+    .workUsdv-1 p {
+        text-transform: capitalize;
+        font-size: 65%;
+    }
+
+    .mision {
+        bottom: -64%;
+    }
+
+    .title-vision {
+        top: 8%;
+        text-align: center;
+    }
+
+    .tm-section10 {
+        overflow: scroll;
+        overflow-y: scroll;
+    }
+
+    .parrafo-vision {
+        position: fixed;
+        top: 47%;
+        background-color: rgba(73, 71, 69, 0.6);
+        color: white;
+        height: auto;
+        background-image: url(../img/fondo-suelo-blanco.png);
+        font-size: medium;
+        border-radius: 12px;
+        font-family: 'Lemon/Milk light', sans-serif;
+        font-size: 5px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 2%;
+        width: 80%;
+    }
+
+    .vision {
+        display: none;
+    }
 
 .mision1 {
   display: none;
@@ -2814,7 +2864,7 @@ text.dummy-text {
     background-image: url(../img/fondo-suelo-blanco.png);
     font-size: medium;
     border-radius: 12px;
-    font-family: 'Century Gothic light', sans-serif;
+    font-family: 'Lemon/Milk light', sans-serif;
     font-size: 5px;
     padding-left: 3%;
     padding-right: 3%;
@@ -2822,24 +2872,150 @@ text.dummy-text {
     width: 80%;
 }
 
-.politica {
-    top: 77%;
-    position: fixed;
-    left: 10%;
-    width: 80%;
-    line-height: 1px;
-    height: auto;
-}
-.politica a{
-    padding-bottom: 2.5%;
-    margin: 2px 1px 5px 1px;
-    margin-top: 0%;
-    padding-top: 2.5%;
-    text-decoration: underline;
+    .politica {
+        top: 77%;
+        position: fixed;
+        left: 10%;
+        width: 80%;
+        line-height: 1px;
+        height: auto;
+    }
+
+    .politica a {
+        padding-bottom: 2.5%;
+        margin: 2px 1px 5px 1px;
+        margin-top: 0%;
+        padding-top: 2.5%;
+        text-decoration: underline;
+
+    }
+
+    .divProduct {
+        cursor: pointer;
+        width: 46%;
+        height: 30vh;
+        background-color: rgba(49, 170, 71, 1);
+        margin: 2%;
+        padding: 5% 3%;
+        padding-bottom: 8%;
+        border-radius: 5%;
+        float: left;
+    }
+
+    .divProduct div {
+        height: 60%;
+        width: 100%;
+        text-align: center;
+        background-color: white;
+    }
+
+    .divProduct div img {
+        height: 100%;
+        max-width: 100%;
+    }
+
+    .divProduct p {
+        font-size: 15px;
+    }
+
+    .divProduct a {
+        font-size: 12px;
+    }
+
+    .title-product {
+        position: relative;
+        top: 70%;
+        background-color: rgba(0, 139, 58, 0.6);
+        color: white;
+        text-transform: uppercase;
+        height: auto;
+        font-size: large;
+        border-radius: 15px;
+        font-family: 'Centuri Gothic', sans-serif;
+        font-weight: 600;
+        font-size: 25px;
+        width: fit-content;
+        left: 7%;
+    }
+
+    .logo-supliers2 {
+        display: none;
+    }
+
+    .productsmmaq {
+        overflow: auto;
+        position: fixed;
+        height: 66vh;
+        padding: 2% 2%;
+        width: 100%;
+        left: 0%;
+        top: 24%;
+    }
+
+    .products14,
+    .products1,
+    .products12,
+    .products13 {
+        height: 23vh;
+    }
+
+    .filter-product {
+        position: fixed;
+        padding: 1%;
+        width: 100%;
+        background-image: url(../img/fondo-suelo-blanco.png);
+        background-color: rgba(1, 1, 1, 0.8);
+        left: 0%;
+        top: 0%;
+        margin-top: 2%;
+        height: 100%;
+        z-index: 100000;
+        align-items: center;
+        text-align: center;
+    } 
+    .filter-product form .filters h4 {
+        font-size: 15px;
+        color: white;
+    }
     
-}
+    .filter-product form .filters input {
+        appearance: none;
+        /* Elimina los estilos nativos del checkbox */
+        -webkit-appearance: none;
+        /* Para navegadores basados en Webkit */
+        -moz-appearance: none;
+        /* Para navegadores basados en Gecko */
+    
+        border-radius: 50%;
+        /* Forma circular */
+        border: 2px solid #ccc;
+        /* Borde del checkbox */
+        cursor: pointer;
+        /* Cambia el cursor al pasar sobre el checkbox */
+        width: 10%;
+        height: 2.3vh;
+        margin-right: 5%;
+        color: white;
+    }
+    
+    .filter-product form .filters input:checked {
+        background-color: #007bff;
+        /* Cambia el color de fondo cuando está marcado */
+    }
+    
+    .filter-product form .filters label {
+        font-size: 15px;
+        color: white;
+    }
 
-
+    .filter-product form .filters{
+        width: 80% !important;
+        margin-top: 2%;
+        border-top-width: 2px;
+        border-top-color: rgba(166, 202, 86, 1);
+        
+    }
+    
 }
 
 
