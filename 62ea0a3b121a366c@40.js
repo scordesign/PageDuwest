@@ -71,6 +71,10 @@ function _map(d3,colombiaGeoJSON)
   function pbxFn(d){
     return d && d.properties ? d.properties.PBX : null;
   }
+  function imgFn(d){
+    return d && d.properties ? d.properties.IMG : null;
+  }
+
 
   // Get province name length
   function nameLength(d){
@@ -90,15 +94,32 @@ function _map(d3,colombiaGeoJSON)
    const departmentInfo = d.properties.NOMBRE_DPT;  // Assuming department information is in properties
    const direccionInfo = d.properties.DIRECCION;  // Assuming department information is in properties
    const celInfo = d.properties.CELULAR;  // Assuming department information is in properties
+   const imgInfo = d.properties.IMG; // Assuming department information is in properties
    const pbxInfo = d.properties.PBX; // Assuming department information is in properties
   // Update a DOM element (outside this function) to display the information
    document.getElementById('department-info').innerHTML = 
-   `<h2>${departmentInfo}</h2><br/>
-    <h3> ${direccionInfo}</h3><br/>
-    <h3> DUWEST Colombia, S.A.S.</h3><br/>
-    <h3> Cel. ${celInfo}</h3><br/>
-    <h3> PBX: ${pbxInfo}</h3><br/>`;
+   `<img style="width: 3%;
+   position: fixed;
+   left: 54.4%;
+   top: 22.5%;"src="img/map.gif">
+    <h2 style="width:80%;margin-left:10%;padding-top:3%;"> ${departmentInfo}</h2>
+    <h3 style="width:80%;margin-left:10%;"> ${direccionInfo}</h3>
+    <h3 style="width:80%;margin-left:10%;"> DUWEST Colombia, S.A.S.</h3>
+    <img style="width: 1.5%;
+    position: fixed;
+    left: 55%;
+    top: 44.25%;"src="img/celmap.png" </img>
+    <h3 style="width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
+    <h3 style="width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
+    <img style="width: 10.5%;
+    position: fixed;
+    left: 55%;
+    top: 44.25%;"src="img/${imgInfo}" </img>
+    `;
 
+    const markerImage = d3.select('.marker-image');
+    const pathBBox = path.centroid(d);
+    markerImage.attr('transform', `translate(${pathBBox[0]}, ${pathBBox[1]})`);
 
     // Compute centroid of the selected path
     if (d && centered !== d) {
@@ -287,6 +308,7 @@ function _4(html){return(
 html`<style>
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Josefin+Slab|Arvo|Lato|Vollkorn|Abril+Fatface|Old+Standard+TT|Droid+Sans|Lobster|Inconsolata|Montserrat|Playfair+Display|Karla|Alegreya|Libre+Baskerville|Merriweather|Lora|Archivo+Narrow|Neuton|Signika|Questrial|Fjalla+One|Bitter|Varela+Round);
+@import url('https://fonts.googleapis.com/css2?family=Century+Gothic:wght@200;300;400;500;600;700;800;900&display=swap');
 
 .background {
   fill: transparent;
@@ -321,10 +343,19 @@ text.big-text{
   width: 33%;
   background-color: rgba(0 , 0, 0, 0.6);
   left: 54%;
-  top: 30%;
+  top: 20%;
   z-index: 999;
   height: auto;
   color: white;
+  border-radius:10px;
+  font-family: 'Century Gothic', sans-serif;
+
+}
+.marker-image {
+  position: absolute;
+  /* adjust width and height as needed */
+  width: 20px;
+  height: 20px;
 }
 
 </style>`
@@ -333,6 +364,7 @@ text.big-text{
 function _d3(require){return(
 require("d3@5")
 )}
+
 
 export default function define(runtime, observer) {
   const main = runtime.module();
