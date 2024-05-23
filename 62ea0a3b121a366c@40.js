@@ -111,10 +111,10 @@ function _map(d3,colombiaGeoJSON)
     top: 44.25%;"src="img/celmap.png" </img>
     <h3 style="width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
     <h3 style="width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
-    <img style="width: 10.5%;
+    <img style="width: 15.5%;
     position: fixed;
-    left: 55%;
-    top: 44.25%;"src="img/${imgInfo}" </img>
+    left: 60%;
+    top: 51.25%;"src="img/${imgInfo}" </img>
     `;
 
     const markerImage = d3.select('.marker-image');
@@ -340,7 +340,7 @@ text.big-text{
 .department-info {
   float: left;
   position: fixed;
-  width: 33%;
+  width: 30%;
   background-color: rgba(0 , 0, 0, 0.6);
   left: 54%;
   top: 20%;
