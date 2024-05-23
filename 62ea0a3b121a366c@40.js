@@ -105,32 +105,38 @@ function _map(d3,colombiaGeoJSON)
     <h2 style="font-size:100%;width:90%;margin-left:10%;padding-top:3%;line-height:1;"> ${departmentInfo}</h2>
     <h3 style="font-size:80%;width:80%;margin-left:10%;"> ${direccionInfo}</h3>
     <h3 style="font-size:90%;width:80%;margin-left:10%;"> DUWEST Colombia, S.A.S.</h3>
-    <img style="width: 1.5%;
+    <img src="img/celmap.png" 
+    style="
+    width: 1.5%;
     position: fixed;
     left: 55%;
     top: 46.5%;
-    
+    ">
     @media (max-width: 1400px) {
-      width: 1.5%;
+      img {
+    width: 1.5%;
     position: fixed;
     left: 55%;
     top: 58%;
-    }"src="img/celmap.png" </img>
+    }
+  }
     <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
     <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
-    <img style=
-   "    width: 27%;
-   position: fixed;
+    <img src="img/${imgInfo}"
+  style="
+  width: 27%;
+  position: fixed;
    left: 55.5%;
    top: 55.7%;
-   height: 31%;
+   height: 31%;">
    @media (max-width: 1400px) {
-    width: 27%;
+    img{width: 27%;
     position: fixed;
     left: 55.5%;
     top: 62.7%;
-    height:25%;}
-    "src="img/${imgInfo}" </img>
+    height:25%;
+  }
+  }
     `;
 
     const markerImage = d3.select('.marker-image');
