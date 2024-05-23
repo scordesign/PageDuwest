@@ -111,7 +111,7 @@ function _map(d3,colombiaGeoJSON)
     position: fixed;
     left: 55%;
     top: 46.5%;
-    ">
+    
     @media (max-width: 1400px) {
       img {
     width: 1.5%;
@@ -119,7 +119,7 @@ function _map(d3,colombiaGeoJSON)
     left: 55%;
     top: 58%;
     }
-  }
+  }">
     <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
     <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
     <img src="img/${imgInfo}"
@@ -128,7 +128,7 @@ function _map(d3,colombiaGeoJSON)
   position: fixed;
    left: 55.5%;
    top: 55.7%;
-   height: 31%;">
+   height: 31%;
    @media (max-width: 1400px) {
     img{width: 27%;
     position: fixed;
@@ -136,7 +136,7 @@ function _map(d3,colombiaGeoJSON)
     top: 62.7%;
     height:25%;
   }
-  }
+  }">
     `;
 
     const markerImage = d3.select('.marker-image');

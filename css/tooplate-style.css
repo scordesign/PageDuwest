@@ -90,7 +90,7 @@ http://www.tooplate.com/view/2102-constructive
 }
 
 body {
-    font-family: 'Century Gothic light', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
     font-size: 18px;
     font-weight: 300;
     color: white;
@@ -255,6 +255,9 @@ p:last-child {
     margin-top: 1%;
     width: 40vw;
     height: fit-content;
+}
+#imgFlagMob{
+    display: none;
 }
 
 #imglogo a {
@@ -738,7 +741,7 @@ footer a {
     z-index: 9999 !important;
     bottom: 0px;
     background-color: #31aa47;
-    height: 9vh;
+    height: 7vh;
     width: 100%;
 }
 
@@ -2524,10 +2527,23 @@ text.dummy-text {
         top: -900%;
         right: -30%;
         width: 50%;
+        display: none;
     }
 
     #imgFlag img {
-        display: block;
+        display: none;
+        height: 3vh;
+    }
+    #imgFlagMob {
+        position: fixed;
+        top: -900%;
+        right: -30%;
+        width: 100%;
+        display: none;
+    }
+
+    #imgFlagMob img {
+        display: none;
         height: 3vh;
     }
 
@@ -2564,6 +2580,12 @@ text.dummy-text {
     #whatsapp {
         display: flex;
     }
+    #whatsapp-icon{
+        display: none;
+    }
+    #user-add {
+        display: none;
+    }
 
     #facebook {
         display: none;
@@ -2580,7 +2602,8 @@ text.dummy-text {
     }
 
     #imglogo img {
-        width: 100%;
+        width: 65%;
+        margin-left: 8%;
     }
 
     /* #dropDownBar {
@@ -2600,18 +2623,18 @@ text.dummy-text {
     .catalogo {
         display: flow;
         left: 0%;
-        margin-top: 0%;
+        margin-top: 16%;
     }
 
     .catalogo1,
     .catalogo2 {
-        height: 23%;
+        height: 33.3%;
         width: 100%;
         left: 0%;
     }
 
     .catalogo4 {
-        height: 30%;
+        height: 33.3%;
         width: 100%;
         left: 0%;
     }
@@ -2626,9 +2649,9 @@ text.dummy-text {
 
     .footer2 {
 
-        top: 0px;
-        height: 4%;
-        width: 100%;
+        top: 2%;
+        height: 6%;
+        width: 300%;
         left: 0%;
         right: 0%;
     }
