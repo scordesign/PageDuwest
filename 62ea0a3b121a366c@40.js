@@ -113,7 +113,7 @@ function _map(d3,colombiaGeoJSON)
     <h3 style="width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
     <img style="width: 15.5%;
     position: fixed;
-    left: 60%;
+    left: 61%;
     top: 51.25%;"src="img/${imgInfo}" </img>
     `;
 
@@ -345,7 +345,7 @@ text.big-text{
   left: 54%;
   top: 20%;
   z-index: 999;
-  height: auto;
+  height: 50%;
   color: white;
   border-radius:10px;
   font-family: 'Century Gothic', sans-serif;
