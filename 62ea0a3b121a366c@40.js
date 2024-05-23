@@ -8,19 +8,19 @@ function _map(d3,colombiaGeoJSON)
   const svg = d3.create("svg");
 
   var width = 960,
-      height = 600,
+      height = 750,
       centered;
 
   // Define color scale
   var color = d3.scaleLinear()
   .domain([1, 20])
   .clamp(true)
-  .range(['#fff', '#409A99']);
+  .range(['#fff', '#fff']);
 
   var projection = d3.geoMercator()
-  .scale(2000)
+  .scale(1800)
   // Center the Map in Colombia
-  .center([-74, 4.5])
+  .center([-70, 2.3])
   .translate([width / 2, height / 2]);
 
   var path = d3.geoPath()
@@ -54,8 +54,8 @@ function _map(d3,colombiaGeoJSON)
 
   var bigText = g.append('text')
     .classed('big-text', true)
-    .attr('x', 20)
-    .attr('y', 45);
+    .attr('x', '30%')
+    .attr('y', '50%');
 
 
   // Get province name
@@ -101,20 +101,36 @@ function _map(d3,colombiaGeoJSON)
    `<img style="width: 3%;
    position: fixed;
    left: 54.4%;
-   top: 22.5%;"src="img/map.gif">
-    <h2 style="width:80%;margin-left:10%;padding-top:3%;"> ${departmentInfo}</h2>
-    <h3 style="width:80%;margin-left:10%;"> ${direccionInfo}</h3>
-    <h3 style="width:80%;margin-left:10%;"> DUWEST Colombia, S.A.S.</h3>
+   top: 34.5%;"src="img/map.gif">
+    <h2 style="font-size:100%;width:90%;margin-left:10%;padding-top:3%;line-height:1;"> ${departmentInfo}</h2>
+    <h3 style="font-size:80%;width:80%;margin-left:10%;"> ${direccionInfo}</h3>
+    <h3 style="font-size:90%;width:80%;margin-left:10%;"> DUWEST Colombia, S.A.S.</h3>
     <img style="width: 1.5%;
     position: fixed;
     left: 55%;
-    top: 44.25%;"src="img/celmap.png" </img>
-    <h3 style="width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
-    <h3 style="width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
-    <img style="width: 15.5%;
+    top: 46.5%;
+    
+    @media (max-width: 1400px) {
+      width: 1.5%;
     position: fixed;
-    left: 61%;
-    top: 51.25%;"src="img/${imgInfo}" </img>
+    left: 55%;
+    top: 58%;
+    }"src="img/celmap.png" </img>
+    <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
+    <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
+    <img style=
+   "    width: 27%;
+   position: fixed;
+   left: 55.5%;
+   top: 55.7%;
+   height: 31%;
+   @media (max-width: 1400px) {
+    width: 27%;
+    position: fixed;
+    left: 55.5%;
+    top: 62.7%;
+    height:25%;}
+    "src="img/${imgInfo}" </img>
     `;
 
     const markerImage = d3.select('.marker-image');
@@ -174,30 +190,8 @@ function _map(d3,colombiaGeoJSON)
   var BASE_FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
   var FONTS = [
-    "Open Sans",
-    "Josefin Slab",
-    "Arvo",
-    "Lato",
-    "Vollkorn",
-    "Abril Fatface",
-    "Old StandardTT",
-    "Droid+Sans",
-    "Lobster",
-    "Inconsolata",
-    "Montserrat",
-    "Playfair Display",
-    "Karla",
-    "Alegreya",
-    "Libre Baskerville",
-    "Merriweather",
-    "Lora",
-    "Archivo Narrow",
-    "Neuton",
-    "Signika",
-    "Questrial",
-    "Fjalla One",
-    "Bitter",
-    "Varela Round"
+    "Century Gothic",
+   
   ];
 
   function textArt(text){
@@ -316,8 +310,8 @@ html`<style>
 }
 
 .map-layer {
-  fill: #fff;
-  stroke: #aaa;
+  fill: white !important;
+  stroke: green !important;
 }
 
 .effect-layer{
@@ -330,6 +324,8 @@ text{
 }
 
 text.big-text{
+  position:fixed;
+  top: 370%;
   font-size: 30px;
   font-weight: 400;
 }
@@ -343,12 +339,33 @@ text.big-text{
   width: 30%;
   background-color: rgba(0 , 0, 0, 0.6);
   left: 54%;
-  top: 20%;
+  top: 32%;
   z-index: 999;
-  height: 50%;
+  height: 57%;
   color: white;
   border-radius:10px;
   font-family: 'Century Gothic', sans-serif;
+
+}
+.department-info-title {
+  float: left;
+  position: fixed;
+  width: 30%;
+  background-color: rgba(0 , 0, 0, 0.6);
+  left: 54%;
+  top: 17%;
+  z-index: 999;
+  height: auto;
+  color: white;
+  border-radius:10px;
+  font-family: 'Century Gothic', sans-serif;
+  text-align: center;
+
+}
+.department-info-title h2{
+font-size: 24px !important;
+padding-top: 1px;
+padding-bottom: 1px;
 
 }
 .marker-image {
@@ -356,6 +373,9 @@ text.big-text{
   /* adjust width and height as needed */
   width: 20px;
   height: 20px;
+}
+@media (max-width: 1400px) {
+  
 }
 
 </style>`

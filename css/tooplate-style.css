@@ -90,7 +90,7 @@ http://www.tooplate.com/view/2102-constructive
 }
 
 body {
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-size: 18px;
     font-weight: 300;
     color: white;
@@ -855,7 +855,7 @@ footer a {
     background-image: url(../img/fondo-suelo-blanco.png);
     font-size: medium;
     border-radius: 12px;
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-size: 25px;
     right: 12%;
     width: auto;
@@ -947,7 +947,7 @@ footer a {
     background-image: url(../img/fondo-suelo-blanco.png);
     font-size: medium;
     border-radius: 12px;
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-size: 5px;
     padding-left: 3%;
     padding-right: 3%;
@@ -958,7 +958,7 @@ footer a {
 .parrafo-vision p {
 
     color: white;
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-size: 17px;
     padding-left: 2%;
     padding-right: 2%;
@@ -975,7 +975,7 @@ footer a {
     background-image: url(../img/fondo-suelo-blanco.png);
     font-size: medium;
     border-radius: 12px;
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-size: 5px;
     padding-left: 3%;
     padding-right: 3%;
@@ -1949,6 +1949,7 @@ footer a {
     height: 100%;
     position: fixed;
     left: 0%;
+    top: 0%;
 
 }
 
@@ -1969,7 +1970,7 @@ footer a {
 }
 
 text {
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-weight: 300;
 }
 
@@ -2511,7 +2512,7 @@ text.dummy-text {
 
     .sec1 p {
         line-height: 20px;
-        font-family: 'Lemon/Milk light', sans-serif;
+        font-family: 'Century Gothic light', sans-serif;
     }
 
     .sec2 {
@@ -2781,7 +2782,7 @@ text.dummy-text {
     background-image: url(../img/fondo-suelo-blanco.png);
     font-size: medium;
     border-radius: 12px;
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-size: 5px;
     padding-left: 3%;
     padding-right: 3%;
@@ -2813,7 +2814,7 @@ text.dummy-text {
     background-image: url(../img/fondo-suelo-blanco.png);
     font-size: medium;
     border-radius: 12px;
-    font-family: 'Lemon/Milk light', sans-serif;
+    font-family: 'Century Gothic light', sans-serif;
     font-size: 5px;
     padding-left: 3%;
     padding-right: 3%;
