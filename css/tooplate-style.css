@@ -512,8 +512,14 @@ address {
     margin-top: 12px;
 
 }
+#whatsappmobile{
+    display: flex;
+}
 
 #whatsapp {
+    display: none;
+}
+.whatsapp{
     display: none;
 }
 
@@ -1073,6 +1079,9 @@ footer a {
 
 }
 
+#whatsappmobile{
+    display: none;
+}
 #whatsapp {
     display: none;
 }
@@ -2536,15 +2545,21 @@ text.dummy-text {
     }
     #imgFlagMob {
         position: fixed;
-        top: -900%;
-        right: -30%;
+        top: 10%;
+        right: 0;
         width: 100%;
-        display: none;
+        display: block;
+    
     }
 
     #imgFlagMob img {
-        display: none;
-        height: 3vh;
+     
+            height: 1.3vh;
+            top: -900%;
+            position: fixed;
+            width: 100%;
+            left: 0%;
+        
     }
 
     #searchMenu {
@@ -2626,17 +2641,26 @@ text.dummy-text {
         margin-top: 16%;
     }
 
-    .catalogo1,
+    .catalogo1{
+        height: 33.3%;
+        width: 100%;
+        left: 0%;
+        background-image: url(../img/imagen1cle.png);
+    }
     .catalogo2 {
         height: 33.3%;
         width: 100%;
         left: 0%;
+        background-image: url(../img/imagen2cle.png);
+
     }
 
     .catalogo4 {
-        height: 33.3%;
+        height: 46.3%;
         width: 100%;
         left: 0%;
+        background-image: url(../img/imagen3cle.png);
+
     }
 
     .catalogo3 {
@@ -2649,7 +2673,7 @@ text.dummy-text {
 
     .footer2 {
 
-        top: 2%;
+        top: 1.2%;
         height: 6%;
         width: 300%;
         left: 0%;
@@ -2661,7 +2685,7 @@ text.dummy-text {
         position: relative;
         float: center;
         top: 22%;
-        right: 12.5%;
+        /* right: 12.5%; */
         border-radius: 10px;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.6);
@@ -2674,7 +2698,7 @@ text.dummy-text {
         position: relative;
         float: center;
         top: 22%;
-        right: 12.5%;
+        /* right: 12.5%; */
         border-radius: 10px;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.6);
