@@ -1042,6 +1042,18 @@ footer a {
 
 }
 
+
+
+#whatsappmobile{
+    display: none;
+}
+#whatsapp {
+    display: none;
+}
+
+#nuestromovil {
+    display: none;
+}
 .popup-container {
     display: none;
     position: fixed;
@@ -1088,17 +1100,6 @@ footer a {
 
 }
 
-#whatsappmobile{
-    display: none;
-}
-#whatsapp {
-    display: none;
-}
-
-#nuestromovil {
-    display: none;
-}
-
 .popup-content h4 {
     margin: 0;
     text-align: left;
@@ -1124,6 +1125,77 @@ footer a {
     bottom: -20%;
 }
 
+
+.popup-container1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-content1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(217, 217, 217, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 80%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px;
+}
+
+.close-btn1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.popup-content1 p {
+    margin: 0;
+    text-align: justify;
+    color: #6F6D60;
+    font-size: 89%;
+    /* text-transform: uppercase; */
+    line-height: 24px;
+    font-family: 'Centuri Gothic', sans-serif;
+
+
+}
+
+.popup-content1 h4 {
+    margin: 0;
+    text-align: left;
+    color: #6F6D60;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.popup-content1 h3 {
+    margin: 0;
+    text-align: left;
+    color: #006838;
+    font-size: 20px;
+    text-transform: uppercase;
+
+}
+
+.popup-content1 img {
+    width: 15%;
+    position: fixed;
+    left: 40%;
+    bottom: -20%;
+}
 #modalNotice {
     overflow: auto;
     /* Estilos de la barra de desplazamiento */
