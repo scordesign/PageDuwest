@@ -1134,40 +1134,58 @@ footer a {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../img/fondo-suelo-blanco-vertically.png);
     z-index: 999;
+    /* backdrop-filter: blur(5px); */
 }
 
 .popup-content1 {
     position: absolute;
-    top: 40%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(217, 217, 217, 0.9);
+    background-color: rgba(73, 71, 69, 0.9);
+    background-image: url(../img/fondorednal.png);
     padding: 20px;
     border-radius: 5px;
-    max-width: 80%;
+    /* max-width: 100%; */
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 10px;
+    width: 90%;
+    backdrop-filter: blur(6px);
+    height: 70%;
+    background-size: cover;
+    color: white;
+
 }
 
 .close-btn1 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    position: fixed;
+    top: -12%;
+    /* right: 12px; */
     cursor: pointer;
+    color: white !important;
+    left: 45%;
+    font-size: 60px;
+    font-family: 'Century Gothic',sans-serif;
+    font-weight: lighter;
 }
 
 .popup-content1 p {
     margin: 0;
     text-align: justify;
     color: #6F6D60;
-    font-size: 89%;
+    font-size: 18px;
     /* text-transform: uppercase; */
     line-height: 24px;
     font-family: 'Centuri Gothic', sans-serif;
+    color: white !important;
+    text-align: center;
+    padding-left: 16%;
+    padding-right: 16%;
 
 
 }
@@ -1176,25 +1194,46 @@ footer a {
     margin: 0;
     text-align: left;
     color: #6F6D60;
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: white !important;
+    text-align: center;
+    padding-left: 9%;
+    padding-right: 9%;
 }
 
 .popup-content1 h3 {
     margin: 0;
     text-align: left;
     color: #006838;
-    font-size: 20px;
+    font-size: 24px;
     text-transform: uppercase;
+    color: white !important;
+    font-family: 'Century Gothic Bold';
+    text-align: center;
+    padding-top: 33%;
 
 }
 
 .popup-content1 img {
-    width: 15%;
+    width: 90%;
     position: fixed;
-    left: 40%;
-    bottom: -20%;
+    left: 5%;
+    bottom: 3%;
+    border-radius: 16px ;
+}
+.location img {
+    width: 30%;
+    position: fixed;
+    left: 5%;
+    top: 3%;
+}
+#location {
+    width: 25%;
+    position: fixed;
+    left: 36%;
+    top: 3%;
 }
 #modalNotice {
     overflow: auto;
@@ -2866,6 +2905,13 @@ text.dummy-text {
         left: 0%;
         margin-left: 0%;
         overflow: auto;
+    }
+    #tmNavLink2, #tmNavLink3, #tmNavLink4, #tmNavLink5, #tmNavLink6, #tmNavLink7, #tmNavLink8, #tmNavLink9, #tmNavLink10{
+        border: greenyellow 2px solid;
+        border-radius: 18px;
+        width: fit-content;
+        align-items: center;
+        text-transform: uppercase;
     }
 
     .title-conocenos {

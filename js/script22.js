@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var popupTitle1 = document.getElementById('popup-title1');
     var popupTitle1 = document.getElementById('popup-subtitle1');
     var popupText1 = document.getElementById('popup-text1');
+    var popupImg1 = document.getElementById('popup-img1');
     var closeBtn = document.querySelector('.close-btn1');
 
     popupLinks.forEach(function(link) {
@@ -12,9 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
             var title1 = link.getAttribute('data-title1');
             var subtitle1 = link.getAttribute('data-subtitle1');
             var text1 = link.getAttribute('data-text1');
+            var img1 = link.getAttribute('data-img1');
             document.getElementById('popup-title1').textContent = title1;
             document.getElementById('popup-subtitle1').textContent = subtitle1;
             document.getElementById('popup-text1').textContent = text1;
+            // document.getElementById('popup-img1'). = img1;
+            $("#popup-img1").attr("src", img1);
+            console.log($("#popup-img1"));
+            console.log(img1);
+
             popupContainer1.style.display = 'block';
         });
     });
@@ -37,4 +44,5 @@ document.addEventListener('DOMContentLoaded', function() {
         // Evitar que el clic en el popup se propague al contenedor
         event.stopPropagation();
     });
+    
 });
