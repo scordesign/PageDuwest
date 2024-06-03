@@ -3204,6 +3204,23 @@ text.dummy-text {
         align-items: center;
         text-align: center;
     } 
+
+    .filters {
+        width: 100%;
+        color: white;
+        align-items: center;
+        /* margin-left: 45%; */
+        display: inline-grid;
+    }
+
+    .filtersEach{
+        display: inline-flex;
+        width: 100%;
+        /* align-items: center; */
+        text-align: center;
+        padding-left: 25%;  
+    }
+
     .filter-product form .filters h4 {
         font-size: 15px;
         color: white;
@@ -3219,19 +3236,20 @@ text.dummy-text {
     
         border-radius: 50%;
         /* Forma circular */
-        border: 2px solid #ccc;
+        border: 2px solid  #a6ca56;
+        ;
         /* Borde del checkbox */
         cursor: pointer;
         /* Cambia el cursor al pasar sobre el checkbox */
-        width: 10%;
+        width: 8%;
         height: 2.3vh;
         margin-right: 5%;
         color: white;
     }
     
     .filter-product form .filters input:checked {
-        background-color: #007bff;
-        /* Cambia el color de fondo cuando está marcado */
+        background: rgb(166,202,86);
+        background: radial-gradient(circle, rgba(166,202,86,1) 73%, rgba(166,202,86,0) 73%, rgba(1,0,36,0) 100%);        /* Cambia el color de fondo cuando está marcado */
     }
     
     .filter-product form .filters label {
@@ -3240,6 +3258,8 @@ text.dummy-text {
     }
 
     .filter-product form .filters{
+        border-top: 0.3vh solid rgba(166, 202, 86, 1);
+        padding-top: 2vh;
         width: 80% !important;
         margin-top: 2%;
         border-top-width: 2px;
