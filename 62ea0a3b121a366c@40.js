@@ -13,9 +13,9 @@ function _map(d3,colombiaGeoJSON)
 
   // Define color scale
   var color = d3.scaleLinear()
-  .domain([1, 20])
+  .domain([0, 1])
   .clamp(true)
-  .range(['#fff', '#fff']);
+  .range(['#fff', 'green']);
 
   var projection = d3.geoMercator()
   .scale(1800)
@@ -74,6 +74,9 @@ function _map(d3,colombiaGeoJSON)
   function imgFn(d){
     return d && d.properties ? d.properties.IMG : null;
   }
+  function colorFn(d){
+    return d && d.properties ? d.properties.COLOR : null;
+  }
 
 
   // Get province name length
@@ -84,8 +87,8 @@ function _map(d3,colombiaGeoJSON)
 
   // Get province color
   function fillFn(d){
-    return color(nameLength(d));
-  }
+    return d && d.properties ? (colorFn(d) === "verde" ? "green" : "white") : "white";
+    }
 
   // When clicked, zoom in
   function clicked(d) {
@@ -96,6 +99,7 @@ function _map(d3,colombiaGeoJSON)
    const celInfo = d.properties.CELULAR;  // Assuming department information is in properties
    const imgInfo = d.properties.IMG; // Assuming department information is in properties
    const pbxInfo = d.properties.PBX; // Assuming department information is in properties
+   const colorInfo = d.properties.COLOR; // Assuming department information is in properties
   // Update a DOM element (outside this function) to display the information
    document.getElementById('department-info').innerHTML = 
    `<img style="width: 3%;
@@ -196,7 +200,7 @@ function _map(d3,colombiaGeoJSON)
   var BASE_FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
   var FONTS = [
-    "Century Gothic",
+    "Century Gothic Bold",
    
   ];
 
@@ -283,7 +287,7 @@ function _map(d3,colombiaGeoJSON)
     var features = colombiaGeoJSON.features;
 
   // Update color scale domain based on data
-  color.domain([0, d3.max(features, nameLength)]);
+  color.domain([0, d3.max(features, colorFn)]);
 
   // Draw each province as a path
   mapLayer.selectAll('path')
@@ -316,7 +320,7 @@ html`<style>
 }
 
 .map-layer {
-  fill: white !important;
+  fill: green !important;
   stroke: green !important;
 }
 

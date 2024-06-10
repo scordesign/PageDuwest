@@ -576,7 +576,7 @@ footer a {
 }
 
 .catalogo1 {
-    width: 33.333333333333333%;
+    width: 33.333333333333336%;
     height: 100vh;
     background-color: transparent !important;
     z-index: 1;
@@ -584,6 +584,7 @@ footer a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: fixed;
 }
 
 .catalogo1 a {
@@ -597,13 +598,15 @@ footer a {
 
 
 .catalogo2 {
-    width: 33.333333333333333%;
+    width: 33.5%;
     height: 100vh;
     background-color: transparent;
     background-image: url(../img/Imagen\ categoria-07.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: fixed;
+    left: 33.2%;
 }
 
 .catalogo3 {
@@ -625,6 +628,8 @@ footer a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: fixed;
+    left: 66.66666666666667%;
 }
 
 .box1 {
@@ -933,11 +938,13 @@ footer a {
     height: auto;
     font-size: large;
     border-radius: 15px;
-    font-family: 'Centuri Gothic', sans-serif;
+    font-family: 'Century Gothic Bold';
     font-weight: 600;
     font-size: 35px;
     width: fit-content;
     left: 70%;
+    padding-top: 0.5%;
+    padding-bottom: 0.1%;
 }
 
 .parrafo-vision h4 {
@@ -958,11 +965,14 @@ footer a {
     height: auto;
     font-size: large;
     border-radius: 15px;
-    font-family: 'Centuri Gothic', sans-serif;
+    font-family: 'Century Gothic Bold';
     font-weight: 600;
     font-size: 35px;
     width: fit-content;
     left: 20%;
+    padding-top: 0.5%;
+    padding-bottom: 0.1%;
+
 
 }
 
