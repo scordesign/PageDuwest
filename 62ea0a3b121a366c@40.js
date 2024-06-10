@@ -321,7 +321,7 @@ html`<style>
 
 .map-layer {
   fill: green !important;
-  stroke: green !important;
+  stroke: white !important;
 }
 
 .effect-layer{
