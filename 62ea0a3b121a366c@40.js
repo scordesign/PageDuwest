@@ -89,7 +89,9 @@ function _map(d3,colombiaGeoJSON)
   function fillFn(d){
     return d && d.properties ? (colorFn(d) === "verde" ? "green" : "white") : "white";
     }
-
+  function borderFn(d){
+      return d && d.properties ? (colorFn(d) === "verde" ? "white" : "green") : "green";
+      }
   // When clicked, zoom in
   function clicked(d) {
     var x, y, k;
@@ -296,6 +298,7 @@ function _map(d3,colombiaGeoJSON)
     .attr('d', path)
     .attr('vector-effect', 'non-scaling-stroke')
     .style('fill', fillFn)
+    .style('stroke', borderFn)
     .on('mouseover', mouseover)
     .on('mouseout', mouseout)
     .on('click', clicked);
