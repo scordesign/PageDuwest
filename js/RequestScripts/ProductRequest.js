@@ -7,6 +7,12 @@ $(function () {
 
 });
 
+function searchCell(param) {
+    pageId = currentPageID.replace("#tm-section-", "").trim();
+    $("#products2-" + pageId + " .divProduct").remove();
+    getProducts(pageId, $("#searchMenuCell"+param).val(), ($("#filtersInput-" + pageId).val() == "" ? undefined : $("#filtersInput-" + pageId).val()))
+}
+
 function addProduct() {
     $("#modalBackground").toggleClass("hide");
 
@@ -275,9 +281,6 @@ function getProducts(section, search, filters, page) {
             //console.log(response.replace(/\\/g, ''));
             response = JSON.parse(JSON.parse(response));
             console.log(response);
-
-            console.log(response.Total);
-            console.log(response.Page);
 
             localStorage.setItem("TotalRegs", response.Total);
             localStorage.setItem("PageRegs", response.Page);
@@ -730,4 +733,12 @@ function deleteDocs(docName, id, Type) {
             console.log(xhr.responseText); // Mostrar la respuesta del servidor en la consola
         }
     });
+}
+
+function closeCell() {
+    $(".filter-product").toggleClass("hideCell");
+}
+
+function seeFilters() {
+    $(".filter-product").toggleClass("hideCell");
 }
