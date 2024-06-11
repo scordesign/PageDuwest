@@ -266,12 +266,14 @@ function _map(d3,colombiaGeoJSON)
       .text(function(d){return d.text;})
       .attr('x', function(d){return d.x;})
       .attr('y', function(d){return d.y;})
-      .style('font-family', fontFamily)
+      .style('font-family', 'Century Gothic Bold')
+      .style('color', 'white')
       .style('fill', '#FFFFFF')
       .style('opacity', 0);
 
     selection.merge(textEnter)
-      .style('font-family', fontFamily)
+      .style('font-family', 'Century Gothic Bold')
+      .style('color', 'white')
       .attr('x', function(d){return d.x;})
       .attr('y', function(d){return d.y;});
 
@@ -299,6 +301,7 @@ function _map(d3,colombiaGeoJSON)
     .attr('vector-effect', 'non-scaling-stroke')
     .style('fill', fillFn)
     .style('stroke', borderFn)
+    .style('color', 'white')
     .on('mouseover', mouseover)
     .on('mouseout', mouseout)
     .on('click', clicked);
@@ -337,7 +340,7 @@ html`<style>
 text{
   font-family:'Century Gothic Bold';
   font-weight: 300;
-  font-color: #FFFFFF;
+  color: #FFFFFF;
 
 }
 
@@ -347,7 +350,7 @@ text.big-text{
   font-size: 30px;
   font-weight: 400;
   font-family:'Century Gothic Bold';
-  font-color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .effect-layer text, text.dummy-text{
