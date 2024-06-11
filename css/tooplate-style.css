@@ -2899,12 +2899,14 @@ text.dummy-text {
         width: 100%;
         left: 0%;
         background-image: url(../img/imagen1cle.png);
+        position: relative;
     }
     .catalogo2 {
         height: 33.3%;
         width: 100%;
         left: 0%;
         background-image: url(../img/imagen2cle.png);
+        position: relative;
 
     }
 
@@ -2913,6 +2915,7 @@ text.dummy-text {
         width: 100%;
         left: 0%;
         background-image: url(../img/imagen3cle.png);
+        position: relative;
 
     }
 
