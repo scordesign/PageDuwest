@@ -13,7 +13,7 @@ botonAnterior.addEventListener('click', () => {
     indiceActual--;
 
     if (indiceActual < 0) {
-        indiceActual = 2;
+        indiceActual = 3;
     }
 
     mostrarImagen(indiceActual);
@@ -22,7 +22,7 @@ botonAnterior.addEventListener('click', () => {
 botonSiguiente.addEventListener('click', () => {
     indiceActual++;
 
-    if (indiceActual > 2) {
+    if (indiceActual > 3) {
         indiceActual = 0;
     }
 
