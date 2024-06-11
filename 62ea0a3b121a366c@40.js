@@ -13,9 +13,9 @@ function _map(d3,colombiaGeoJSON)
 
   // Define color scale
   var color = d3.scaleLinear()
-  .domain([1, 20])
+  .domain([0, 1])
   .clamp(true)
-  .range(['#fff', '#fff']);
+  .range(['#fff', 'green']);
 
   var projection = d3.geoMercator()
   .scale(1800)
@@ -74,6 +74,9 @@ function _map(d3,colombiaGeoJSON)
   function imgFn(d){
     return d && d.properties ? d.properties.IMG : null;
   }
+  function colorFn(d){
+    return d && d.properties ? d.properties.COLOR : null;
+  }
 
 
   // Get province name length
@@ -84,9 +87,11 @@ function _map(d3,colombiaGeoJSON)
 
   // Get province color
   function fillFn(d){
-    return color(nameLength(d));
-  }
-
+    return d && d.properties ? (colorFn(d) === "verde" ? "#00A047" : "white") : "white";
+    }
+  function borderFn(d){
+      return d && d.properties ? (colorFn(d) === "verde" ? "white" : "green") : "#00A047";
+      }
   // When clicked, zoom in
   function clicked(d) {
     var x, y, k;
@@ -96,6 +101,7 @@ function _map(d3,colombiaGeoJSON)
    const celInfo = d.properties.CELULAR;  // Assuming department information is in properties
    const imgInfo = d.properties.IMG; // Assuming department information is in properties
    const pbxInfo = d.properties.PBX; // Assuming department information is in properties
+   const colorInfo = d.properties.COLOR; // Assuming department information is in properties
   // Update a DOM element (outside this function) to display the information
    document.getElementById('department-info').innerHTML = 
    `<img style="width: 3%;
@@ -159,7 +165,7 @@ function _map(d3,colombiaGeoJSON)
 
     // Highlight the clicked province
     mapLayer.selectAll('path')
-      .style('fill', function(d){return centered && d===centered ? '#008F39' : fillFn(d);});
+      .style('fill', function(d){return centered && d===centered ? '#005A47' : fillFn(d);});
 
     // Zoom
    // g.transition()
@@ -178,7 +184,7 @@ function _map(d3,colombiaGeoJSON)
   function mouseout(d){
     // Reset province color
     mapLayer.selectAll('path')
-      .style('fill', function(d){return centered && d===centered ? '#008F39' : fillFn(d);});
+      .style('fill', function(d){return centered && d===centered ? '#005A47' : fillFn(d);});
 
     // Remove effect text
     effectLayer.selectAll('text').transition()
@@ -193,10 +199,10 @@ function _map(d3,colombiaGeoJSON)
   // Just me playing around.
   // You won't need this for a regular map.
 
-  var BASE_FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
+  var BASE_FONT = "'Century Gothic Bold'";
 
   var FONTS = [
-    "Century Gothic",
+    "Century Gothic Bold",
    
   ];
 
@@ -261,7 +267,7 @@ function _map(d3,colombiaGeoJSON)
       .attr('x', function(d){return d.x;})
       .attr('y', function(d){return d.y;})
       .style('font-family', fontFamily)
-      .style('fill', '#777')
+      .style('fill', '#FFFFFF')
       .style('opacity', 0);
 
     selection.merge(textEnter)
@@ -283,7 +289,7 @@ function _map(d3,colombiaGeoJSON)
     var features = colombiaGeoJSON.features;
 
   // Update color scale domain based on data
-  color.domain([0, d3.max(features, nameLength)]);
+  color.domain([0, d3.max(features, colorFn)]);
 
   // Draw each province as a path
   mapLayer.selectAll('path')
@@ -292,6 +298,7 @@ function _map(d3,colombiaGeoJSON)
     .attr('d', path)
     .attr('vector-effect', 'non-scaling-stroke')
     .style('fill', fillFn)
+    .style('stroke', borderFn)
     .on('mouseover', mouseover)
     .on('mouseout', mouseout)
     .on('click', clicked);
@@ -309,15 +316,18 @@ html`<style>
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Josefin+Slab|Arvo|Lato|Vollkorn|Abril+Fatface|Old+Standard+TT|Droid+Sans|Lobster|Inconsolata|Montserrat|Playfair+Display|Karla|Alegreya|Libre+Baskerville|Merriweather|Lora|Archivo+Narrow|Neuton|Signika|Questrial|Fjalla+One|Bitter|Varela+Round);
 @import url('https://fonts.googleapis.com/css2?family=Century+Gothic:wght@200;300;400;500;600;700;800;900&display=swap');
-
+@font-face {
+  font-family: 'Century Gothic Bold';
+  src: url('../webfonts/CenturyGothic-Bold.ttf') format('truetype');
+}
 .background {
   fill: transparent;
   pointer-events: all;
 }
 
 .map-layer {
-  fill: white !important;
-  stroke: green !important;
+  fill: green !important;
+  stroke: white !important;
 }
 
 .effect-layer{
@@ -325,8 +335,10 @@ html`<style>
 }
 
 text{
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family:'Century Gothic Bold';
   font-weight: 300;
+  font-color: #FFFFFF;
+
 }
 
 text.big-text{
@@ -334,10 +346,14 @@ text.big-text{
   top: 370%;
   font-size: 30px;
   font-weight: 400;
+  font-family:'Century Gothic Bold';
+  font-color: #FFFFFF;
 }
 
 .effect-layer text, text.dummy-text{
   font-size: 12px;
+  color: #FFFFFF;
+
 }
 .department-info {
   float: left;
@@ -348,9 +364,9 @@ text.big-text{
   top: 32%;
   z-index: 999;
   height: 57%;
-  color: white;
+  color: #FFFFFF;
   border-radius:10px;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Century Gothic Bold', sans-serif;
 
 }
 .department-info-title {
@@ -362,9 +378,9 @@ text.big-text{
   top: 17%;
   z-index: 999;
   height: auto;
-  color: white;
+  color: #FFFFFF;
   border-radius:10px;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Century Gothic Bold';
   text-align: center;
 
 }
@@ -372,6 +388,8 @@ text.big-text{
 font-size: 24px !important;
 padding-top: 1px;
 padding-bottom: 1px;
+color: #FFFFFF;
+
 
 }
 .marker-image {
