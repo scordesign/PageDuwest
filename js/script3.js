@@ -1,37 +1,45 @@
-const botonAbrir = document.getElementById('abrir-carruselfotos');
-const carrusel = document.getElementById('carruselfotos');
-const botonAnterior = document.getElementById('anterior');
-const botonSiguiente = document.getElementById('siguiente');
+// script.js
 
-let indiceActual = 0;
+const abrirGaleria = document.getElementById('abrirGaleria');
+const galeria = document.getElementById('galeria');
+const cerrarGaleria = document.getElementById('cerrarGaleria');
+const anterior = document.getElementById('anterior');
+const siguiente = document.getElementById('siguiente');
+const imagenes = [
+  "img/Foto conoce más de duwest 1.JPG",
+  "img/Foto conoce más de Duwest 2.png",
+  "img/Foto Novedades y lanzamiento 4.png",
+  "img/Foto Novedades y lanzamiento 1.png",
+  "img/Foto Novedades y lanzamientos 2.png",
+];
+let imagenActual = 0;
 
-botonAbrir.addEventListener('click', () => {
-    carrusel.classList.remove('oculto');
+abrirGaleria.addEventListener('click', () => {
+  galeria.style.display = 'block';
+  mostrarImagen(imagenActual);
 });
 
-botonAnterior.addEventListener('click', () => {
-    indiceActual--;
-
-    if (indiceActual < 0) {
-        indiceActual = 3;
-    }
-
-    mostrarImagen(indiceActual);
+cerrarGaleria.addEventListener('click', () => {
+  galeria.style.display = 'none';
 });
 
-botonSiguiente.addEventListener('click', () => {
-    indiceActual++;
+anterior.addEventListener('click', () => {
+  imagenActual--;
+  if (imagenActual < 0) {
+    imagenActual = imagenes.length - 1;
+  }
+  mostrarImagen(imagenActual);
+});
 
-    if (indiceActual > 3) {
-        indiceActual = 0;
-    }
-
-    mostrarImagen(indiceActual);
+siguiente.addEventListener('click', () => {
+  imagenActual++;
+  if (imagenActual >= imagenes.length) {
+    imagenActual = 0;
+  }
+  mostrarImagen(imagenActual);
 });
 
 function mostrarImagen(indice) {
-    const imagenes = document.querySelectorAll('.contenedor-imagenesfotos img');
-    imagenes.forEach(imagen => imagen.style.display = 'none');
-
-    imagenes[indice].style.display = 'block';
+  const imagen = document.querySelector('.imagen-activa');
+  imagen.src = imagenes[indice];
 }
