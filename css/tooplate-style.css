@@ -97,7 +97,7 @@ body {
     z-index: 1000;
     background: #00000052;
     position: absolute;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border-radius: 0rem 0rem 1rem 1rem;
 }
 
@@ -2599,7 +2599,7 @@ text.dummy-text {
 
 @media (max-width: 600px) {
     #dropDownBar {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.3);
         width: 100%;
         display: flex;
         justify-content: center;
@@ -2636,6 +2636,11 @@ text.dummy-text {
         right: 0%;
         width: 100%;
         border-radius: 0%;
+    }
+    #tm-section-1 {
+        background-image: url(../img/Fondo-1vacas.png)!important;
+        background-size: cover!important;
+        background-position: center!important;
     }
 
     #tmSideBar {
@@ -2936,6 +2941,8 @@ text.dummy-text {
         left: 0%;
         background-image: url(../img/imagen2cle.png);
         position: relative;
+        background-repeat: no-repeat;
+        background-position-y: 10% ;
 
     }
 
@@ -2969,7 +2976,7 @@ text.dummy-text {
         width: 75%;
         position: relative;
         float: center;
-        top: 22%;
+        top: 43%;
         /* right: 12.5%; */
         border-radius: 10px;
         text-align: center;
@@ -2982,7 +2989,7 @@ text.dummy-text {
         width: 75%;
         position: relative;
         float: center;
-        top: 22%;
+        top: 60%;
         /* right: 12.5%; */
         border-radius: 10px;
         text-align: center;
@@ -2991,21 +2998,25 @@ text.dummy-text {
 
     .box1 h3 {
         text-align: center;
+        font-size: 23px;
 
     }
 
     .box2 h3 {
         text-align: center;
+        font-size: 23px;
 
     }
 
     .box3 h3 {
         text-align: center;
+        font-size: 23px;
 
     }
 
     .box4 h3 {
         text-align: center;
+        font-size: 23px;
 
     }
 
