@@ -55,7 +55,8 @@ function _map(d3,colombiaGeoJSON)
   var bigText = g.append('text')
     .classed('big-text', true)
     .attr('x', '30%')
-    .attr('y', '50%');
+    .attr('y', '50%')
+    .style('color', 'white !important');
 
 
   // Get province name
@@ -90,7 +91,7 @@ function _map(d3,colombiaGeoJSON)
     return d && d.properties ? (colorFn(d) === "verde" ? "#00A047" : "white") : "white";
     }
   function borderFn(d){
-      return d && d.properties ? (colorFn(d) === "verde" ? "white" : "green") : "#00A047";
+      return d && d.properties ? (colorFn(d) === "verde" ? "white" : "green") : "#CCFF00";
       }
   // When clicked, zoom in
   function clicked(d) {
@@ -199,10 +200,10 @@ function _map(d3,colombiaGeoJSON)
   // Just me playing around.
   // You won't need this for a regular map.
 
-  var BASE_FONT = "'Century Gothic Bold'";
+  var BASE_FONT = "'Century Gothic'";
 
   var FONTS = [
-    "Century Gothic Bold",
+    "Century Gothic",
    
   ];
 
@@ -213,6 +214,7 @@ function _map(d3,colombiaGeoJSON)
 
     bigText
       .style('font-family', fontFamily)
+      .style('color', 'white')
       .text(text);
 
     // Use dummy text to compute actual width of the text
@@ -266,13 +268,13 @@ function _map(d3,colombiaGeoJSON)
       .text(function(d){return d.text;})
       .attr('x', function(d){return d.x;})
       .attr('y', function(d){return d.y;})
-      .style('font-family', 'Century Gothic Bold')
+      .style('font-family', 'Century Gothic')
       .style('color', 'white')
       .style('fill', '#FFFFFF')
       .style('opacity', 0);
 
     selection.merge(textEnter)
-      .style('font-family', 'Century Gothic Bold')
+      .style('font-family', 'Century Gothic')
       .style('color', 'white')
       .attr('x', function(d){return d.x;})
       .attr('y', function(d){return d.y;});
@@ -323,6 +325,9 @@ html`<style>
   font-family: 'Century Gothic Bold';
   src: url('../webfonts/CenturyGothic-Bold.ttf') format('truetype');
 }
+body {
+  color:white !important;
+}
 .background {
   fill: transparent;
   pointer-events: all;
@@ -338,7 +343,7 @@ html`<style>
 }
 
 text{
-  font-family:'Century Gothic Bold';
+  font-family:'Century Gothic';
   font-weight: 300;
   color: #FFFFFF;
 
@@ -349,8 +354,8 @@ text.big-text{
   top: 370%;
   font-size: 30px;
   font-weight: 400;
-  font-family:'Century Gothic Bold';
-  color: #FFFFFF;
+  font-family:'Century Gothic';
+  color: white !important;
 }
 
 .effect-layer text, text.dummy-text{
@@ -369,7 +374,7 @@ text.big-text{
   height: 57%;
   color: #FFFFFF;
   border-radius:10px;
-  font-family: 'Century Gothic Bold', sans-serif;
+  font-family: 'Century Gothic', sans-serif;
 
 }
 .department-info-title {
@@ -383,7 +388,7 @@ text.big-text{
   height: auto;
   color: #FFFFFF;
   border-radius:10px;
-  font-family: 'Century Gothic Bold';
+  font-family: 'Century Gothic';
   text-align: center;
 
 }
@@ -392,6 +397,7 @@ font-size: 24px !important;
 padding-top: 1px;
 padding-bottom: 1px;
 color: #FFFFFF;
+font-family: "Century Gothic";
 
 
 }
