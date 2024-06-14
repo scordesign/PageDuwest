@@ -1,4 +1,3 @@
-// https://observablehq.com/@john-guerra/geojson-colombia@40
 function _1(md){return(
 md
 )}
@@ -91,7 +90,7 @@ function _map(d3,colombiaGeoJSON)
     return d && d.properties ? (colorFn(d) === "verde" ? "#00A047" : "white") : "white";
     }
   function borderFn(d){
-      return d && d.properties ? (colorFn(d) === "verde" ? "white" : "green") : "#CCFF00";
+      return d && d.properties ? (colorFn(d) === "verde" ? "#CCFF00" : "green") : "white";
       }
   // When clicked, zoom in
   function clicked(d) {
@@ -291,9 +290,21 @@ function _map(d3,colombiaGeoJSON)
   }
   
     var features = colombiaGeoJSON.features;
+    const departmentImage = "img/rec.png";
 
+    // Function to position the image element
+    function positionImage(d) {
+      const centroid = path.centroid(d);
+      // Modify this line to return a complete transform string
+      return `translate(${centroid[0] - 10}, ${centroid[1] - 10})`;
+    }
   // Update color scale domain based on data
   color.domain([0, d3.max(features, colorFn)]);
+
+  // const mapLayerImage = mapLayer.append("image")
+  // .attr("xlink:href", departmentImage)  // Set the image source
+  // .attr("width", 20)  // Adjust width and height as needed
+  // .attr("height", 20);
 
   // Draw each province as a path
   mapLayer.selectAll('path')
@@ -306,7 +317,12 @@ function _map(d3,colombiaGeoJSON)
     .style('color', 'white')
     .on('mouseover', mouseover)
     .on('mouseout', mouseout)
-    .on('click', clicked);
+    .on('click', clicked) 
+    .append('image')  // Append image element here (nested within path)
+    .attr("xlink:href", departmentImage)  // Set the image source
+    .attr("width", 10)  // Adjust width and height as needed
+    .attr("height", 10)
+    .attr("transform", d => positionImage(d)); // Call positionImage for transform
 
   return svg.node()
 }
@@ -339,7 +355,7 @@ body {
 }
 
 .effect-layer{
-  pointer-events:none;
+  /* other styles... */
 }
 
 text{
