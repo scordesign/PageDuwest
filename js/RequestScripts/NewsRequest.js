@@ -7,6 +7,11 @@ $(function () {
 
 });
 
+function searchnews(param) {
+    $("#news .divNew").remove();
+    getNews( $("#searchMenu"+param).val());
+}
+
 function addNew() {
     $("#modalBackground").toggleClass("hide");
 
@@ -132,10 +137,6 @@ function getNews( search, page) {
         success: function (response) {
             //console.log(response.replace(/\\/g, ''));
             response = JSON.parse(JSON.parse(response));
-            console.log(response);
-
-            console.log(response.Total);
-            console.log(response.Page);
 
             localStorage.setItem("TotalRegs", response.Total);
             localStorage.setItem("PageRegs", response.Page);
@@ -147,6 +148,13 @@ function getNews( search, page) {
 
                 var divOne = $("<div>").attr("class", "divNewImage");
                 var divTwo = $("<div>").attr("class", "divNewDesc fuente-century-gothic").attr("onclick", "getNew(" + element.id + ")").addClass(background);
+
+
+                if ($(window).width() <= 600) {
+                    // Cambiar la fuente de la imagen para pantallas más pequeñas
+                    divTwo.attr("style","background: linear-gradient(0deg,  rgba(1, 1, 1, 0.8) 0% , rgba(255, 255, 255, 0) 100%),url(\""+(element.images == null ? "" : element.images.length == 0 ? "" : element.images[0])+"\");");
+                } 
+                
                 divOne.append($("<img>").attr("src", element.images == null ? "" : element.images.length == 0 ? "" : element.images[0]));
                 divFather.append(divOne);
                 divTwo.append($("<p>").html(element.name ).addClass("bold titleNew"));

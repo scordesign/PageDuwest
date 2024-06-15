@@ -3448,7 +3448,10 @@ text.dummy-text {
         display: initial !important;
     }
 
-
+    .searchcell::placeholder {
+        color: white !important;
+        text-decoration: underline !important;
+    }
 
     .searchCellDiv {
         padding-top: 2vh;
@@ -3631,7 +3634,10 @@ text.dummy-text {
         right: 0%;
     }
 
-    .tm-section {
+    #tm-section-12,
+    #tm-section-13,
+    #tm-section-14,
+    #tm-section-15 {
         padding-top: 23vh !important;
     }
 
@@ -3644,7 +3650,7 @@ text.dummy-text {
         border-style: solid;
     }
 
-    #modalLogo{
+    #modalLogo {
         display: none;
     }
 
@@ -3725,12 +3731,14 @@ text.dummy-text {
         color: white;
         font-size: calc(2vh + 2vw);
     }
+
     #infoProductDesc {
         color: white;
         text-align: justify;
         font-size: calc(1vh + 1vw);
         line-height: calc(1vh + 0.7vw);
     }
+
     #infoProduct .filtersProduct {
         color: white;
         font-size: calc(1vh + 1vw);
@@ -3743,12 +3751,129 @@ text.dummy-text {
         line-height: calc(1vh + 0.7vw);
     }
 
-    .carousel-control-prev{
+    .carousel-control-prev {
         z-index: 13;
     }
 
-    .carousel-control-next{
+    .carousel-control-next {
         z-index: 13;
+    }
+
+    .divNewImage {
+        display: none;
+    }
+
+    .divNewDesc {
+        width: 80%;
+        margin: auto;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        border-radius: 8%;
+    }
+
+    .divNew {
+        height: 40vh;
+    }
+    .news{
+        margin-bottom: 20%;
+    }
+
+    .divNewDesc .titleNew{
+        margin-top: 55%;
+        text-align: center;
+        margin-bottom: 2%;
+        color: white;
+    }
+
+    .divNewDesc .descNew {
+        text-align: center;
+        /* font-size: calc(0.63vh + 0.63vw); */
+        line-height: calc(2vh + 1vw);
+        margin-bottom: 0;
+        overflow: hidden;
+        height: 26%;
+        color: white;
+    }
+
+    .divNewDesc  .buttonNew{
+        text-decoration: underline;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-left: 20%;
+    }
+
+    #modalBackgroundNotice{
+        z-index: 12 !important;
+    }
+    #modalLogoNotice{
+        display: none !important;
+    }
+
+    #modalNotice{
+        width: 100%;
+        height: 90%;
+        margin-top: 0vh;
+        padding-top: 5vh;
+    }
+    #closeModalNotice{
+        position: absolute;
+        right: 46%;
+        top: 2%;
+        max-height: 10%;
+    }
+
+    #closeModalNotice i{
+        font-size: 3.1vh;
+    }
+
+    #fatherNewModal {
+        margin: 5% 15%;
+    }
+
+    #infoNewDesc {
+        text-align: justify;
+        font-size: calc(1.3vh + 1.3vw);
+        line-height: calc(1.5vh + 1.5vw);
+    }
+
+    #infoNew h5 {
+        font-size: calc(2vh + 1.5vw);
+    }
+
+    #fatherNewModal {
+        margin: 5% 15%;
+    }
+
+    #CarruselDirection{
+        margin-left: 35%;
+    }
+
+    .searchCellNewDiv  {
+        padding-top: 3vh;
+        display: inline-flex !important;
+        margin-left: 13vw;
+    }
+
+    .searchcellNew {
+        border-width: 0px;
+        display: initial !important;
+        padding-left: 4%;
+        background: #00000000;
+        border-radius: 1rem;
+        border-color: white;
+        border-style: solid;
+    }
+    .searchcellNew::placeholder {
+        color: black !important;
+        text-decoration: underline !important;
+     }
+
+     .searchCellNewDiv img {
+        display: inherit;
+        height: 5vh !important;
+        padding-top: 0px !important;
     }
 }
 
