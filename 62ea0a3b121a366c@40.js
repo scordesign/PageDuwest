@@ -25,6 +25,15 @@ function _map(d3,colombiaGeoJSON)
   var path = d3.geoPath()
   .projection(projection);
 
+ // var defs = $('<defs>');
+  //var pattern =$('<pattern>').attr('id', 'imgPattern').attr('patternUnits', 'userSpaceOnUse')
+  //.attr('width', '500').attr('height', '500');
+  //var image =$('<image>').attr('href', 'img/rec.png').attr('x', '0')
+  //.attr('y', '0').attr('height', '500').attr('width', '500');
+  //pattern.append(image);
+  //defs.append(pattern);
+  //svg.append(defs);
+
   // Set svg width & height
   svg
     .attr('width', width)
@@ -77,7 +86,9 @@ function _map(d3,colombiaGeoJSON)
   function colorFn(d){
     return d && d.properties ? d.properties.COLOR : null;
   }
-
+  function colornFn(d){
+    return d && d.properties ? d.properties.COLOR : null;
+  }
 
   // Get province name length
   function nameLength(d){
@@ -88,6 +99,8 @@ function _map(d3,colombiaGeoJSON)
   // Get province color
   function fillFn(d){
     return d && d.properties ? (colorFn(d) === "verde" ? "#00A047" : "white") : "white";
+    return d && d.properties ? (colornFn(d) === "verde" ? "#00A047" : "white") : "white";
+
     }
   function borderFn(d){
       return d && d.properties ? (colorFn(d) === "verde" ? "#CCFF00" : "green") : "white";
@@ -108,9 +121,9 @@ function _map(d3,colombiaGeoJSON)
    position: fixed;
    left: 54.4%;
    top: 34.5%;"src="img/map.gif">
-    <h2 style="font-size:100%;width:90%;margin-left:10%;padding-top:3%;line-height:1;"> ${departmentInfo}</h2>
-    <h3 style="font-size:80%;width:80%;margin-left:10%;"> ${direccionInfo}</h3>
-    <h3 style="font-size:90%;width:80%;margin-left:10%;"> DUWEST Colombia, S.A.S.</h3>
+    <h2 style="font-family:'Lemon Milk';font-size:100%;width:90%;margin-left:10%;padding-top:3%;line-height:1;"> ${departmentInfo}</h2>
+    <h3 style="font-family:'Century Gothic';font-size:80%;width:80%;margin-left:10%;"> ${direccionInfo}</h3>
+    <h3 style="font-family:'Century Gothic';font-size:90%;width:80%;margin-left:10%;"> DUWEST Colombia, S.A.S.</h3>
     <img src="img/celmap.png" 
     style="
     width: 1.5%;
@@ -126,8 +139,8 @@ function _map(d3,colombiaGeoJSON)
     top: 58%;
     }
   }">
-    <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
-    <h3 style="font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
+    <h3 style="font-family:'Century Gothic';font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
+    <h3 style="font-family:'Century Gothic';font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
     <img src="img/${imgInfo}"
   style="
   width: 27%;
@@ -199,10 +212,10 @@ function _map(d3,colombiaGeoJSON)
   // Just me playing around.
   // You won't need this for a regular map.
 
-  var BASE_FONT = "'Century Gothic'";
+  var BASE_FONT = "'Lemon Milk','Lemon Milk'";
 
   var FONTS = [
-    "Century Gothic",
+    "Lemon Milk","Lemon Milk"
    
   ];
 
@@ -267,13 +280,13 @@ function _map(d3,colombiaGeoJSON)
       .text(function(d){return d.text;})
       .attr('x', function(d){return d.x;})
       .attr('y', function(d){return d.y;})
-      .style('font-family', 'Century Gothic')
+      .style('font-family', 'Lemon Milk')
       .style('color', 'white')
       .style('fill', '#FFFFFF')
       .style('opacity', 0);
 
     selection.merge(textEnter)
-      .style('font-family', 'Century Gothic')
+      .style('font-family', 'Lemon Milk')
       .style('color', 'white')
       .attr('x', function(d){return d.x;})
       .attr('y', function(d){return d.y;});
@@ -315,6 +328,7 @@ function _map(d3,colombiaGeoJSON)
     .style('fill', fillFn)
     .style('stroke', borderFn)
     .style('color', 'white')
+    .style('background-image', 'img/rec.png')
     .on('mouseover', mouseover)
     .on('mouseout', mouseout)
     .on('click', clicked) 
@@ -339,7 +353,15 @@ html`<style>
 @import url('https://fonts.googleapis.com/css2?family=Century+Gothic:wght@200;300;400;500;600;700;800;900&display=swap');
 @font-face {
   font-family: 'Century Gothic Bold';
-  src: url('../webfonts/CenturyGothic-Bold.ttf') format('truetype');
+  src: url('webfonts/CenturyGothic-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('webfonts/CenturyGothic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('webfonts/LEMONMILK-Regular.otf') format('truetype');
 }
 body {
   color:white !important;
@@ -352,6 +374,7 @@ body {
 .map-layer {
   fill: green !important;
   stroke: white !important;
+  color: white !important;
 }
 
 .effect-layer{
@@ -359,9 +382,9 @@ body {
 }
 
 text{
-  font-family:'Century Gothic';
+  font-family:'Lemon Milk';
   font-weight: 300;
-  color: #FFFFFF;
+  color: white;
 
 }
 
@@ -369,9 +392,12 @@ text.big-text{
   position:fixed;
   top: 370%;
   font-size: 30px;
-  font-weight: 400;
-  font-family:'Century Gothic';
+}
+.map-layer text.big-text {
+  font-weight: bold;
   color: white !important;
+  font-family:'Lemon Milk';
+
 }
 
 .effect-layer text, text.dummy-text{
@@ -390,7 +416,8 @@ text.big-text{
   height: 57%;
   color: #FFFFFF;
   border-radius:10px;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Century Gothic';
+  color: white;
 
 }
 .department-info-title {
@@ -404,7 +431,7 @@ text.big-text{
   height: auto;
   color: #FFFFFF;
   border-radius:10px;
-  font-family: 'Century Gothic';
+  font-family: 'Lemon Milk';
   text-align: center;
 
 }
@@ -413,7 +440,7 @@ font-size: 24px !important;
 padding-top: 1px;
 padding-bottom: 1px;
 color: #FFFFFF;
-font-family: "Century Gothic";
+font-family: "Lemon Milk";
 
 
 }

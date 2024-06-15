@@ -19,6 +19,14 @@ http://www.tooplate.com/view/2102-constructive
     font-family: 'Century Gothic Bold';
     src: url('../webfonts/CenturyGothic-Bold.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Lemon Milk';
+    src: url('../webfonts/LEMONMILK-Regular.otf') format('truetype');
+}
+@font-face {
+    font-family: 'Lemon Milk Bold';
+    src: url('../webfonts/LEMONMILK-Bold.otf') format('truetype');
+}
 
 
 
@@ -65,6 +73,7 @@ body {
     position: fixed;
     padding: 1% 1%;
     text-align: justify;
+    font-family: 'Lemon Milk';
 }
 
 .sec2 {
@@ -578,6 +587,7 @@ footer a {
     align-items: center;
     top: 0%;
     position: fixed;
+    font-family: 'Lemon Milk';
 }
 
 .catalogo1 {
@@ -663,7 +673,7 @@ footer a {
     z-index: 2;
     text-align: center;
     font-size: 35px;
-    font-family: 'Century Gothic Bold';
+    font-family: 'Lemon Milk';
 
 }
 
@@ -694,7 +704,7 @@ footer a {
     font-weight: bold;
     text-align: center;
     font-size: 35px;
-    font-family: 'Century Gothic Bold';
+    font-family: 'Lemon Milk';
 
 
 }
@@ -756,7 +766,7 @@ footer a {
     font-weight: bold;
     text-align: center;
     font-size: 35px;
-    font-family: 'Century Gothic Bold';
+    font-family: 'Lemon Milk';
 
 }
 
@@ -1979,7 +1989,7 @@ button {
     height: auto;
     font-size: large;
     border-radius: 15px;
-    font-family: 'Centuri Gothic', sans-serif;
+    font-family: 'Lemon Milk';
     font-weight: 600;
     font-size: 35px;
     width: fit-content;
