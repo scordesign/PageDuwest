@@ -224,11 +224,13 @@ function getfilters(pageId) {
             // var sectionNumber = pageId.substring(pageId.length - 2, pageId.length);
             for (var key in response.data) {
                 var divFirst = $("<div>").attr("class", "filters").attr("style", "width:100%;color:black;");
+                divFirst.append($("<h4>").html("Filtrar").attr("class", "filtertitle"));
 
                 if (response.data.hasOwnProperty(key)) {
                     divFirst.append($("<h4>").html(key).attr("class", "bold"));
                     var objetos = response.data[key];
                     // Iterar sobre los objetos dentro de cada categoría
+
                     objetos.forEach(function (element) {
                         var divData = $("<div>").attr("class", "filtersEach").attr("style", "display:inline-flex;width:100%;");
 

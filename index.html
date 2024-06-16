@@ -46,7 +46,7 @@ http://www.tooplate.com/view/2102-constructive
 
 <body>
 	<!-- Loader -->
-	<div id="#loaderpage">
+	<div id="loaderpage">
 		<div id="loader-wrapper">
 			<div id="loader">
 				<img src="img/Carga gif.gif">
@@ -187,6 +187,7 @@ http://www.tooplate.com/view/2102-constructive
 
 			<!-- section 1 -->
 			<section id="tm-section-1" class="tm-section">
+				<div class="backgroundmobile"></div>
 				<div class="sec1">
 					<p>CONOCE EL MEJOR PASTO DEL MUNDO TROPICAL Y NUTRE A TUS ANIMALES CON PASTO DE LA MEJOR CALIDAD.
 					</p>
@@ -269,7 +270,7 @@ http://www.tooplate.com/view/2102-constructive
 				<nav id="tmMainNav" class="tm-main-nav">
 					<div class="conocenos">
 						<div class="title-conocenos">
-							&nbsp; &nbsp; &nbsp; conoce más de duwest colombia&nbsp; &nbsp; &nbsp;
+							conoce más de duwest colombia
 						</div><br><br>
 						<div class="parrafo-conocenos">
 
@@ -291,7 +292,7 @@ http://www.tooplate.com/view/2102-constructive
 							<img src="img/Foto conoce más de Duwest 2.png">
 							<a href="#contact" class="scrolly active" data-bg-img="Fondo-4.png"
 								data-page="#tm-section-10">
-								&nbsp;Misión y Visión&nbsp;
+								Misión y Visión
 							</a>
 
 						</div>
@@ -321,7 +322,7 @@ http://www.tooplate.com/view/2102-constructive
 
 					</div>
 				</nav>
-				<div class="footer2">
+				<div class="footer2"id="footer2">
 					<img src="img/gif proveedores v7.gif">
 				</div>
 			</section>
@@ -333,7 +334,7 @@ http://www.tooplate.com/view/2102-constructive
 					<div class="vision-general">
 
 						<div class="title-vision">
-							&nbsp;conoce más de duwest colombia&nbsp;
+							conoce más de duwest colombia
 						</div>
 						<div class="politica">
 							<a href="" class="popup-link" data-title="Política de calidad"
@@ -390,9 +391,10 @@ http://www.tooplate.com/view/2102-constructive
 						<div class="parrafo-vision">
 							<h4>Visión</h4>
 							<br>
-							<p>Somos reconocidos por nuestros clientes y proveedores como la primera opción en aquellos
-								mercados en donde participamos,
-								siendo nuestra ventaja competitica un equipo humano altamente comprometido y realizado.
+							<p>Proveer soluciones, desarrollando relaciones a largo plazo con nuestros clientes,
+								colaboradores y accionistas;
+								superando sus expectativas por medio de un equipo con alto espiritu de innovación y
+								compromiso que vive los valores corporativos.
 							</p><br>
 							<br>
 						</div>
@@ -402,10 +404,10 @@ http://www.tooplate.com/view/2102-constructive
 						<div class="parrafo-mision">
 							<h4>Misión</h4>
 							<br>
-							<p>Proveer soluciones, desarrollando relaciones a largo plazo con nuestros clientes,
-								colaboradores y accionistas;
-								superando sus expectativas por medio de un equipo con alto espiritu de innovación y
-								COMPROMISO que VIVE los VALORES CORPORATIVOS.
+							<p>
+								Somos reconocidos por nuestros clientes y proveedores como la primera opción en aquellos
+								mercados en donde participamos,
+								siendo nuestra ventaja competitica un equipo humano altamente comprometido y realizado.
 							</p><br>
 							<br>
 						</div>
@@ -415,13 +417,13 @@ http://www.tooplate.com/view/2102-constructive
 					</div>
 
 				</nav>
-				<div class="footer2">
+				<div class="footer2"id="footer2">
 					<img src="img/gif proveedores v7.gif">
 				</div>
 			</section>
 			<!-- Pop Up Politicas -->
 
-			<div class="popup-container" id="#popup-container">
+			<div class="popup-container" id="popup-container">
 				<div class="popup-content">
 					<span class="close-btn">&times;</span>
 					<h3 id="popup-title"></h3>
@@ -482,7 +484,7 @@ http://www.tooplate.com/view/2102-constructive
 					<iframe id="inlineFrameExample" src="./map.html">
 					</iframe>
 				</div>
-				<div class="footer2">
+				<div class="footer2"id="footer2">
 					<img src="img/gif proveedores v7.gif">
 				</div>
 				<div id="country">
@@ -635,6 +637,7 @@ map.invalidateSize();
 
 					</div> -->
 					<div class="filter-product hideCell">
+
 						<i id="closeCell" onclick="closeCell()" class="closeCell far fa-window-close cell"></i>
 						<img src="img/Logo-R-Andina---Fondo-oscuro.png" class="cell" alt="">
 						<div class="searchCellDiv cell">
@@ -802,7 +805,7 @@ map.invalidateSize();
 		<!-- .tm-content -->
 
 
-		<footer class="footer-link">
+		<footer class="footer-link" id="footer-link">
 
 			<div class="portafolio">
 				<nav id="tmMainNav1" class="tm-main-nav">
@@ -894,6 +897,14 @@ map.invalidateSize();
 		var currentPageID = "#tm-section-1";
 
 		$(function () {
+
+			// $('.popup-link').click(function () { 
+			// 	$("footer").addClass("hide");
+			// });
+
+			// $('.close-btn').click(function () { 
+			// 	$("footer").removeClass("hide");
+			// });
 
 			$("body").on("click", function (event) {
 				var dropDownBar = $("#dropDownBar");
@@ -1067,7 +1078,7 @@ map.invalidateSize();
 			$(".tm-main-nav a").removeClass("active");
 			currentNavItem.addClass("active");
 
-
+			$("footer").removeClass("hide");
 			switch (currentNavItem.data().page) {
 				case '#tm-section-8':
 				case '#tm-section-2':
@@ -1081,15 +1092,28 @@ map.invalidateSize();
 				case '#tm-section-16':
 				case '#popup-container':
 					$("footer").hide();
-					// Expected output: "Mangoes and papayas are $2.79 a pound."
 					break;
-
+				case '#loaderpage':
+				
+				case '#popup-container':
+				case '#loader-wrapper':
+    // Hide footer (original functionality)
+                    $("footer-link").hide();
+					break;
+    // Hide footer2 specifically for #popup-container
 				default:
-					$("footer").show();
+					if (currentPageID == "#tm-section-10" && esMovil()) {
+						$("footer").hide();
+					} else {
+						$("footer").show();
+					}
+					
 			}
 
 
-
+				
+				
+			
 
 			console.log(currentPageID + '>>>>>>>>>>>>>>');
 
@@ -1102,6 +1126,7 @@ map.invalidateSize();
 			var bgImg = currentNavItem.data("bgImg");
 			$.backstretch("img/" + bgImg);
 		}
+		
 
 		// Setup Nav Toggle Button
 		function setupNavToggle() {
