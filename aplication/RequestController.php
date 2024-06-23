@@ -5,6 +5,7 @@ require_once('controller/UserController.php');
 require_once('controller/FilterController.php');
 require_once('controller/sessionController.php');
 require_once('controller/NewsController.php');
+require_once('controller/AmountsController.php');
 
 require_once('connection/Connection.php');
 
@@ -14,6 +15,7 @@ $Products = new Products();
 $news = new News();
 $Filters = new Filters();
 $session = new session();
+$Amounts = new Amounts();
 
 switch (strtolower($_SERVER["REQUEST_METHOD"])) {
     case "post":
@@ -74,6 +76,9 @@ switch (strtolower($_SERVER["REQUEST_METHOD"])) {
             case "getNew":
                 echo $news->getNew();
                 break;
+            case "getAmounts":
+                echo $Amounts->getAmounts();
+            break;
         }
 
         break;
