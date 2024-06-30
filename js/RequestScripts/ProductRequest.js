@@ -331,9 +331,10 @@ function getProducts(section, search, filters, page) {
                 var divFather = $("<div>").attr("class", "divProduct").attr("onclick", "getProduct(" + element.id + ")");
 
                 var divSon = $("<div>");
-                divSon.append($("<img>").attr("src", element.listImg == null ? "" : element.listImg.length == 0 ? "" : element.listImg[0]));
+                divSon.append($("<img>").attr("src", element.logo == null ? "" : element.logo.substring(1, element.logo.length)));
                 divFather.append(divSon);
-                divFather.append($("<p>").html(element.name + ", " + element.amount));
+                divFather.append($("<p>").attr("class", "titleProduct").html(element.name));
+                divFather.append($("<p>").attr("class", "textProduct").html(element.description));
 
                 divFather.append($("<a>").html("Ver más información"));
 
@@ -357,7 +358,6 @@ function getProduct(id) {
             //console.log(response.replace(/\\/g, ''));
             response = JSON.parse(JSON.parse(response));
             console.log(response);
-            console.log(response.listImg);
             $("#formModal").html("");
             if ($("#modalBackground").hasClass("hide")) {
                 $("#modalBackground").toggleClass("hide");
@@ -365,35 +365,53 @@ function getProduct(id) {
 
 
             var div = $("<div>").attr("id", "fatherProductModal").addClass("noClose");
-            var divCarrusel = $("<div>").attr("id", "myCarouselProduct").attr("class", "carousel slide").attr("data-ride", "carousel").addClass("noClose");
+            var divlogo = $("<div>").attr("id", "myCarouselProduct").attr("class", "carousel slide").attr("data-ride", "carousel").addClass("noClose");
+            var divAmount = $("<div>").attr("id", "amount").attr("class", "amount").addClass("noClose");
 
 
-            var divCarruselinner = $("<div>").attr("class", "carousel-inner").addClass("noClose");
+            // var divCarruselinner = $("<div>").attr("class", "carousel-inner").addClass("noClose");
 
-            var i = 0;
-            response.data.listImg.forEach(element => {
-                var divCarruselinnerItem = $("<div>").attr("class", "carousel-item " + (i == 0 ? "active" : "")).attr("id", "carousel-item" + i).addClass("noClose");
-                divCarruselinnerItem.append($("<img>").attr("class", "d-block w-100").attr("src", element).attr("alt", "imagen " + i).addClass("noClose"));
-                divCarruselinner.append(divCarruselinnerItem);
-                i++;
-            });
-            divCarrusel.append(divCarruselinner);
-            var aCarruselPrev = $("<a>").attr("id", "carousel-control-prev").attr("onclick", "prevProductIMg(0)").attr("class", "carousel-control-prev").attr("href", "#carouselExampleIndicators").attr("role", "button").attr("data-slide", "prev").addClass("noClose");
-            aCarruselPrev.append($("<span>").attr("class", "carousel-control-prev-icon").attr("aria-hidden", "true").addClass("noClose"));
-            aCarruselPrev.append($("<span>").attr("class", "sr-only").html("Anterior").addClass("noClose"));
+            // var i = 0;
+            // response.data.listImg.forEach(element => {
+            //     var divCarruselinnerItem = $("<div>").attr("class", "carousel-item " + (i == 0 ? "active" : "")).attr("id", "carousel-item" + i).addClass("noClose");
+            //     divCarruselinnerItem.append($("<img>").attr("class", "d-block w-100").attr("src", element).attr("alt", "imagen " + i).addClass("noClose"));
+            //     divCarruselinner.append(divCarruselinnerItem);
+            //     i++; 
+            // });
+            // divCarrusel.append(divCarruselinner);
+            // var aCarruselPrev = $("<a>").attr("id", "carousel-control-prev").attr("onclick", "prevProductIMg(0)").attr("class", "carousel-control-prev").attr("href", "#carouselExampleIndicators").attr("role", "button").attr("data-slide", "prev").addClass("noClose");
+            // aCarruselPrev.append($("<span>").attr("class", "carousel-control-prev-icon").attr("aria-hidden", "true").addClass("noClose"));
+            // aCarruselPrev.append($("<span>").attr("class", "sr-only").html("Anterior").addClass("noClose"));
 
-            var aCarruselNext = $("<a>").attr("id", "carousel-control-next").attr("onclick", "nextProductIMg(0)").attr("class", "carousel-control-next").attr("href", "#carouselExampleIndicators").attr("role", "button").attr("data-slide", "next").addClass("noClose");
-            aCarruselNext.append($("<span>").attr("class", "carousel-control-next-icon").attr("aria-hidden", "true").addClass("noClose"));
-            aCarruselNext.append($("<span>").attr("class", "sr-only").html("Siguiente").addClass("noClose"));
+            // var aCarruselNext = $("<a>").attr("id", "carousel-control-next").attr("onclick", "nextProductIMg(0)").attr("class", "carousel-control-next").attr("href", "#carouselExampleIndicators").attr("role", "button").attr("data-slide", "next").addClass("noClose");
+            // aCarruselNext.append($("<span>").attr("class", "carousel-control-next-icon").attr("aria-hidden", "true").addClass("noClose"));
+            // aCarruselNext.append($("<span>").attr("class", "sr-only").html("Siguiente").addClass("noClose"));
 
-            divCarrusel.append(aCarruselPrev);
-            divCarrusel.append(aCarruselNext);
+            // divCarrusel.append(aCarruselPrev);
+            // divCarrusel.append(aCarruselNext);
 
             // info
+
+
+
+            var divLogoinnerItem = $("<img>").attr("class", "d-block logoImg").attr("src", (response.data.logo == "" || response.data.logo == null) ? "" : response.data.logo.substring(1, response.data.logo.length)).addClass("noClose");
+            divlogo.append(divLogoinnerItem);
+
+            if ((response.data.amountImgs).length != 0) {
+                (response.data.amountImgs).forEach(element => {
+                    var amountElement = $("<img>").attr("src", element).attr("class", "d-block h-100");
+                    divAmount.append(amountElement);
+                });
+            }
+
+
+
             var divInfo = $("<div>").attr("id", "infoProduct").addClass("noClose");
 
-            divInfo.append($("<h5>").addClass("noClose").html((response.data.name + " / " + response.data.amount).toUpperCase()).addClass("fuente-leomn-milk").addClass("bold"));
+            divInfo.append($("<h5>").addClass("noClose").html((response.data.name).toUpperCase()).addClass("fuente-leomn-milk").addClass("bold"));
             divInfo.append($("<p>").addClass("noClose").html(response.data.description).attr("id", "infoProductDesc").addClass("noClose").addClass("fuente-century-gothic"));
+            divInfo.append($("<p>").html("Presentaciones: " + response.data.amountName).attr("id", "infoProductAmount").addClass("noClose").addClass("fuente-century-gothic"));
+
 
             if (response.data.filters != null || response.data.filters != "") {
                 var filtersProduct = "";
@@ -403,16 +421,15 @@ function getProduct(id) {
                     if (filtersProduct.includes(filtersProductElement.attr("data"))) {
                         filtersProduct = filtersProduct.substring(0, (filtersProduct.indexOf(filtersProductElement.attr("data")) + filtersProductElement.attr("data").length + 1)) + " " + filtersProductElement.attr("name") + "," + filtersProduct.substring((filtersProduct.indexOf(filtersProductElement.attr("data")) + filtersProductElement.attr("data").length + 1 /*+ filtersProductElement.attr("name").length + 2*/), filtersProduct.length) + ", ";
                     } else {
-
-                        filtersProduct += +" " + filtersProductElement.attr("data") + ": " + filtersProductElement.attr("name") + ", ";
+                        filtersProduct += "  " + filtersProductElement.attr("data") + ": " + filtersProductElement.attr("name") + ", ";
                     }
                 });
 
                 filtersProduct = filtersProduct.replaceAll(", 0", " ");
                 filtersProduct = filtersProduct.endsWith(", ") ? filtersProduct.substring(0, filtersProduct.length - 2) : filtersProduct;
                 filtersProduct = filtersProduct.startsWith("0") ? filtersProduct.substring(1, filtersProduct.length).replaceAll("0", " ") : filtersProduct.replaceAll("0", " ");
+                filtersProduct = filtersProduct.replace(",  ", "<br>");
                 divInfo.append($("<p>").addClass("filtersProduct").html(filtersProduct).addClass("noClose").addClass("fuente-century-gothic"));
-
             }
             response.data.listDocs.forEach(element => {
                 // var pDocs = $("<p>").addClass("noClose");
@@ -426,7 +443,9 @@ function getProduct(id) {
                 divInfo.append($("<br>"));
                 divInfo.append($("<button>").attr("type", "button").attr("class", "btn btn-danger ").html("eliminar").attr("style", "margin-top:2%;").attr("onclick", "getProductForDelete(" + id + ")"));
             }
-            div.append(divCarrusel);
+
+            div.append(divlogo);
+            div.append(divAmount);
             div.append(divInfo);
 
 
@@ -517,7 +536,7 @@ function getProductForUpdate(id) {
                 });
                 form.append(divFile);
 
-                form.append($("<input>").attr("type", "hidden").attr("name", "amount").attr("id", "amountInput").val(responseProduct.data.amount));
+                form.append($("<input>").attr("type", "hidden").attr("name", "amount").attr("id", "amountInput").val(responseProduct.data.amount+","));
                 if (responseProduct.data.amount != null || responseProduct.data.amount != "") {
 
                     var div1 = $("<div>").attr("id", "amount").attr("style", "margin-top:2%;");

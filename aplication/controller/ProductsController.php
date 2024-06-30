@@ -50,7 +50,7 @@ class Products
             $files = str_contains($files, ',,') ? str_replace(",,", ",", $files) : $files;
 
 
-            unlink(str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/" . $docName);
+            unlink(str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/" . $docName);
 
             $sSql = "";
 
@@ -141,32 +141,35 @@ class Products
             // Obtener los resultados
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
             $logopatch = $resultado["logo"] == null ? "" : $resultado["logo"];
-            if ($logo !== null) {
-                if ($logopatch !== "" ) {
-                    unlink(str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/" . $logopatch);
+
+            // var_dump($logo);
+
+            if (($logo["name"] == null ?"": $logo["name"]) !== "" ) {
+                if ($logopatch !== "") {
+                    unlink(str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/" . $logopatch);
                 }
-                $directoryLogo = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images/logo";
+                $directoryLogo = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images/logo";
                 if (!is_dir($directoryLogo)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
                     mkdir($directoryLogo, 0777, true);
-    
+
                     // Establecer permisos adicionales si es necesario
                     chmod($directoryLogo, 0777);
                 }
-                $rutaArchivoLogo ="";
-                
+                $rutaArchivoLogo = "";
+
                 if ($logo !== null) {
                     // Mover archivo al directorio deseado
                     $rutaArchivoLogo = $directoryLogo . "/" . basename($logo["name"]);
                     move_uploaded_file($logo["tmp_name"], $rutaArchivoLogo);
-                    $logopatch ="/img/prueba/" . $name . "/images/logo/". basename($logo["name"]);
+                    $logopatch = "/img/prueba/" . $name . "/images/logo/" . basename($logo["name"]);
                     // Agregar nombre del archivo a la lista
                 }
             }
 
             $imagesNamesString = str_replace("\\", "", $resultado['listImg']);
             if ($images !== null || !empty($images)) {
-                $directoryimage = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images";
+                $directoryimage = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images";
                 if (!is_dir($directoryimage)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
                     mkdir($directoryimage, 0777, true);
@@ -190,7 +193,7 @@ class Products
             }
             $filesNamesString = str_replace("\\", "", $resultado['listDocs']);
             if ($files !== null || !empty($files)) {
-                $directoryFile = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/files";
+                $directoryFile = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/files";
 
                 if (!is_dir($directoryFile)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
@@ -289,11 +292,11 @@ class Products
             // Obtener los resultados
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
 
-            $imgList= json_decode(str_replace("\\", "", $resultado['listImg']), true);
-            $fileList= json_decode(str_replace("\\", "", $resultado['listDocs']), true);
+            $imgList = json_decode(str_replace("\\", "", $resultado['listImg']), true);
+            $fileList = json_decode(str_replace("\\", "", $resultado['listDocs']), true);
 
-            
-            $this->deletedirectory(str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/".$resultado['name'] );
+
+            $this->deletedirectory(str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $resultado['name']);
 
             // unlink(str_replace("\aplication\controller", "", __DIR__) . "/img/prueba/".$resultado['name'] );
             // foreach ($imgList as $key => $value) {
@@ -304,7 +307,7 @@ class Products
             //     unlink(str_replace("\aplication\controller", "", __DIR__) . "/" . $value);
             // }
 
-            
+
 
             $stmt = $pdo->prepare("delete from products  where id =:id");
 
@@ -336,7 +339,8 @@ class Products
         // Iterar sobre el resultado
     }
 
-    function deletedirectory($directorio): bool {
+    function deletedirectory($directorio): bool
+    {
         if (is_dir($directorio)) {
             $archivos = glob($directorio . '/*'); // Obtener todos los archivos y subdirectorios dentro del directorio
             foreach ($archivos as $archivo) {
@@ -351,11 +355,11 @@ class Products
                 } catch (\Throwable $th) {
                     //throw $th;
                 }
-               
+
             }
             // Una vez que todos los archivos y subdirectorios están eliminados, eliminar el directorio principal
             rmdir($directorio);
-            return true ;
+            return true;
         } else {
             return false;
         }
@@ -394,7 +398,7 @@ class Products
             $amountOther = $_POST["amountOther"] === null ? "" : $_POST["amountOther"];
             $imagesNamesString = "[]";
 
-            $directoryLogo = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images/logo";
+            $directoryLogo = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images/logo";
             if (!is_dir($directoryLogo)) {
                 // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
                 mkdir($directoryLogo, 0777, true);
@@ -402,21 +406,21 @@ class Products
                 // Establecer permisos adicionales si es necesario
                 chmod($directoryLogo, 0777);
             }
-            $rutaArchivoLogo ="";
+            $rutaArchivoLogo = "";
             $logopatch = "";
             if ($logo !== null) {
                 // Mover archivo al directorio deseado
                 $rutaArchivoLogo = $directoryLogo . "/" . basename($logo["name"]);
                 move_uploaded_file($logo["tmp_name"], $rutaArchivoLogo);
-                $logopatch ="/img/prueba/" . $name .  "/images/logo/". basename($logo["name"]);
+                $logopatch = "/img/prueba/" . $name . "/images/logo/" . basename($logo["name"]);
                 // Agregar nombre del archivo a la lista
             }
-            
+
 
 
 
             if ($images !== null) {
-                $directoryimage = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images";
+                $directoryimage = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images";
                 if (!is_dir($directoryimage)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
                     mkdir($directoryimage, 0777, true);
@@ -437,7 +441,7 @@ class Products
             }
             $filesNamesString = "[]";
             if ($files !== null) {
-                $directoryFile = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/files";
+                $directoryFile = str_replace("/aplication/controller", "", str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/files";
 
                 if (!is_dir($directoryFile)) {
                     // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
@@ -460,7 +464,7 @@ class Products
                 $filesNamesString = json_encode($filesNames);
             }
 
-            
+
 
             $stmt = $pdo->prepare("INSERT INTO products (`name`,`description`,`listImg`,`listDocs`,`filters`,`section`,`amount`,`logo`,`amountOther`) VALUES (:name,:description,:listImg,:listDocs,:filters,:section,:amount,:logo,:amountOther)");
 
@@ -502,9 +506,10 @@ class Products
     public function getProducts(): string
     {
         $returnFields = array();
+        $Ssql = "";
         try {
             $page = !isset($_GET["page"]) ? 1 : $_GET["page"];
-            $section = !isset($_GET["section"]) ? "" :"#". $_GET["section"];
+            $section = !isset($_GET["section"]) ? "" : "#" . $_GET["section"];
             $filters = !isset($_GET["filters"]) ? "" : substr($_GET["filters"], 0, strlen($_GET["filters"]) - 1);
             $search = !isset($_GET["search"]) ? "" : $_GET["search"];
 
@@ -518,7 +523,7 @@ class Products
             }
 
             if ($filters !== "") {
-                
+
                 $filtersList = explode(",", $filters);
                 $Ssql .= "(";
                 foreach ($filtersList as $filter) {
@@ -542,13 +547,13 @@ class Products
             if ($filters !== "") {
                 $filtersList = explode(",", $filters);
                 foreach ($filtersList as $filter) {
-                    $filterSearch = "%{". str_replace("%", "", $filter) ."}%";
-                    $statementCount->bindParam(":filter" . str_replace("%", "", $filter), $filterSearch , PDO::PARAM_STR);
+                    $filterSearch = "%{" . str_replace("%", "", $filter) . "}%";
+                    $statementCount->bindParam(":filter" . str_replace("%", "", $filter), $filterSearch, PDO::PARAM_STR);
                 }
             }
 
 
-            $statementCount->bindParam(":section" , $section , PDO::PARAM_STR);
+            $statementCount->bindParam(":section", $section, PDO::PARAM_STR);
 
             $statementCount->execute();
 
@@ -559,7 +564,7 @@ class Products
 
             // data
             $statement = $pdo->prepare($Ssql . " LIMIT " . $page * 10 . " OFFSET 0" . ($page * 10) - 10);
-            $statement->bindParam(":section" , $section , PDO::PARAM_STR);
+            $statement->bindParam(":section", $section, PDO::PARAM_STR);
             if ($search !== "") {
                 $statement->bindParam(':name', $search, PDO::PARAM_STR);
             }
@@ -567,7 +572,7 @@ class Products
             if ($filters !== "") {
                 $filtersList = explode(",", $filters);
                 foreach ($filtersList as $filter) {
-                    $filterSearch = "%{". str_replace("%", "", $filter) ."}%";
+                    $filterSearch = "%{" . str_replace("%", "", $filter) . "}%";
                     $statement->bindParam(":filter" . str_replace("%", "", $filter), $filterSearch, PDO::PARAM_STR);
                 }
             }
@@ -586,6 +591,7 @@ class Products
                 $resultadosReturnEach['amount'] = $resultado['amount'];
                 $resultadosReturnEach['amountOther'] = $resultado['amountOther'];
                 $resultadosReturnEach['id'] = $resultado['id'];
+                $resultadosReturnEach['logo'] = $resultado['logo'];
                 $resultadosReturn[$i] = $resultadosReturnEach;
                 $i++;
             }
@@ -594,7 +600,7 @@ class Products
             $returnFields["Page"] = $page;
             $returnFields["Total"] = $count;
             $returnFields["status"] = 200;
-            $returnFields["message"] = "Correcto" ;
+            $returnFields["message"] = "Correcto";
 
             $returnProduct = json_encode($returnFields);
 
@@ -604,8 +610,8 @@ class Products
         } catch (\Throwable $e) {
             $returnFields["status"] = 500;
             $returnFields["message"] = $e->getMessage();
-            $returnProduct = json_encode($returnFields);
 
+            $returnProduct = json_encode($returnFields);
 
             return json_encode($returnProduct);
         }
@@ -615,6 +621,7 @@ class Products
     public function getProduct(): string
     {
         $returnFields = array();
+        $Ssql = "";
         try {
             $id = !isset($_GET["id"]) ? 0 : $_GET["id"];
 
@@ -633,6 +640,9 @@ class Products
 
             $statement->execute();
             $resultados = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+            $resultadosinfo = array();
             $resultadosReturn = array();
 
             foreach ($resultados as $resultado) {
@@ -645,11 +655,42 @@ class Products
                 $resultadosReturn['id'] = $resultado['id'];
                 $resultadosReturn['filters'] = $resultado['filters'];
                 $resultadosReturn['amountOther'] = $resultado['amountOther'];
+                $resultadosReturn['logo'] = $resultado['logo'];
+
+                $resultadosReturn['amountImgs'] = "";
+                $resultadosReturn['amountName'] = "";
+
+                if (($resultado['amount'] == null ? "" : $resultado['amount']) !== "") {
+                    $resultado['amount'] = str_replace("{", "", $resultado['amount']);
+                    $resultado['amount'] = str_replace("}", "", $resultado['amount']);
+
+                    $Ssql = "select * from amount where id in ( " . $resultado['amount'] . ")";
+
+                    $statement1 = $pdo->prepare($Ssql);
+
+                    // $statement1->bindParam(':amount', $resultado['amount'], PDO::PARAM_);
+
+                    $statement1->execute();
+                    $resultados1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
+
+
+                    $amountImg = "";
+                    $amountDesc = "";
+                    foreach ($resultados1 as $resultado1) {
+                        $amountImg .= $resultado1["patch"] . ",";
+                        $amountDesc .= $resultado1["name"] . ", ";
+                    }
+                    $amountImg = str_ends_with($amountImg, ',') ? substr($amountImg, 0, -1) : $amountImg;
+                    $amountDesc = str_ends_with($amountDesc, ', ') ? substr($amountDesc, 0, -2) : $amountDesc;
+
+                    $resultadosReturn['amountImgs'] = explode(",", $amountImg) ; 
+                    $resultadosReturn['amountName'] = $amountDesc . (( $resultado['amountOther'] == null)? "" : ",". $resultado['amountOther'] ); 
+                }
             }
 
             $returnFields["data"] = $resultadosReturn;
-
             $returnFields["status"] = 200;
+            $returnFields["info"] = $resultadosinfo;
             $returnFields["message"] = "Correcto";
 
             $returnProduct = json_encode($returnFields);
@@ -659,8 +700,8 @@ class Products
 
         } catch (\Throwable $e) {
             $returnFields["status"] = 500;
-            $returnFields["message"] = $e;
-
+            $returnFields["message"] = $e->getMessage();
+            // $returnFields["info"] = $Ssql;
             $returnProduct = json_encode($returnFields);
 
 
