@@ -105,6 +105,7 @@ class Products
 
             $files = $_FILES["files"];
             $images = $_FILES["images"];
+            $logo = $_FILES["logo"];
 
             if ($_POST["name"] === null) {
                 $returnFields["status"] = 406;
@@ -119,9 +120,11 @@ class Products
             $description = $_POST["description"] === null ? "" : $_POST["description"];
             $name = $_POST["name"] === null ? "" : $_POST["name"];
             $section = $_POST["section"] === null ? "" : $_POST["section"];
-            $amount = $_POST["amount"] === null ? "" : $_POST["amount"];
+            $amount = $_POST["amount"] === null ? "" : substr($_POST["amount"], 0, strlen($_POST["amount"]) - 1);
+            $amountOther = $_POST["amountOther"] === null ? "" : $_POST["amountOther"];
 
             $filters = str_starts_with($filters, ',') ? substr($filters, 1) : $filters;
+            $amount = str_starts_with($amount, ',') ? substr($amount, 1) : $amount;
 
 
             $consulta = "SELECT * FROM products WHERE id = :id ";
@@ -137,6 +140,29 @@ class Products
             $stmt->execute();
             // Obtener los resultados
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+            $logopatch = $resultado["logo"] == null ? "" : $resultado["logo"];
+            if ($logo !== null) {
+                if ($logopatch !== "" ) {
+                    unlink(str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/" . $logopatch);
+                }
+                $directoryLogo = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images/logo";
+                if (!is_dir($directoryLogo)) {
+                    // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
+                    mkdir($directoryLogo, 0777, true);
+    
+                    // Establecer permisos adicionales si es necesario
+                    chmod($directoryLogo, 0777);
+                }
+                $rutaArchivoLogo ="";
+                
+                if ($logo !== null) {
+                    // Mover archivo al directorio deseado
+                    $rutaArchivoLogo = $directoryLogo . "/" . basename($logo["name"]);
+                    move_uploaded_file($logo["tmp_name"], $rutaArchivoLogo);
+                    $logopatch ="/img/prueba/" . $name . "/images/logo/". basename($logo["name"]);
+                    // Agregar nombre del archivo a la lista
+                }
+            }
 
             $imagesNamesString = str_replace("\\", "", $resultado['listImg']);
             if ($images !== null || !empty($images)) {
@@ -192,7 +218,7 @@ class Products
 
 
 
-            $stmt = $pdo->prepare("update products set `name` =:name,`description` =:description,`listImg` =:listImg,`listDocs` =:listDocs,`filters` =:filters,`section` =:section,`amount` = :amount where id =:id");
+            $stmt = $pdo->prepare("update products set `name` =:name,`description` =:description,`listImg` =:listImg,`listDocs` =:listDocs,`filters` =:filters,`section` =:section,`amount` = :amount ,`amountOther` =:amountOther,`logo` =:logo where id =:id");
 
 
             $stmt->bindParam(':name', $name);
@@ -202,6 +228,8 @@ class Products
             $stmt->bindParam(':filters', $filters);
             $stmt->bindParam(':section', $section);
             $stmt->bindParam(':amount', $amount);
+            $stmt->bindParam(':amountOther', $amountOther);
+            $stmt->bindParam(':logo', $logopatch);
             $stmt->bindParam(':id', $id);
             // Ejecutar la sentencia SQL con los valores correspondientes
             $stmt->execute();
@@ -312,13 +340,18 @@ class Products
         if (is_dir($directorio)) {
             $archivos = glob($directorio . '/*'); // Obtener todos los archivos y subdirectorios dentro del directorio
             foreach ($archivos as $archivo) {
-                if (is_file($archivo)) {
-                    // Si es un archivo, eliminarlo
-                    unlink($archivo);
-                } elseif (is_dir($archivo)) {
-                    // Si es un directorio, llamar recursivamente a esta función para eliminarlo
-                    $this->deletedirectory($archivo);
+                try {
+                    if (is_file($archivo)) {
+                        // Si es un archivo, eliminarlo
+                        unlink($archivo);
+                    } elseif (is_dir($archivo)) {
+                        // Si es un directorio, llamar recursivamente a esta función para eliminarlo
+                        $this->deletedirectory($archivo);
+                    }
+                } catch (\Throwable $th) {
+                    //throw $th;
                 }
+               
             }
             // Una vez que todos los archivos y subdirectorios están eliminados, eliminar el directorio principal
             rmdir($directorio);
@@ -343,6 +376,7 @@ class Products
             $files = $_FILES["files"];
             $images = $_FILES["images"];
 
+            $logo = $_FILES["logo"];
             if ($_POST["name"] === null) {
                 $returnFields["status"] = 406;
                 $returnFields["message"] = "Nombre de producto requerid";
@@ -356,8 +390,30 @@ class Products
             $description = $_POST["description"] === null ? "" : $_POST["description"];
             $name = $_POST["name"] === null ? "" : $_POST["name"];
             $section = $_POST["section"] === null ? "" : $_POST["section"];
-            $amount = $_POST["amount"] === null ? "" : $_POST["amount"];
+            $amount = $_POST["amount"] === null ? "" : substr($_POST["amount"], 0, strlen($_POST["amount"]) - 1);
+            $amountOther = $_POST["amountOther"] === null ? "" : $_POST["amountOther"];
             $imagesNamesString = "[]";
+
+            $directoryLogo = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images/logo";
+            if (!is_dir($directoryLogo)) {
+                // Crear la carpeta con permisos 0777 (lectura, escritura y ejecución para todos)
+                mkdir($directoryLogo, 0777, true);
+
+                // Establecer permisos adicionales si es necesario
+                chmod($directoryLogo, 0777);
+            }
+            $rutaArchivoLogo ="";
+            $logopatch = "";
+            if ($logo !== null) {
+                // Mover archivo al directorio deseado
+                $rutaArchivoLogo = $directoryLogo . "/" . basename($logo["name"]);
+                move_uploaded_file($logo["tmp_name"], $rutaArchivoLogo);
+                $logopatch ="/img/prueba/" . $name .  "/images/logo/". basename($logo["name"]);
+                // Agregar nombre del archivo a la lista
+            }
+            
+
+
 
             if ($images !== null) {
                 $directoryimage = str_replace("/aplication/controller", "",  str_replace("\\", "/", __DIR__)) . "/img/prueba/" . $name . "/images";
@@ -404,8 +460,9 @@ class Products
                 $filesNamesString = json_encode($filesNames);
             }
 
+            
 
-            $stmt = $pdo->prepare("INSERT INTO products (`name`,`description`,`listImg`,`listDocs`,`filters`,`section`,`amount`) VALUES (:name,:description,:listImg,:listDocs,:filters,:section,:amount)");
+            $stmt = $pdo->prepare("INSERT INTO products (`name`,`description`,`listImg`,`listDocs`,`filters`,`section`,`amount`,`logo`,`amountOther`) VALUES (:name,:description,:listImg,:listDocs,:filters,:section,:amount,:logo,:amountOther)");
 
 
             $stmt->bindParam(':name', $name);
@@ -415,6 +472,8 @@ class Products
             $stmt->bindParam(':filters', $filters);
             $stmt->bindParam(':section', $section);
             $stmt->bindParam(':amount', $amount);
+            $stmt->bindParam(':logo', $logopatch);
+            $stmt->bindParam(':amountOther', $amountOther);
             // Ejecutar la sentencia SQL con los valores correspondientes
             $stmt->execute();
 
@@ -525,6 +584,7 @@ class Products
                 $resultadosReturnEach['name'] = $resultado['name'];
                 $resultadosReturnEach['description'] = $resultado['description'];
                 $resultadosReturnEach['amount'] = $resultado['amount'];
+                $resultadosReturnEach['amountOther'] = $resultado['amountOther'];
                 $resultadosReturnEach['id'] = $resultado['id'];
                 $resultadosReturn[$i] = $resultadosReturnEach;
                 $i++;
@@ -584,6 +644,7 @@ class Products
                 $resultadosReturn['amount'] = $resultado['amount'];
                 $resultadosReturn['id'] = $resultado['id'];
                 $resultadosReturn['filters'] = $resultado['filters'];
+                $resultadosReturn['amountOther'] = $resultado['amountOther'];
             }
 
             $returnFields["data"] = $resultadosReturn;
