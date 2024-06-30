@@ -1497,7 +1497,7 @@ footer a {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
-    background-color: rgba(217, 217, 217, 1);
+    background-color: rgba(255, 255, 255, 1);
     overflow: auto;
 }
 
@@ -1523,6 +1523,45 @@ footer a {
 
 #logomenuimg {
     display: none;
+}
+
+#fatherProductModal .amount {
+    height: 12vh;
+    display: inline-flex;
+    float: right;
+    margin-right: 0.5vw;
+    max-width: 50%;
+    overflow: auto;
+}
+
+#fatherProductModal .amount::-webkit-scrollbar {
+    width: 8px;
+    /* Ancho de la barra */
+}
+
+#fatherProductModal .amount::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Color del thumb (el control deslizante) */
+    border-radius: 4px;
+    /* Radio de borde del thumb */
+}
+
+/* Firefox */
+#fatherProductModal .amount::-moz-scrollbar {
+    width: 8px;
+}
+
+#fatherProductModal .amount::-moz-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+/* Internet Explorer */
+#fatherProductModal .amount {
+    scrollbar-width: thin;
+    /* Ancho de la barra en IE/Edge */
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+    /* Color de la barra y del thumb en IE/Edge */
 }
 
 .contenedorfotos {
@@ -2142,21 +2181,23 @@ button {
 
 .divProduct {
     cursor: pointer;
-    width: 18%;
-    height: 30vh;
-    background-color: rgba(49, 170, 71, 1);
+    width: 31.333%;
+    height: 20vh;
+    background-color: #ffffff;
     margin: 1%;
     padding: 1%;
     border-radius: 5%;
     float: left;
+    border: 1px solid rgba(49, 170, 71, 1);
 }
 
 .divProduct div {
-    height: 60%;
+    height: 29%;
     width: 100%;
-    text-align: center;
+    text-align: left;
     background-color: white;
 }
+
 
 .divProduct div img {
     height: 100%;
@@ -2164,12 +2205,30 @@ button {
 }
 
 .divProduct p {
+    margin: 0px;
     font-size: 15px;
+    color: rgba(107, 107, 106, 1);
+    line-height: calc(0.8 + 0.8);
+}
+
+.titleProduct{
+    font-weight: bold;
+    font-size: calc(0.8vh + 0.7vw) !important;
+}
+
+.textProduct{
+    font-size: calc(0.7vh + 0.6vw) !important;
+    overflow: hidden;
+    height: 30%;
 }
 
 .divProduct a {
-    font-size: 12px;
+    font-size: calc(0.7vh + 0.6vw) ;
+    color: rgba(107, 107, 106, 1) !important;
+    text-decoration: underline !important;
 }
+
+
 
 .productsmmaq {
     overflow: auto;
@@ -2208,7 +2267,11 @@ button {
     width: 40%;
     float: left;
     position: relative;
-    max-height: 90%;
+    height: 12vh;
+}
+
+.logoImg{
+    height: 80%;
 }
 
 #fatherProductModal {
@@ -2216,7 +2279,7 @@ button {
 }
 
 #infoProduct {
-    width: 60%;
+    width: 100%;
     padding: 2% 2%;
     float: right;
 }
@@ -2233,16 +2296,26 @@ button {
     line-height: calc(0.7vh + 0.7vw);
 }
 
+#infoProductAmount{
+    color: rgba(55, 130, 82, 1);
+    font-size: calc(0.8vh + 0.8vw);
+    line-height: calc(0.8vh + 0.8vw);
+    font-weight: bold;
+}
+
 #infoProduct .filtersProduct {
     color: rgba(55, 130, 82, 1);
     font-size: calc(0.63vh + 0.63vw);
     line-height: calc(0.7vh + 0.7vw);
+    font-weight: bold;
 }
 
 #infoProduct .DocProducts {
     color: rgba(49, 170, 71, 1);
     font-size: calc(0.63vh + 0.63vw);
     line-height: calc(0.7vh + 0.7vw);
+    font-weight: bold;
+    
 }
 
 .ContentFiles {
