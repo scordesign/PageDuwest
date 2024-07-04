@@ -399,7 +399,7 @@ function getProduct(id) {
 
             if ((response.data.amountImgs).length != 0) {
                 (response.data.amountImgs).forEach(element => {
-                    var amountElement = $("<img>").attr("src", element).attr("class", "d-block h-100");
+                    var amountElement = $("<img>").attr("src", element).attr("class", "d-block h-100 noClose");
                     divAmount.append(amountElement);
                 });
             }
