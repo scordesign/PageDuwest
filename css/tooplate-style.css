@@ -2206,25 +2206,25 @@ button {
 
 .divProduct p {
     margin: 0px;
-    font-size: 15px;
+    /* font-size: 15px; */
     color: rgba(107, 107, 106, 1);
     line-height: calc(0.8 + 0.8);
 }
 
 .titleProduct{
     font-weight: bold;
-    font-size: calc(0.8vh + 0.7vw) !important;
+    font-size: calc(0.8vh + 0.7vw) ;
 }
 
 .textProduct{
-    font-size: calc(0.7vh + 0.6vw) !important;
+    font-size: calc(0.7vh + 0.6vw) ;
     overflow: hidden;
     height: 30%;
 }
 
 .divProduct a {
     font-size: calc(0.7vh + 0.6vw) ;
-    color: rgba(107, 107, 106, 1) !important;
+    color: rgba(107, 107, 106, 1) ;
     text-decoration: underline !important;
 }
 
@@ -3576,7 +3576,7 @@ text.dummy-text {
         cursor: pointer;
         width: 46%;
         height: 30vh;
-        background-color: rgba(49, 170, 71, 1);
+        /* background-color: rgba(49, 170, 71, 1); */
         margin: 2%;
         padding: 5% 3%;
         padding-bottom: 8%;
@@ -3592,17 +3592,18 @@ text.dummy-text {
     }
 
     .divProduct div img {
-        height: 100%;
+        height: auto;
+        max-height: 100%;
         max-width: 100%;
     }
 
-    .divProduct p {
+    /* .divProduct p {
         font-size: 15px;
-    }
+    } */
 
-    .divProduct a {
+    /* .divProduct a {
         font-size: 12px;
-    }
+    } */
 
     .title-product {
         position: relative;
@@ -4053,10 +4054,30 @@ text.dummy-text {
         padding-top: 0px !important;
     }
 
+    .titleProduct{
+        font-size: calc(1vh + 2vw);
+    }
+    
+    .textProduct{
+        font-size: calc(1vh + 1vw);
+    }
 
-.filter-product .search {
-    display: none;
-}
+    #fatherProductModal .amount{
+        display: none;
+    }
+    .logoImg{
+         margin: auto;
+    }
+       
+    .filter-product .search {
+        display: none;
+    }
+
+    #infoProductAmount{
+        color: white;
+        font-size: calc(1vh + 1vw);
+        line-height: calc(0.8vh + 0.8vw);
+    }
 
 }
 
