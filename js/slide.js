@@ -37,7 +37,7 @@ let currentIndex = 0;
 
 function showNextSlide() {
     currentIndex = (currentIndex + 1) % images.length;
-     // updateSlides();
+     updateSlides();
 }
 
 function updateSlides() {
