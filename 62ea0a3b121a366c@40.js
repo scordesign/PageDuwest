@@ -226,7 +226,7 @@ function _map(d3,colombiaGeoJSON)
 
     bigText
       .style('font-family', fontFamily)
-      .style('color', 'white')
+      .style('display', 'none')
       .text(text);
 
     // Use dummy text to compute actual width of the text

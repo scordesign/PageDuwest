@@ -3,6 +3,8 @@ const images = [
     'images/image2.jpg',
     'images/image3.jpg',
     'images/image4.jpg',
+    'images/image5.jpg',
+    
     // Añade tantas imágenes como necesites
 ];
    
@@ -55,4 +57,4 @@ function updateSlides() {
 updateSlides();
 
 // Cambiar de imagen automáticamente cada 5 segundos
-setInterval(showNextSlide, 2000);
+setInterval(showNextSlide, 5000);
