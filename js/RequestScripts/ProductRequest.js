@@ -365,7 +365,7 @@ function getProduct(id) {
 
 
             var div = $("<div>").attr("id", "fatherProductModal").addClass("noClose");
-            var divlogo = $("<div>").attr("id", "myCarouselProduct").attr("class", "carousel slide").attr("data-ride", "carousel").addClass("noClose");
+            var divlogo = $("<div>").attr("id", "myCarouselProduct").attr("class", "carousel ").attr("data-ride", "carousel").addClass("noClose");
             var divAmount = $("<div>").attr("id", "amount").attr("class", "amount").addClass("noClose");
 
 
@@ -437,6 +437,11 @@ function getProduct(id) {
                 divInfo.append($("<a>").attr("href", element).attr("target", "_blank").html(element.split("/")[element.split("/").length - 1]).addClass("noClose").addClass("fuente-century-gothic").addClass("DocProducts"));
                 divInfo.append($("<br>"));
             });
+
+            var divImg = $("<div>").attr("class","noClose imagenProducto");
+            divImg.append($("<img>").attr("src",response.data.listImg == null?"": response.data.listImg[0]));
+            divInfo.append(divImg);
+
 
             if (localStorage.getItem("session") == 1) {
                 divInfo.append($("<button>").attr("type", "button").attr("class", "btn btn-success ").html("editar").attr("style", "margin-top:2%;").attr("onclick", "getProductForUpdate(" + id + ")"));
