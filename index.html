@@ -212,8 +212,8 @@ http://www.tooplate.com/view/2102-constructive
 						<div class="catalogo1">
 							<img src="img/cultivos.png" id="imgporta">
 							<div class="box1">
-									<a href="#products" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2"
-										data-page-type="carousel">
+									<a href="#tm-section-12" class="scrolly" data-bg-img="Fondo-8.png" data-page="#tm-section-12"
+										data-page-type="carousel"onclick="chargeProducts(12)">
 									<h3>portafolio<br> protección de <br>cultivos</h3>
 								</a>
 							</div>
@@ -221,8 +221,8 @@ http://www.tooplate.com/view/2102-constructive
 						<div class="catalogo2">
 							<img src="img/nutricionespeciali.png" id="imgporta">
 							<div class="box2">
-								<a href="#">
-
+								<a href="#tm-section-13" class="scrolly" data-bg-img="Fondo-8.png" data-page="#tm-section-13"
+								data-page-type="carousel"onclick="chargeProductsNoF(13)">
 									<h3>portafolio <br>nutrición<br> especializada</h3>
 								</a>
 							</div>
@@ -241,10 +241,10 @@ http://www.tooplate.com/view/2102-constructive
 						</div> -->
 						<div class="catalogo4">
 							<img src="img/semillas.png" id="imgporta">
-							<a href="#"></a>
 							<div class="box4">
-								<a href="#">
-									<h3>semillas de<br> pastos</h3>
+								<a href="#tm-section-14" class="scrolly" data-bg-img="Fondo-8.png" data-page="#tm-section-14"
+								data-page-type="carousel"onclick="chargeProductsNoF(14)">
+																	<h3>semillas de<br> pastos</h3>
 								</a>
 							</div>
 
@@ -813,7 +813,7 @@ map.invalidateSize();
 
 			<div class="portafolio">
 				<nav id="tmMainNav1" class="tm-main-nav">
-					<a href="#products" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2"
+					<a href="#products" class="scrolly" data-bg-img="Fondo-8.png" data-page="#tm-section-2"
 						data-page-type="carousel">
 						<img src="img/Boton-nuestro-p.png" id="nuestro"></a>
 					<img src="img/rednacionalcel.png" id="nuestromovil" class="whocel"></a>
@@ -824,7 +824,7 @@ map.invalidateSize();
 			<div class="comercial">
 				<nav id="tmMainNav1" class="tm-main-nav">
 
-					<a href="#products" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-11"
+					<a href="#products" class="scrolly" data-bg-img="Fondo-2.png" data-page="#tm-section-11"
 						data-page-type="carousel">
 						<img src="img/Boton-red-N.png" id="nuestro"></a>
 					<img src="img/ubicacioncel.png" id="nuestromovil" class="whocel"></a>
@@ -836,7 +836,7 @@ map.invalidateSize();
 			</div>
 			<div class="contactanos">
 				<nav id="tmMainNav1" class="tm-main-nav">
-					<a href="#products" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-11"
+					<a href="#products" class="scrolly" data-bg-img="Fondo-2.png" data-page="#tm-section-11"
 						data-page-type="carousel">
 						<img src="img/Boton-contactanos.png" id="nuestro"></a>
 					<img src="img/quienessomoscel.png" id="nuestromovil" class="whocel"></a>
@@ -1214,6 +1214,68 @@ map.invalidateSize();
 			}
 		});
 
+	</script>
+	<script>
+	$(document).ready(function() {
+		// Cache sections for performance
+		var sections = $(".tm-section");
+	  
+		// Function to handle section switching with transition
+		function switchSection(sectionId, direction) {
+		  var currentSection = $(currentPageID);
+		  var transitionClass;
+	  
+		  // Determine transition class based on direction (up or down)
+		  if (direction > 0) {
+			transitionClass = "slide-right"; // Right to left for ascending sections
+		  } else {
+			transitionClass = "slide-left"; // Left to right for descending sections
+		  }
+	  
+		  // Calculate direction modifier based on section numbering
+		  var directionModifier = sectionId.split("-")[1] - currentPageID.split("-")[1];
+	  
+		  // Add transition class to current section
+		  currentSection.addClass(transitionClass);
+	  
+		  // Hide current section after transition
+		  currentSection.on("transitionend", function() {
+			currentSection.removeClass(transitionClass).hide();
+			$(this).off("transitionend"); // Remove event listener after transition
+		  });
+	  
+		  // Show new section
+		  $(sectionId).addClass(transitionClass).show();
+	  
+		  // Update current page ID
+		  currentPageID = sectionId;
+	  
+		  // Remove transition class from new section after transition
+		  $(sectionId).on("transitionend", function() {
+			$(this).removeClass(transitionClass);
+			$(this).off("transitionend"); // Remove event listener after transition
+		  });
+		}
+	  
+		// Set up click event listener for navigation links
+		$(".tm-main-nav a").click(function(e) {
+		  e.preventDefault();
+	  
+		  var clickedSection = $(this).data("page");
+		  var sectionNumber = clickedSection.split("-")[1];
+		  var currentNumber = currentPageID.split("-")[1];
+	  
+		  // Calculate direction based on section numbering difference
+		  var direction = sectionNumber - currentNumber;
+	  
+		  // Call switchSection function with clicked section and direction
+		  switchSection(clickedSection, direction);
+		});
+	  
+		// Initial setup (assuming "#tm-section-1" is the starting page)
+		var currentPageID = "#tm-section-1";
+		$(currentPageID).show();
+	  });
 	</script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>

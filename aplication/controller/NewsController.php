@@ -394,7 +394,7 @@ class News
 
 
             // data
-            $statement = $pdo->prepare($Ssql . " LIMIT " . $page * 10 . " OFFSET 0" . ($page * 10) - 10);
+            $statement = $pdo->prepare($Ssql . " ORDER BY id DESC LIMIT " . $page * 10 . " OFFSET 0" . ($page * 10) - 10);
             if ($search !== "") {
                 $statement->bindParam(':name', $search, PDO::PARAM_STR);
             }
