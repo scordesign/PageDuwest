@@ -296,7 +296,7 @@ p:last-child {
 }
 
 #imglogo img {
-    width: 10.5vw;
+    width: 8vw;
 }
 .slider {
     width: 100%;
@@ -355,7 +355,7 @@ p:last-child {
     transition: opacity 0.6s ease-in-out;
 }
 .slide img{
-    object-fit: cover;
+    object-fit:cover;
 }
 
 .imagenProducto{
@@ -990,10 +990,14 @@ footer a {
     height: auto;
     font-size: large;
     border-radius: 15px;
-    font-family: 'Lemon Milk';
+    font-family: 'Lemon Milk' !important;
     font-weight: 600;
     font-size: 35px;
     width: fit-content;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
 }
 
 
@@ -1050,6 +1054,7 @@ footer a {
 }
 
 .img-conocenos a {
+    text-decoration: underline;
     background-color: rgba(0, 139, 58, 0.6);
     color: white;
     text-transform: uppercase;
@@ -1061,6 +1066,10 @@ footer a {
     font-size: 35px;
     width: fit-content;
     text-align: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
 
 }
 
@@ -1082,6 +1091,10 @@ footer a {
      /* border-radius: 13px;
      border-color: white;
      border: groove; */
+     padding-left: 1%;
+     padding-right: 1%;
+     padding-top: 0.1%;
+     padding-bottom: 0.1%;
  
 
 }
@@ -1114,10 +1127,14 @@ footer a {
     height: auto;
     font-size: large;
     border-radius: 15px;
-    font-family: 'Lemon Milk';
+    font-family: 'Lemon Milk' !important;
     font-weight: 600;
     font-size: 35px;
     width: fit-content;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
 }
 
 .mision1 {
@@ -1388,7 +1405,10 @@ footer a {
   }
   
   .modalgalery {
-    display: none;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+       display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -1399,49 +1419,50 @@ footer a {
   }
   
   .contenido-modalgalery {
-    position: absolute;
-    top: 69%;
-    left: 51%;
+    position: fixed;
+    top: 45%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent;
     padding: 20px;
     border-radius: 5px;
     width: auto;
-    height: 104%;
-    /* margin-left: 55%; */
+    height: 59%;
   }
   .backgroungmobile{
     display: none;
   }
   #logogalery{
     position: fixed !important;
-    bottom: 29%;
-    width: 15%;
-    left: 43.2%;
+    bottom: -30%;
+    width: 14%;
+    left: 45.5%;
 
   }
   #cameragalery{
     position: fixed !important;
-    bottom: 37.5%;
-    width: 5%;
+    bottom: -15%;
+    width: 7%;
+    left: 49%;
   }
   .imagen-activa {
-    width: auto;
-    height: 55%;
-    margin-bottom: 20px; 
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
   }
   
 #cerrarGaleria {
     background-image: url(../img/close.png);
     background-repeat: no-repeat;
-    height: 60px;
-    width: 70px;
-    background-size: 50px 50px;
+    height: 10%;
+    width: 5%;
+    background-size: 100% 100%;
     background-position: center;
     background-color: transparent !important;
     position: fixed;
     top: -4%;
     left: 92%;
+
 }
     
   
@@ -2204,7 +2225,7 @@ button {
     height: auto;
     font-size: large;
     border-radius: 15px;
-    font-family: 'Lemon Milk';
+    font-family: 'Lemon Milk' !important;
     font-weight: 600;
     font-size: 35px;
     width: fit-content;
@@ -2220,7 +2241,7 @@ button {
     height: auto;
     font-size: large;
     border-radius: 15px;
-    font-family: 'Centuri Gothic', sans-serif;
+    font-family: 'Lemon Milk' !important;
     font-weight: 600;
     font-size: 35px;
     width: fit-content;
@@ -2306,7 +2327,7 @@ button {
     color:#008E5B;
     text-align: center;
     font-size: 1rem;
-    font-family: 'Century Gothic Bold';
+    font-family: 'Lemon Milk' !important;
     text-transform: uppercase;
 
 }
@@ -2385,6 +2406,7 @@ button {
 
 .titleProduct{
     font-weight: bold;
+    font-family: 'Lemon Milk';
     font-size: calc(0.8vh + 0.7vw) ;
 }
 
@@ -2684,6 +2706,29 @@ text.dummy-text {
     margin-bottom: 0px;
     font-family: 'Century Gothic Bold';
 }
+.imagensede {
+    width: 16%;
+   position: fixed;
+left: 60.5%;
+top: 73.7%;
+height: 24%;
+}
+.department-info {
+    float: left;
+    position: fixed;
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 54%;
+    top: 42%;
+    z-index: 999;
+    height: 57%;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-family: 'Century Gothic';
+    color: white;
+    
+
+}
 
 @media (max-width: 1800px) {
     .tm-section {
@@ -2723,10 +2768,54 @@ text.dummy-text {
     .box4 h3{
         font-size: 100%;
     }
+    .imagensede {
+        width: 16%;
+       position: fixed;
+    left: 60.5%;
+    top: 73.7%;
+    height: 24%;
+    }
+    .department-info {
+        float: left;
+        position: fixed;
+        width: 30%;
+        background-color: rgba(0, 0, 0, 0.6);
+        left: 54%;
+        top: 42%;
+        z-index: 999;
+        height: 57%;
+        color: #FFFFFF;
+        border-radius: 10px;
+        font-family: 'Century Gothic';
+        color: white;
+        
+    
+    }
 }
 @media (max-width: 1400px) {
     .box1 h3{
         font-size: 100%;
+    }
+    .mision {
+        
+        bottom: 12.5%;
+        right: -1%;
+       
+    }
+    .imagensede {
+        width: 16%;
+       position: fixed;
+    left: 60.5%;
+    top: 73.7%;
+    height: 24%;
+    }
+    #map-container {
+        width: 100%;
+        margin: 0 auto;
+        height: 100vh;
+        position: fixed;
+        left: 0%;
+        top: -10%;
     }
     .box2 h3{
         font-size: 100%;
@@ -2824,6 +2913,7 @@ text.dummy-text {
     .title-conocenos {
 
         font-size: 27px;
+        font-family: 'Lemon Milk';
     }
 
     .img-conocenos a {
@@ -2836,6 +2926,8 @@ text.dummy-text {
 
         top: 17%;
         font-size: 27px;
+        font-family: 'Lemon Milk';
+
     }
 
     .politica {
@@ -2968,7 +3060,7 @@ text.dummy-text {
 
     .tm-main-nav a {
         padding-bottom: 20px;
-        margin: 20px 0 25px 0;
+        /* margin: 20px 0 25px 0; */
     }
 
     .tm-section {
@@ -2995,6 +3087,17 @@ text.dummy-text {
 }
 
 @media (max-width: 600px) {
+    .slide img{
+        object-fit:none;
+        object-position: 70%;
+    }
+    .slide {
+        width: 100%;
+        height: 50%;
+        position: fixed;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+    }
     #dropDownBar {
         background-color: rgba(0, 0, 0, 0.3);
         width: 100%;
@@ -3008,13 +3111,13 @@ text.dummy-text {
 
     }
     .backgroundmobile{
-        display: block;
+        display: none;
         background-image: url(../img/Fondo-8.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         height: 50vh;
-        z-index: 999;
+
       }
     .popup-content {
         top: 46%;
@@ -3118,38 +3221,56 @@ text.dummy-text {
     }
 
     .portafolio img {
-        width: 10%;
-        position: fixed;
-        top: 52.7%;
-        left: 15%;
+        width: 15%;
+        /* position: fixed; */
+        /* top: 5.7%; */
+        /* left: 15%; */
+        margin-top: 5%;
+        margin-left: 5%;
     }
-
+.containertitlemen{
+    width: 100%;
+    text-align: center;
+}
     .comercial img {
-        width: 8%;
-        position: fixed;
-        top: 61.7%;
-        left: 15%;
+        width: 10%;
+        /* position: fixed; */
+        /* top: 5.7%; */
+        /* left: 15%; */
+        margin-top: 3%;
+        margin-left: 5%;
     }
 
     .contactanos img {
-        width: 10%;
-        position: fixed;
-        top: 70.7%;
-        left: 15%;
+        width: 15%;
+        /* position: fixed; */
+        /* top: 5.7%; */
+        /* left: 15%; */
+        margin-top: 0%;
+        margin-left: 5%;
     }
 
     .whatsapp img {
-        width: 10%;
-        position: fixed;
-        top: 79.7%;
-        left: 15%;
+        width: 20%;
+        /* position: fixed; */
+        /* top: 5.7%; */
+        /* left: 15%; */
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    .tm-main-nav a {
+        padding-bottom: 0px;
+        /* margin: 20px 0 25px 0; */
+    }
+    .workUsdv-1 img {
+        width: 20%;
     }
 
     .texcel {
         width: 72%;
-        left: 24%;
+        /* left: 24%; */
         position: relative;
-        margin-top: -18%;
+        margin-top: 5%; 
         margin-left: 3%;
         font-family: 'Lemon Milk';
     }
@@ -3234,6 +3355,7 @@ text.dummy-text {
         position: fixed;
         padding: 2% 5%;
         text-align: justify;
+        z-index: 999;
     }
 
     .sec1 p {
@@ -3246,6 +3368,7 @@ text.dummy-text {
         left: 20%;
         width: 60%;
         bottom: 55%;
+        z-index: 999;
 
     }
 
@@ -3501,6 +3624,8 @@ text.dummy-text {
         margin-left: 5%;
         text-align: center;
         top: 15%;
+        font-family: 'Lemon Milk';
+
     }
 
     .parrafo-conocenos {
@@ -3653,6 +3778,8 @@ text.dummy-text {
         padding-right: 16%;
         padding-top: 3%;
         padding-bottom: 3%;
+        font-family: 'Lemon Milk';
+
 
     }
 
@@ -3791,6 +3918,8 @@ text.dummy-text {
         font-size: 25px;
         width: fit-content;
         left: 7%;
+        font-family: 'Lemon Milk';
+
     }
 
     .searchCellDiv .searchcell {
@@ -4032,8 +4161,17 @@ text.dummy-text {
         background-size: cover;
     }
 .slider{
-    display: none;
+    display: block;
+    background-image: url(../img/Fondo-8.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    z-index: 9;
+    position: fixed;
+    top: 0%;
 }
+
     #closeModal {
         right: 1%;
         position: fixed;
@@ -4137,6 +4275,8 @@ text.dummy-text {
         text-align: center;
         margin-bottom: 2%;
         color: white;
+        font-family: 'Lemon Milk';
+
     }
 
     .divNewDesc .descNew {
@@ -4231,6 +4371,8 @@ text.dummy-text {
 
     .titleProduct{
         font-size: calc(1vh + 2vw);
+        font-family: 'Lemon Milk';
+
     }
     
     .textProduct{

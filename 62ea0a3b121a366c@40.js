@@ -117,45 +117,20 @@ function _map(d3,colombiaGeoJSON)
    const colorInfo = d.properties.COLOR; // Assuming department information is in properties
   // Update a DOM element (outside this function) to display the information
    document.getElementById('department-info').innerHTML = 
-   `<img style="width: 3%;
-   position: fixed;
-   left: 54.4%;
-   top: 34.5%;"src="img/map.gif">
-    <h2 style="font-family:'Lemon Milk';font-size:100%;width:90%;margin-left:10%;padding-top:3%;line-height:1;"> ${departmentInfo}</h2>
-    <h3 style="font-family:'Century Gothic';font-size:80%;width:80%;margin-left:10%;"> ${direccionInfo}</h3>
-    <h3 style="font-family:'Century Gothic';font-size:90%;width:80%;margin-left:10%;"> DUWEST Colombia, S.A.S.</h3>
-    <img src="img/celmap.png" 
-    style="
-    width: 1.5%;
-    position: fixed;
-    left: 55%;
-    top: 46.5%;
-    
-    @media (max-width: 1400px) {
-      img {
-    width: 1.5%;
-    position: fixed;
-    left: 55%;
-    top: 58%;
-    }
-  }">
-    <h3 style="font-family:'Century Gothic';font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:0%;line-height:0;"> Cel. ${celInfo}</h3>
-    <h3 style="font-family:'Century Gothic';font-size:80%;width:80%;margin-left:10%;padding-top:0%;padding-bottom:2%;line-height:0;"> PBX: ${pbxInfo}</h3>
-    <img src="img/${imgInfo}"
-  style="
-  width: 27%;
-  position: fixed;
-   left: 55.5%;
-   top: 55.7%;
-   height: 31%;
-   @media (max-width: 1400px) {
-    img{width: 27%;
-    position: fixed;
-    left: 55.5%;
-    top: 62.7%;
-    height:25%;
-  }
-  }">
+   ` 
+   <style="overflow: hidden;"
+	<link rel="stylesheet" href="css/map.css">
+   <img class="ubimap"src="img/map.gif">
+
+    <h2 id="departamento"> ${departmentInfo}</h2>
+    <h3 id="direccion"> ${direccionInfo}</h3>
+    <h3 id="duwest"> DUWEST Colombia, S.A.S.</h3>
+    <img id="celmap" src="img/celmap.png">
+    <h3 id="celinfo"> Cel. ${celInfo}</h3>
+    <h3 id="pbx"> PBX: ${pbxInfo}</h3>
+    <div id="imgsedecontainer">
+    <img id="imgsede"src="img/${imgInfo}">
+    </div>
     `;
 
     const markerImage = d3.select('.marker-image');
@@ -347,113 +322,11 @@ d3.json("https://raw.githubusercontent.com/scordesign/PageDuwest/main/colombia.g
 )}
 
 function _4(html){return(
-html`<style>
+html`
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Josefin+Slab|Arvo|Lato|Vollkorn|Abril+Fatface|Old+Standard+TT|Droid+Sans|Lobster|Inconsolata|Montserrat|Playfair+Display|Karla|Alegreya|Libre+Baskerville|Merriweather|Lora|Archivo+Narrow|Neuton|Signika|Questrial|Fjalla+One|Bitter|Varela+Round);
-@import url('https://fonts.googleapis.com/css2?family=Century+Gothic:wght@200;300;400;500;600;700;800;900&display=swap');
-@font-face {
-  font-family: 'Century Gothic Bold';
-  src: url('webfonts/CenturyGothic-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Century Gothic';
-  src: url('webfonts/CenturyGothic.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Lemon Milk';
-  src: url('webfonts/LEMONMILK-Regular.otf') format('truetype');
-}
-body {
-  color:white !important;
-}
-.background {
-  fill: transparent;
-  pointer-events: all;
-}
-
-.map-layer {
-  fill: green !important;
-  stroke: white !important;
-  color: white !important;
-}
-
-.effect-layer{
-  /* other styles... */
-}
-
-text{
-  font-family:'Lemon Milk';
-  font-weight: 300;
-  color: white;
-
-}
-
-text.big-text{
-  position:fixed;
-  top: 370%;
-  font-size: 30px;
-}
-.map-layer text.big-text {
-  font-weight: bold;
-  color: white !important;
-  font-family:'Lemon Milk';
-
-}
-
-.effect-layer text, text.dummy-text{
-  font-size: 12px;
-  color: #FFFFFF;
-
-}
-.department-info {
-  float: left;
-  position: fixed;
-  width: 30%;
-  background-color: rgba(0 , 0, 0, 0.6);
-  left: 54%;
-  top: 32%;
-  z-index: 999;
-  height: 57%;
-  color: #FFFFFF;
-  border-radius:10px;
-  font-family: 'Century Gothic';
-  color: white;
-
-}
-.department-info-title {
-  float: left;
-  position: fixed;
-  width: 30%;
-  background-color: rgba(0 , 0, 0, 0.6);
-  left: 54%;
-  top: 17%;
-  z-index: 999;
-  height: auto;
-  color: #FFFFFF;
-  border-radius:10px;
-  font-family: 'Lemon Milk';
-  text-align: center;
-
-}
-.department-info-title h2{
-font-size: 24px !important;
-padding-top: 1px;
-padding-bottom: 1px;
-color: #FFFFFF;
-font-family: "Lemon Milk";
-
-
-}
-.marker-image {
-  position: absolute;
-  /* adjust width and height as needed */
-  width: 20px;
-  height: 20px;
-}
-@media (max-width: 1400px) {
-  
-}
-
+<link rel="stylesheet" href="css/map.css">
+<style>
+overflow: hidden;
 </style>`
 )}
 
