@@ -79,7 +79,7 @@ function addNew() {
                     }
 
                     $("#modalBackground").toggleClass("hide");
-                    chargeNews(currentPageID.replace("#tm-section-", "").trim())
+                    chargeNews(sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim())
 
                     // Mostrar la alerta
                     $("#alerta").fadeIn();
@@ -190,7 +190,7 @@ function getNew(id) {
 
 
             var div = $("<div>").attr("id", "fatherNewModal").addClass("noClose");
-            var divCarrusel = $("<div>").attr("id", "myCarouselNew").attr("class", "carousel slide").attr("data-ride", "carousel").addClass("noClose");
+            var divCarrusel = $("<div>").attr("id", "myCarouselNew").attr("class", "carousel ").attr("data-ride", "carousel").addClass("noClose");
 
 
             var divCarruselinner = $("<div>").attr("class", "carousel-inner").addClass("noClose");
@@ -356,7 +356,7 @@ function getNewForUpdate(id) {
                             // Mostrar la alerta
                             $("#alerta").fadeIn();
 
-                            chargeNews(currentPageID.replace("#tm-section-", "").trim())
+                            chargeNews(sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim())
 
                             // Desvanecer la alerta después de 3 segundos
                             setTimeout(function () {
@@ -466,7 +466,7 @@ function getNewForDelete(id) {
                             // Mostrar la alerta
                             $("#alerta").fadeIn();
 
-                            chargeNews(currentPageID.replace("#tm-section-", "").trim())
+                            chargeNews(sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim())
 
                             // Desvanecer la alerta después de 3 segundos
                             setTimeout(function () {

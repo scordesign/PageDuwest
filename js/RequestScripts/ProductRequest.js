@@ -1,6 +1,6 @@
 $(function () {
     $("#searchMenu").keyup(function () {
-        pageId = currentPageID.replace("#tm-section-", "").trim();
+        pageId = sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim();
         $("#products2-" + pageId + " .divProduct").remove();
         getProducts(pageId, $("#searchMenu").val(), ($("#filtersInput-" + pageId).val() == "" ? undefined : $("#filtersInput-" + pageId).val()))
     });
@@ -8,7 +8,7 @@ $(function () {
 });
 
 function searchCell(param) {
-    pageId = currentPageID.replace("#tm-section-", "").trim();
+    pageId = sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim();
     $("#products2-" + pageId + " .divProduct").remove();
     getProducts(pageId, $("#searchMenuCell" + param).val(), ($("#filtersInput-" + pageId).val() == "" ? undefined : $("#filtersInput-" + pageId).val()))
 }
@@ -134,7 +134,7 @@ function addProduct() {
             }
         });
 
-        // if (!(currentPageID.trim().endsWith("14") ||currentPageID.trim().endsWith("15"))) {
+        // if (!(sessionStorage.getItem("currentPageID").trim().endsWith("14") ||sessionStorage.getItem("currentPageID").trim().endsWith("15"))) {
         form.append(div);
         // }
 
@@ -142,7 +142,7 @@ function addProduct() {
 
         form.append($("<input>").attr("type", "text").attr("name", "filters").attr("id", "filtersInput").attr("hidden", "hidden"));
 
-        form.append($("<input>").attr("type", "text").attr("name", "section").attr("hidden", "hidden").attr("value", currentPageID));
+        form.append($("<input>").attr("type", "text").attr("name", "section").attr("hidden", "hidden").attr("value", sessionStorage.getItem("currentPageID")));
 
         form.append($("<input>").attr("type", "text").attr("name", "action").attr("hidden", "hidden").attr("value", "addProduct"));
 
@@ -180,7 +180,7 @@ function addProduct() {
                     }
 
                     $("#modalBackground").toggleClass("hide");
-                    chargeProducts(currentPageID.replace("#tm-section-", "").trim())
+                    chargeProducts(sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim())
 
                     // Mostrar la alerta
                     $("#alerta").fadeIn();
@@ -208,7 +208,7 @@ function addProduct() {
 function pagination() {
     var pageCurrent = localStorage.getItem("PageRegs");
     var total = localStorage.getItem("TotalRegs");
-    var pageId = currentPageID.replace("#tm-section-", "").trim();
+    var pageId = sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim();
     var el = $("#products2-" + pageId);
 
     if ((el.offset().top + el.height() < $(window).height()) && (pageCurrent * 10) < total) {
@@ -221,7 +221,7 @@ function pagination() {
 function pagination14() {
     var pageCurrent = localStorage.getItem("PageRegs");
     var total = localStorage.getItem("TotalRegs");
-    var pageId = currentPageID.replace("#tm-section-", "").trim();
+    var pageId = sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim();
     var fatherEl = $("#products2-" + pageId);
     var el = $("#products2-" + pageId + " .functionPrducts")
 
@@ -307,7 +307,7 @@ function filterAddProducts(id, section) {
     } else {
         $("#filtersInput-" + section).val($("#filtersInput-" + section).val().replace("{" + id + "},", ""));
     }
-    pageId = currentPageID.replace("#tm-section-", "").trim();
+    pageId = sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim();
     $("#products2-" + pageId + " .divProduct").remove();
     getProducts(pageId, (($("#searchMenu").val() == "" ? undefined : $("#searchMenu").val())), ($("#filtersInput-" + pageId).val() == "" ? undefined : $("#filtersInput-" + pageId).val()));
 }
@@ -350,7 +350,7 @@ function getProducts(section, search, filters, page) {
 }
 
 function getProduct(id) {
-    var section = currentPageID.substring(currentPageID.length - 2, currentPageID.length);
+    var section = sessionStorage.getItem("currentPageID").substring(sessionStorage.getItem("currentPageID").length - 2, sessionStorage.getItem("currentPageID").length);
     $.ajax({
         url: "aplication/RequestController.php?action=getProduct&id=" + id, // Archivo PHP que contiene la función
         type: "GET", // Método de solicitud
@@ -637,7 +637,7 @@ function getProductForUpdate(id) {
                 }
 
 
-                form.append($("<input>").attr("type", "text").attr("name", "section").attr("hidden", "hidden").attr("value", currentPageID));
+                form.append($("<input>").attr("type", "text").attr("name", "section").attr("hidden", "hidden").attr("value", sessionStorage.getItem("currentPageID")));
 
                 form.append($("<input>").attr("type", "text").attr("name", "id").attr("hidden", "hidden").attr("value", responseProduct.data.id));
 
@@ -682,7 +682,7 @@ function getProductForUpdate(id) {
                             // Mostrar la alerta
                             $("#alerta").fadeIn();
 
-                            chargeProducts(currentPageID.replace("#tm-section-", "").trim())
+                            chargeProducts(sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim())
 
                             // Desvanecer la alerta después de 3 segundos
                             setTimeout(function () {
@@ -786,7 +786,7 @@ function getProductForDelete(id) {
                             // Mostrar la alerta
                             $("#alerta").fadeIn();
 
-                            chargeProducts(currentPageID.replace("#tm-section-", "").trim())
+                            chargeProducts(sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim())
 
                             // Desvanecer la alerta después de 3 segundos
                             setTimeout(function () {
@@ -843,7 +843,7 @@ function deleteDocs(docName, id, Type) {
             // Manejar la respuesta
             response = JSON.parse(JSON.parse(response));
             console.log(response);
-            chargeProducts(currentPageID.replace("#tm-section-", "").trim())
+            chargeProducts(sessionStorage.getItem("currentPageID").replace("#tm-section-", "").trim())
             getProductForUpdate(id);
 
 
