@@ -256,7 +256,7 @@ p:last-child {
 
 .sidebar {
     backdrop-filter: blur(10px);
-    border-radius: 2rem;
+    border-radius: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -694,7 +694,10 @@ address {
 
 
 }
-
+#nuestromovil1 {
+    display: none;
+    
+}
 .portafolio,
 .comercial,
 .contactanos {
@@ -948,7 +951,7 @@ footer a {
 
 .footer2 {
     position: absolute;
-    z-index: 9999 !important;
+    z-index: 9 !important;
     bottom: 0px;
     background-color: #31aa47;
     height: 7vh;
@@ -3459,14 +3462,15 @@ height: 24%;
         margin-left: 5%;
     }
 
-    .contactanos img {
-        width: 15%;
-        /* position: fixed; */
-        /* top: 5.7%; */
-        /* left: 15%; */
-        margin-top: 0%;
-        margin-left: 5%;
-    }
+    
+        .contactanos img {
+            width: 15%;
+            /* position: fixed; */
+            /* top: 5.7%; */
+            /* left: 15%; */
+            margin-top: 2%;
+            margin-left: 5%;
+        }
 
     .whatsapp img {
         width: 20%;
@@ -3511,6 +3515,15 @@ height: 24%;
         text-align: center;
 
     }
+    #nuestromovil1 {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        font-size: 80%;
+        text-align: center;
+        margin-top: -11%;
+        margin-left: 12%;
+    }
 
     #nuestromovil img {
         width: 50%;
@@ -3541,11 +3554,14 @@ height: 24%;
     }
 
     #imgFlagMob {
-        position: fixed;
-        top: 10%;
-        right: 0;
-        width: 100%;
-        display: block;
+        
+            position: fixed;
+            top: 0%;
+            right: 0;
+            width: 100%;
+            display: block;
+            z-index: 999;
+        
 
     }
 
@@ -3670,6 +3686,20 @@ height: 24%;
     #instagram {
         display: none;
     }
+    .banner-mavuno {
+        position: absolute;
+        bottom: 0.8%;
+        background-image: url(../img/Banner-Mavunoresponsive.png);
+        background-size: contain;
+        background-position: center;
+        width: 100%;
+        background-size: 170%;
+        height: 30%;
+        z-index: 1002;
+        background-repeat: no-repeat;
+    }
+    
+    
 
     #loader img {
         width: 70%;

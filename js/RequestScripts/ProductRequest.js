@@ -394,6 +394,12 @@ function getProduct(id) {
 
 
 
+            
+
+
+
+            var divInfo = $("<div>").attr("id", "infoProduct").addClass("noClose");
+            
             var divLogoinnerItem = $("<img>").attr("class", "d-block logoImg").attr("src", (response.data.logo == "" || response.data.logo == null) ? "" : response.data.logo.substring(1, response.data.logo.length)).addClass("noClose");
             divlogo.append(divLogoinnerItem);
 
@@ -403,11 +409,6 @@ function getProduct(id) {
                     divAmount.append(amountElement);
                 });
             }
-
-
-
-            var divInfo = $("<div>").attr("id", "infoProduct").addClass("noClose");
-
             divInfo.append($("<h5>").addClass("noClose").html((response.data.name).toUpperCase()).addClass("fuente-leomn-milk").addClass("bold"));
             divInfo.append($("<p>").addClass("noClose").html(response.data.description).attr("id", "infoProductDesc").addClass("noClose").addClass("fuente-century-gothic"));
             divInfo.append($("<p>").html("Presentaciones: " + response.data.amountName).attr("id", "infoProductAmount").addClass("noClose").addClass("fuente-century-gothic"));
