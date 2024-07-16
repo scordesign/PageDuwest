@@ -9,8 +9,8 @@ class Conexion {
     // pc
 
      private $host = 'localhost';
-      private $usuario = 'root';
-      private $contrasena = '';
+      private $usuario = 'sebas';
+      private $contrasena = 'Seb@2022.';
 
      private $nombre_bd = 'duwest_main';
     private $conexion;
