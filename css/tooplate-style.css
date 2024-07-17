@@ -4474,6 +4474,8 @@ height: 24%;
         border-top-right-radius: 20px;
         margin-top: 1vh;
         padding-top: 1vh;
+        border: solid 1px green;
+        border-bottom: 0px;
     }
 
     .carousel-inner {
