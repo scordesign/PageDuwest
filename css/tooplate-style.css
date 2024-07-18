@@ -161,9 +161,18 @@ a {
     color: #FFF;
 }
 
-a:hover {
-    color: #FF0;
-}
+#whatsapp-icon:hover {
+    color: #25D366; /* Green for WhatsApp */
+  }
+  
+  #facebook:hover {
+    color: #3B5998; /* Blue for Facebook */
+  }
+  
+  #instagram:hover {
+    color: #D43089; /* Purple for Instagram */
+  }
+
 
 h1,
 h2,
