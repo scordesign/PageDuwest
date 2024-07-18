@@ -4472,12 +4472,19 @@ height: 24%;
 
     #myCarouselProduct {
         margin: auto;
-        width: 80%;
+        width: 100%;
         /* float: left; */
         position: relative;
         /* max-height: 40vh; */
-        left: 10%;
+        /* left: 10%; */
         backdrop-filter: 0px;
+        background: white;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 1vh;
+        padding-top: 1vh;
+        border: solid 1px green;
+        border-bottom: 0px;
     }
 
     .carousel-inner {
@@ -4503,8 +4510,11 @@ height: 24%;
         /* float: right; */
         /* margin: auto; */
         border: solid 1px green;
+        border-top: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
         padding: 2vh 4vw;
-        padding-top: 5vh;
+        padding-top: 1vh;
     }
 
     #infoProduct h5 {

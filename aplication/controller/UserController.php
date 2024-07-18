@@ -124,14 +124,14 @@ class users
 
             // Consulta SQL
             $consulta = "SELECT * FROM users WHERE user = :user and mail = :mail";
-
+            $error = "SELECT * FROM users WHERE user = ".$user." and mail = ".$mail;
             // Preparar la consulta
             $stmt = $pdo->prepare($consulta);
 
             // Asignar valores a los parámetros (en este caso, solo uno)
 
-            $stmt->bindParam(':user', $user, PDO::PARAM_INT);
-            $stmt->bindParam(':mail', $user, PDO::PARAM_INT);
+            $stmt->bindParam(':user', $user, PDO::PARAM_STR);
+            $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
 
             // Ejecutar la consulta
             $stmt->execute();
@@ -140,7 +140,7 @@ class users
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             // Procesar los resultados
-            if (count($resultado) > 0) {
+            if (sizeof($resultado) > 0) {
                 $returnFields["status"] = 406;
                 $returnFields["message"] = "Usuario o correo electronico repetido";
 
@@ -167,6 +167,7 @@ class users
             // Ejecutar la sentencia SQL con los valores correspondientes
             $stmt->execute();
 
+            
             $returnFields["status"] = 200;
             $returnFields["message"] = "Creado exitosamente";
 
