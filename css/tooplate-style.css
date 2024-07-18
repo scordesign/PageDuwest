@@ -1510,7 +1510,11 @@ footer a {
     font-family: 'Century Gothic', sans-serif;
     font-weight: lighter;
 }
-
+#whatsmobile{
+    position: fixed;
+    bottom: 20%;
+    z-index: 999;
+}
 .popup-content1 p {
     margin: 0;
     text-align: justify;
