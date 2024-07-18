@@ -1512,9 +1512,12 @@ footer a {
 }
 #whatsmobile{
     position: fixed;
-    bottom: 20%;
+    bottom: 10%;
+    height: 7%;
     z-index: 999;
+    right: 2%;
 }
+
 .popup-content1 p {
     margin: 0;
     text-align: justify;
