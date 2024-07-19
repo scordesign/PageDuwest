@@ -1430,6 +1430,10 @@ footer a {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
   }
+  .botonesgalery{
+    display: flex;
+    justify-content: center;
+  }
   
   .contenido-modalgalery {
     position: fixed;
@@ -1446,17 +1450,17 @@ footer a {
     display: none;
   }
   #logogalery{
-    position: fixed !important;
+    /* position: fixed !important; */
     bottom: -30%;
     width: 14%;
-    left: 45.5%;
+    /* left: 45.5%; */
 
   }
   #cameragalery{
-    position: fixed !important;
+    /* position: fixed !important; */
     bottom: -15%;
     width: 7%;
-    left: 49%;
+    /* left: 49%; */
   }
   .imagen-activa {
     width: 100%;
@@ -1467,14 +1471,14 @@ footer a {
 #cerrarGaleria {
     background-image: url(../img/close.png);
     background-repeat: no-repeat;
-    height: 10%;
-    width: 5%;
+    height: 7%;
+    width: auto;
     background-size: 100% 100%;
     background-position: center;
     background-color: transparent !important;
     position: fixed;
     top: -4%;
-    left: 92%;
+    left: 100%;
 
 }
     
@@ -1487,7 +1491,6 @@ footer a {
     background-size: 50px 50px;
     background-position:center;
     background-color: transparent !important;
-    margin-left: 5%;
 }
 #anterior{
     background-image:url(../img/left.png);
@@ -1497,8 +1500,7 @@ footer a {
     background-size: 50px 50px;
     background-position:center;
     background-color: transparent !important;
-    margin-left: 36%;
-
+ß
 }
 .close-btn1 {
     position: fixed;
