@@ -856,7 +856,7 @@ footer a {
     font-weight: bold;
     z-index: 2;
     text-align: center;
-    font-size: 35px;
+    font-size: calc(1vh + 1.5vw);
     font-family: 'Lemon Milk';
 
 }
@@ -887,7 +887,7 @@ footer a {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    font-size: 35px;
+    font-size: calc(1vh + 1.5vw);
     font-family: 'Lemon Milk';
 
 
@@ -918,7 +918,8 @@ footer a {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    font-size: 35px;
+    font-size: calc(1vh + 1.5vw);
+
 }
 
 
@@ -949,7 +950,7 @@ footer a {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    font-size: 35px;
+    font-size: calc(1vh + 1.5vw);
     font-family: 'Lemon Milk';
 
 }
@@ -1516,6 +1517,11 @@ footer a {
     height: 7%;
     z-index: 999;
     right: 2%;
+}
+
+#fatherProductModal #whatsmobile{
+    bottom: 27%;
+    right: 26%;
 }
 
 .popup-content1 p {
@@ -3164,6 +3170,10 @@ height: 24%;
 }
 
 @media (max-width: 600px) {
+    #fatherProductModal #whatsmobile{
+        bottom: 14%;
+        right: 7%;
+    }
     #map-container {
      display: none;
     

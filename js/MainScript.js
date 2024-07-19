@@ -285,7 +285,6 @@ switch (section) {
         $("footer").hide();
         break;
     case '#loaderpage':
-    case '#popup-container':
     case '#loader-wrapper':
 // Hide footer (original functionality)
         $("footer-link").hide();
@@ -329,18 +328,20 @@ function changePage(currentNavItem) {
 
     SetInfoSection(currentNavItem.data().page);
     // console.log(sessionStorage.getItem("currentPageID") + '>>>>>>>>>>>>>>');
-    var oldSection = sessionStorage.getItem("currentPageID");
-    $(sessionStorage.getItem("currentPageID")).hide();
+    if (currentNavItem.data("page") != '#popup-container') {
+        $(sessionStorage.getItem("currentPageID")).hide();
 
-    // Show current page
-    // sessionStorage.getItem("currentPageID") = currentNavItem.data("page");
-    sessionStorage.setItem("currentPageID",currentNavItem.data("page"));
-    $(sessionStorage.getItem("currentPageID")).fadeIn(1000);
-    var newSection = sessionStorage.getItem("currentPageID");
-
-
-
-    history.pushState({ page: newSection }, "", newSection);
+        // Show current page
+        // sessionStorage.getItem("currentPageID") = currentNavItem.data("page");
+        sessionStorage.setItem("currentPageID",currentNavItem.data("page"));
+        $(sessionStorage.getItem("currentPageID")).fadeIn(1000);
+        var newSection = sessionStorage.getItem("currentPageID");
+    
+    
+    
+        history.pushState({ page: newSection }, "", newSection);
+        console.log(currentNavItem.data("page"));
+    }
 
 
     // Change background image
