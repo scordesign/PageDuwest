@@ -735,7 +735,7 @@ address {
     width: 100%;
 }
 
-.comercial {}
+
 
 .comercial img {
     width: 100%;
@@ -2870,9 +2870,6 @@ height: 24%;
         margin-right: 25px;
     }
 
-    .sidebar {
-        /*      padding: 60px 30px;*/
-    }
 
     .sec1 p {
         font-size: 0.43em;
@@ -3562,11 +3559,6 @@ height: 24%;
 
     }
 
-    .tm-main-nav {
-
-        /* display: none; */
-
-    }
 
     #imgFlag {
         position: fixed;
