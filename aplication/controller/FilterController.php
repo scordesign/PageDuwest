@@ -1,62 +1,64 @@
 <?php
+
 class Filters
 {
-
-
     public function __construct()
     {
     }
 
-    public function getFilters() : String
+    private function convert_encoding_recursive($input)
+    {
+        if (is_array($input)) {
+            // Aplicar la función recursivamente a cada elemento del array
+            return array_map(array($this, 'convert_encoding_recursive'), $input);
+        } elseif (is_string($input)) {
+            // Convertir la cadena a UTF-8
+            return mb_convert_encoding($input, 'UTF-8', 'auto');
+        }
+        return $input;
+    }
+
+    public function getFilters(): String
     {
         $returnFields = array();
         try {
             $conexion = new Conexion();
-        $pdo = $conexion->obtenerConexion();
+            $pdo = $conexion->obtenerConexion();
 
-        $statement = $pdo->prepare("SELECT category FROM filters group by category");
-        $statement->execute();
+            $statement = $pdo->prepare("SELECT category FROM filters group by category");
+            $statement->execute();
 
-        $resultado = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $resultado = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        
-        
-        $categorysFilters = array();
+            $categorysFilters = array();
 
-        foreach ($resultado as $category ) {
-            $statementIn = null;
-            $resultadoIn = null;
-            $statementIn = $pdo->prepare("SELECT * FROM filters where `category` = :category");
-            $statementIn->bindParam(':category', $category['category'] , PDO::PARAM_STR);
-            $statementIn->execute();
-            $resultadoIn = $statementIn->fetchAll(PDO::FETCH_ASSOC);
-            $categorysFilters[$category['category']] = $resultadoIn;
-        }
+            foreach ($resultado as $category) {
+                $statementIn = null;
+                $resultadoIn = null;
+                $statementIn = $pdo->prepare("SELECT * FROM filters where `category` = :category");
+                $statementIn->bindParam(':category', $category['category'], PDO::PARAM_STR);
+                $statementIn->execute();
+                $resultadoIn = $statementIn->fetchAll(PDO::FETCH_ASSOC);
+                $categorysFilters[$category['category']] = $resultadoIn;
+            }
 
-        $returnFields["data"] = $categorysFilters;
-        $returnFields["status"] = 200;
-        $returnFields["message"] = "correcto";
+            $returnFields["data"] = $categorysFilters;
+            $returnFields["status"] = 200;
+            $returnFields["message"] = "correcto";
 
-        $returnProduct = json_encode($returnFields);
+            $returnFields = $this->convert_encoding_recursive($returnFields);
+            $returnProduct = json_encode($returnFields);
 
 
-        return json_encode($returnProduct);
+            return $returnProduct;
         } catch (\Throwable $e) {
             echo var_dump($e);
             $returnFields["status"] = 500;
-        $returnFields["message"] = $e->getMessage();
+            $returnFields["message"] = $e->getMessage();
 
-        $returnProduct = json_encode($returnFields);
+            $returnProduct = json_encode($returnFields);
 
-
-        return json_encode($returnProduct);
+            return $returnProduct;
         }
-        
-
-        
-
-        // Iterar sobre el resultado
     }
-
 }
-?>

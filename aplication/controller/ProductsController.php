@@ -503,7 +503,7 @@ class Products
         // Iterar sobre el resultado
     }
 
-    public function getProducts(): string
+    public function getProducts(): String
     {
         $returnFields = array();
         $Ssql = "";

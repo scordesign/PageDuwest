@@ -105,7 +105,7 @@ function addProduct() {
             url: "aplication/RequestController.php?action=getfilters", // Archivo PHP que contiene la función
             type: "GET", // Método de solicitud
             success: function (response) {
-                response = JSON.parse(JSON.parse(response));
+                response = (JSON.parse(response));
 
                 for (var key in response.data) {
                     var divFirst = $("<div>").attr("class", "filters noClose").attr("style", "width:100%;color:black;");
@@ -250,7 +250,7 @@ function getfilters(pageId) {
         url: "aplication/RequestController.php?action=getfilters", // Archivo PHP que contiene la función
         type: "GET", // Método de solicitud
         success: function (response) {
-            response = JSON.parse(JSON.parse(response));
+            response = (JSON.parse(response));
             var sectionNumber = pageId;
             // var sectionNumber = pageId.substring(pageId.length - 2, pageId.length);
             $("#filter-product-" + sectionNumber).append($("<h4>").html("Filtrar").attr("class", "filtertitle"));
@@ -605,7 +605,7 @@ function getProductForUpdate(id) {
                         url: "aplication/RequestController.php?action=getfilters", // Archivo PHP que contiene la función
                         type: "GET", // Método de solicitud
                         success: function (response) {
-                            response = JSON.parse(JSON.parse(response));
+                            response = (JSON.parse(response));
 
                             for (var key in response.data) {
                                 var divFirst = $("<div>").attr("class", "filters noClose").attr("style", "width:100%;color:black;");

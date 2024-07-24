@@ -1,9 +1,9 @@
 <?php
 class Conexion {
     //mac
-     private $host = 'localhost:8889';
-     private $usuario = 'root';
-     private $contrasena = 'root';
+     //private $host = 'localhost:8889';
+     //private $usuario = 'root';
+     //private $contrasena = 'root';
 
     // other
 
@@ -13,16 +13,16 @@ class Conexion {
 
     // pc
 
-    // private $host = 'localhost';
-    // private $usuario = 'root';
-    // private $contrasena = '';
+     private $host = 'localhost';
+     private $usuario = 'root';
+     private $contrasena = '';
 
      private $nombre_bd = 'duwest_main';
     private $conexion;
 
     public function __construct() {
         try {
-            $dsn = "mysql:host={$this->host};dbname={$this->nombre_bd}";
+            $dsn = "mysql:host={$this->host};dbname={$this->nombre_bd};charset=utf8mb4";
             $opciones = array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
@@ -38,4 +38,3 @@ class Conexion {
         return $this->conexion;
     }
 }
-?>

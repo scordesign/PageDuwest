@@ -41,7 +41,7 @@ class users
 
             // Asignar valores a los parámetros (en este caso, solo uno)
 
-            $stmt->bindParam(':user', $user, PDO::PARAM_INT);
+            $stmt->bindParam(':user', $user, PDO::PARAM_STR);
 
             // Ejecutar la consulta
             $stmt->execute();
@@ -63,7 +63,6 @@ class users
 
 
              $passwordEncrypt = hash('sha256', $resultado['key'] . $password);
-
              if($passwordEncrypt !== $resultado['password'] ){
                 $returnFields["status"] = 406;
                 $returnFields["message"] = "Contraseña incorrecta";
