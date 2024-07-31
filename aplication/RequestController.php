@@ -1,13 +1,13 @@
 <?php
 session_start();
-require_once('controller/ProductsController.php');
-require_once('controller/UserController.php');
-require_once('controller/FilterController.php');
-require_once('controller/sessionController.php');
-require_once('controller/NewsController.php');
-require_once('controller/AmountsController.php');
+require_once ('controller/ProductsController.php');
+require_once ('controller/UserController.php');
+require_once ('controller/FilterController.php');
+require_once ('controller/sessionController.php');
+require_once ('controller/NewsController.php');
+require_once ('controller/AmountsController.php');
 
-require_once('connection/Connection.php');
+require_once ('connection/Connection.php');
 
 
 $users = new users();
@@ -51,15 +51,39 @@ switch (strtolower($_SERVER["REQUEST_METHOD"])) {
             case "deleteNews":
                 echo $news->deleteNews();
                 break;
+            case "addFilter":
+                echo $Filters->addFilter();
+                break;
+            case "editFilter":
+                echo $Filters->editFilter();
+                break;
+            case "deleteFilter":
+                echo $Filters->deleteFilter();
+                break;
+            case "addAmount":
+                echo $Amounts->addAmount();
+                break;
+            case "editAmount":
+                echo $Amounts->editAmount();
+                break;
+            case "deleteAmount":
+                echo $Amounts->deleteAmount();
+                break;
+            case "editUser":
+                echo $users->editUser();
+                break;
+            case "deleteUser":
+                echo $users->deleteUser();
+                break;
         }
         break;
     case "get":
         switch ($_GET["action"]) {
             case "getSession":
-                $session-> getSession();
+                $session->getSession();
                 break;
             case "destroySession":
-                echo  $session-> destroySession();
+                echo $session->destroySession();
                 break;
             case "getfilters":
                 echo $Filters->getFilters();
@@ -78,7 +102,10 @@ switch (strtolower($_SERVER["REQUEST_METHOD"])) {
                 break;
             case "getAmounts":
                 echo $Amounts->getAmounts();
-            break;
+                break;
+            case "getUsers":
+                echo $users->getUsers();
+                break;
         }
 
         break;

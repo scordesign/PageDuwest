@@ -492,4 +492,3 @@ class News
         // Iterar sobre el resultado
     }
 }
-?>

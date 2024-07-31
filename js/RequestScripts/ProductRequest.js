@@ -64,7 +64,7 @@ function addProduct() {
                 // Iterar sobre los objetos dentro de cada categoría
                 var i = 0;
                 response.data.forEach(function (element) {
-                    var divData = $("<div>").attr("class", "AmountsEach").attr("style", "display:inline-flex;width:50%;");
+                    var divData = $("<div>").attr("class", "AmountsEach").addClass("noClose").attr("style", "display:inline-flex;width:50%;");
 
                     divData.append($("<input>").attr("type", "checkbox").attr("onclick", "AmountAdd(" + element.id + ")").attr("name", element.name).attr("id", "checkBox-amount-" + element.id).attr("style", "width:20%;"));
                     divData.append($("<label>").text(element.name).attr("styles", "width:80%;"));
@@ -440,7 +440,7 @@ function getProduct(id) {
             });
 
             var divImg = $("<div>").attr("class","noClose imagenProducto");
-            divImg.append($("<img>").attr("src",response.data.listImg == null?"": response.data.listImg[0]));
+            divImg.append($("<img>").attr("src",response.data.listImg == null?"": response.data.listImg[0]).addClass("noClose"));
             divInfo.append(divImg);
 
 
@@ -568,7 +568,7 @@ function getProductForUpdate(id) {
                             // Iterar sobre los objetos dentro de cada categoría
                             var i = 0;
                             response.data.forEach(function (element) {
-                                var divData = $("<div>").attr("class", "AmountsEach").attr("style", "display:inline-flex;width:50%;");
+                                var divData = $("<div>").attr("class", "AmountsEach").addClass("noClose").attr("style", "display:inline-flex;width:50%;");
 
 
                                 var input = $("<input>").attr("type", "checkbox").attr("onclick", "AmountAdd(" + element.id + ")").attr("name", element.name).attr("id", "checkBox-amount-" + element.id).attr("style", "width:20%;");

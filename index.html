@@ -57,12 +57,12 @@
 
 	</div>
 	<!-- modal -->
-	<div class="modalBackground hide" id="modalBackground">
+	<div class="modalBackground hide noClose" id="modalBackground">
 		<div class="modal" id="modal">
 			<span id="closeModal"><i class="fas fa-window-close"></i></span>
 			<div id="formModal"></div>
 		</div>
-		<img src="img/logoandina.png" alt="logo" id="modalLogo">
+		<img src="img/logoandina.png" alt="logo" class="noClose" id="modalLogo">
 	</div>
 	<!-- modal -->
 	<div class="modalBackgroundNotice hide" id="modalBackgroundNotice">
@@ -89,13 +89,16 @@
 
 			</span>
 			<span id="imgFlag"> <img src="img/Bandera-col.png"> </span>
-			
+
 
 			<span><i class="fa fa-search" id="busqueda"></i> </span>
 			<span><input type="search" class="searchMenu" name="search" id="searchMenu"></span>
-			<span><a href="https://wa.link/ppe5fm"target="_blank"><i class="fab fa-whatsapp" id="whatsapp-icon"></i></a></span>
-			<span><a href="https://www.facebook.com/duwestcolombia"target="_blank"><i class="fab fa-facebook-f" id="facebook"></i></a></span>
-			<span><a href="https://www.instagram.com/duwest_colombia/"target="_blank"><i class="fab fa-instagram" id="instagram"></i></a></span>
+			<span><a href="https://wa.link/ppe5fm" target="_blank"><i class="fab fa-whatsapp"
+						id="whatsapp-icon"></i></a></span>
+			<span><a href="https://www.facebook.com/duwestcolombia" target="_blank"><i class="fab fa-facebook-f"
+						id="facebook"></i></a></span>
+			<span><a href="https://www.instagram.com/duwest_colombia/" target="_blank"><i class="fab fa-instagram"
+						id="instagram"></i></a></span>
 			<span id="user-add"><i class="far fa-user"></i></span>
 			<span id="bars-menu"><i id="TmMainNav" class="fas fa-bars"></i></span>
 
@@ -127,8 +130,7 @@
 					<li>
 						<a href="#company" id="tmNavLink4" class="scrolly"
 							data-bg-img="fondo-suelo-blanco-vertically.png" data-page="#tm-section-13"
-							onclick="// chargeProducts(13)"
-							>
+							onclick="// chargeProducts(13)">
 							<i class="fa fa-caret-right" aria-hidden="true"></i>Portafolio nutrición especializada
 						</a>
 					</li>
@@ -172,6 +174,12 @@
 						</a>
 					</li>
 					<li>
+						<a href="#admin" id="tmNavLink11" class="adminSession hide scrolly" data-bg-img="Fondo-2.png"
+							data-page="#tm-section-17">
+							<i class="fa fa-caret-right" aria-hidden="true"></i>opciones de administrador
+						</a>
+					</li>
+					<li>
 						<img src="img/logoandina.png" id="logomenuimg">
 						<!-- <a href="#contact" id="tmNavLink10"class="scrolly" data-bg-img="Fondo-2.png" data-page="#tm-section-11">
 							<i class="fa fa-caret-right" aria-hidden="true"></i>Contáctanos
@@ -186,7 +194,7 @@
 
 			<!-- section 1 -->
 			<section id="tm-section-1" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
 				<div class="backgroundmobile"></div>
 				<div class="slider">
 					<div class="slides" id="slides"></div>
@@ -207,45 +215,50 @@
 			<!-- section 2  Catalogo -->
 			<section id="tm-section-2" class="tm-section tm-section-carousel">
 				<!-- <nav id="tmMainNav"> -->
-					<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
-					<div class="catalogo">
-						<!--<header class="mb-4"><h2 class="tm-text-shadow">Our Products</h2></header>-->
-						<div class="catalogo1">
-							<img src="img/cultivos.png" id="imgporta">
-							<div class="box1">
-								<nav id="tmMainNav1" class="tm-main-nav"style="background-image:none !important;">
-									<a href="#intro" id="tmNavLink1"  data-bg-img="Fondo-8.png"
-					data-page="#tm-section-12"onclick="chargeProducts(12)">
-								
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
+				<div class="catalogo">
+					<!--<header class="mb-4"><h2 class="tm-text-shadow">Our Products</h2></header>-->
+					<div class="catalogo1">
+						<img src="img/cultivos.png" id="imgporta">
+						<div class="box1">
+							<nav id="tmMainNav1" class="tm-main-nav" style="background-image:none !important;">
+								<a href="#intro" id="tmNavLink1" data-bg-img="Fondo-8.png" data-page="#tm-section-12"
+									onclick="chargeProducts(12)">
+
 									<h3>portafolio<br> protección de <br>cultivos</h3>
-								</a></nav>
-							</div>
+								</a>
+							</nav>
 						</div>
-						<div class="catalogo2">
-							<img src="img/nutricionespeciali.png" id="imgporta">
-							<div class="box2">
-								<nav id="tmMainNav1" class="tm-main-nav"style="background-image:none !important;">
-								<a href="#tm-section-13" class="scrolly" data-bg-img="Fondo-8.png" data-page="#tm-section-13"
-								data-page-type="carousel"onclick="chargeProductsNoF(13)">
+					</div>
+					<div class="catalogo2">
+						<img src="img/nutricionespeciali.png" id="imgporta">
+						<div class="box2">
+							<nav id="tmMainNav1" class="tm-main-nav" style="background-image:none !important;">
+								<a href="#tm-section-13" class="scrolly" data-bg-img="Fondo-8.png"
+									data-page="#tm-section-13" data-page-type="carousel"
+									onclick="chargeProductsNoF(13)">
 									<h3>portafolio <br>nutrición<br> especializada</h3>
-								</a></nav>
-							</div>
-
+								</a>
+							</nav>
 						</div>
-					
-						<div class="catalogo4">
-							<img src="img/semillas.png" id="imgporta">
-							<div class="box4">
-								<nav id="tmMainNav1" class="tm-main-nav"style="background-image:none !important;">
-								<a href="#tm-section-14" class="scrolly" data-bg-img="Fondo-8.png" data-page="#tm-section-14"
-								data-page-type="carousel"onclick="chargeProductsNoF(14)">
-																	<h3>semillas</h3>
-								</a></nav>
-							</div>
 
+					</div>
 
+					<div class="catalogo4">
+						<img src="img/semillas.png" id="imgporta">
+						<div class="box4">
+							<nav id="tmMainNav1" class="tm-main-nav" style="background-image:none !important;">
+								<a href="#tm-section-14" class="scrolly" data-bg-img="Fondo-8.png"
+									data-page="#tm-section-14" data-page-type="carousel"
+									onclick="chargeProductsNoF(14)">
+									<h3>semillas</h3>
+								</a>
+							</nav>
 						</div>
-	<!-- <div class="catalogo3">
+
+
+					</div>
+					<!-- <div class="catalogo3">
 							<a href="#"></a>
 							<div class="box3">
 								<a href="#">
@@ -256,7 +269,7 @@
 							</div>
 
 						</div> -->
-						<!--<div class="tm-img-slider">
+					<!--<div class="tm-img-slider">
 									<a href="img/gallery-img-01.jpg" class="tm-slider-img"><img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-fluid"></a>
 									<a href="img/gallery-img-02.jpg" class="tm-slider-img"><img src="img/gallery-img-02-tn.jpg" alt="Image" class="img-fluid"></a>
 									<a href="img/gallery-img-03.jpg" class="tm-slider-img"><img src="img/gallery-img-03-tn.jpg" alt="Image" class="img-fluid"></a>
@@ -265,9 +278,9 @@
 									<a href="img/gallery-img-06.jpg" class="tm-slider-img"><img src="img/gallery-img-06-tn.jpg" alt="Image" class="img-fluid"></a>
 								</div> -->
 
-					</div>
+				</div>
 
-			
+
 				<div class="footer2" id="footer2">
 					<img src="img/gif proveedores v7.gif">
 				</div>
@@ -276,7 +289,7 @@
 
 			<!-- section 3 -->
 			<section id="tm-section-3" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
 				<nav id="tmMainNav" class="tm-main-nav">
 					<div class="conocenos">
 						<div class="title-conocenos">
@@ -306,52 +319,52 @@
 							</a>
 
 						</div>
-					<br>
-					<br>
+						<br>
+						<br>
 						<div class="mision">
 							<!-- Pop Up fotos -->
 
 							<button id="abrirGaleria">Ver más fotos</button>
-								
-							
+
+
 
 						</div>
 
-						
+
 
 						<div id="galeria" class="modalgalery">
-						  <div class="contenido-modalgalery">
-							<img src="imagen1.jpg" alt="Imagen 1" class="imagen-activa">	
-							<div class="botonesgalery">
+							<div class="contenido-modalgalery">
+								<img src="imagen1.jpg" alt="Imagen 1" class="imagen-activa">
+								<div class="botonesgalery">
 
-								<button id="anterior"></button>
-								<img id="cameragalery"src="img/camera.png">
-								<button id="siguiente"></button>
-								<br>
+									<button id="anterior"></button>
+									<img id="cameragalery" src="img/camera.png">
+									<button id="siguiente"></button>
+									<br>
 
-								
-							</div>		
-							<div class="botonesgalery"> 
-								<img id="logogalery"src="img/logoandina.png">
 
-							</div>					
-						
-							<button id="cerrarGaleria"></button>
-							
-							
-						  </div>
+								</div>
+								<div class="botonesgalery">
+									<img id="logogalery" src="img/logoandina.png">
+
+								</div>
+
+								<button id="cerrarGaleria"></button>
+
+
+							</div>
 						</div>
 
 					</div>
 				</nav>
-				<div class="footer2"id="footer2">
+				<div class="footer2" id="footer2">
 					<img src="img/gif proveedores v7.gif">
 				</div>
 			</section>
 
 			<!-- section 4 -->
 			<section id="tm-section-10" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
 				<nav id="tmMainNav" class="tm-main-nav">
 
 					<div class="vision-general">
@@ -375,8 +388,9 @@
 								  la información veraz y oportuna a todos los niveles de la Organización,
 								   con el compromiso de la Alta Dirección y la mejora continua de sus 
 								   procesos.">&nbsp;Política de calidad&nbsp;</a><br>
-							<a href="" data-page="#popup-container" class="popup-link" data-title="Política de protección de datos"
-								data-subtitle="Duwest Colombia S.A.S." data-text="Compañía dedicada a la comercialización y distribución de insumos y 
+							<a href="" data-page="#popup-container" class="popup-link"
+								data-title="Política de protección de datos" data-subtitle="Duwest Colombia S.A.S."
+								data-text="Compañía dedicada a la comercialización y distribución de insumos y 
 							servicios para la protección, nutrición y producción agropecuaria; 
 							desarrolla sus actividades en el marco del cumplimiento de los requisitos
 							 legales y ambientales propios del mercado con el objetivo de satisfacer
@@ -390,8 +404,8 @@
 								  la información veraz y oportuna a todos los niveles de la Organización,
 								   con el compromiso de la Alta Dirección y la mejora continua de sus 
 								   procesos.">&nbsp;Política de protección de datos&nbsp;</a><br>
-							<a href="" data-page="#popup-container" class="popup-link" data-title="Política de seguridad"
-								data-subtitle="Duwest Colombia S.A.S." data-text="Duwest Colombia S.A.S. Compañía dedicada al almacenamiento, comercialización y distribución de insumos y servicios para la protección, nutrición y producción agropecuaria, establece dentro de sus prioridades:
+							<a href="" data-page="#popup-container" class="popup-link"
+								data-title="Política de seguridad" data-subtitle="Duwest Colombia S.A.S." data-text="Duwest Colombia S.A.S. Compañía dedicada al almacenamiento, comercialización y distribución de insumos y servicios para la protección, nutrición y producción agropecuaria, establece dentro de sus prioridades:
 								• velar por el completo bienestar físico, mental y social de sus colaboradores.
 								• Mantener las instalaciones y puestos de trabajo en condiciones higiénicas adecuadas y seguras, en cumplimiento con los protocolos de bioseguridad definidos.
 								• Minimizar la ocurrencia de incidentes, accidentes de trabajo y de enfermedades laborales.
@@ -435,7 +449,7 @@
 					</div>
 
 				</nav>
-				<div class="footer2"id="footer2">
+				<div class="footer2" id="footer2">
 					<img src="img/gif proveedores v7.gif">
 				</div>
 			</section>
@@ -468,7 +482,7 @@
 
 			<!-- section 8 -->
 			<section id="tm-section-8" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
 				<div class="bgWorkUs bg-a"></div>
 				<div class="bgWorkUs bg-b"></div>
 				<div class="bgWorkUs bg-c"></div>
@@ -498,34 +512,36 @@
 
 			<!-- section 11 -  -->
 			<section id="tm-section-11" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
 				<div id="map-container">
 					<iframe id="inlineFrameExample" src="./map.html">
 					</iframe>
 				</div>
-				<div class="footer2"id="footer2">
+				<div class="footer2" id="footer2">
 					<img src="img/gif proveedores v7.gif">
 				</div>
 				<div id="country">
 					<h2>RED NACIONAL COMERCIAL</h2>
-					<a href="" id="red2"class="popup-link1" data-title1="SEDE RIONEGRO, ANTIOQUIA"
-					data-subtitle1="Cr 47 # 64 A - 163 Bodega 47 parque empresarial rionegro" data-text1="DUWEST Colombia, S.A.S.&#10;
-					Cel. +57 321 3139743&#10;PBX: +57 898 5064"data-img1="img/rionegro.jpeg">&nbsp;Rionegro - Antioquia&nbsp;</a>
-					<a href="" id="red3"class="popup-link1" data-title1="SEDE PEREIRA, RISARALDA"
-					data-subtitle1="Av 30 de agosto 94 # 14 - 73 Centro empresarial la villa - Bodega 19B" data-text1="DUWEST Colombia, S.A.S.&#10;
-					Cel. +57 321 3139743&#10;PBX: +57-6 340 2573"data-img1="img/pereira.jpeg">&nbsp;Pereira - Risaralda&nbsp;</a>
-					<a href="" id="red4"class="popup-link1" data-title1="SEDE NEIVA, HUILA"
-					data-subtitle1="Carrera # 5 - 10 sur" data-text1="DUWEST Colombia, S.A.S.&#10;
-					Cel. +57 321 3139743&#10;PBX: +57 310 2655205"data-img1="img/huila.jpeg">&nbsp;Neiva - Huila&nbsp;</a>
-				    <a href="" id="red5"class="popup-link1" data-title1="SEDE FLORIDABLANCA, SANTANDER"
-					data-subtitle1="Calle 31 A #24 - 15 Oficina 610 centro empresarial la florida" data-text1="DUWEST Colombia, S.A.S.&#10;
-					Cel. +57 321 3139743&#10;PBX: +57-6 187 009"data-img1="img/santander.jpeg">&nbsp;Floridablanca - Santander&nbsp;</a>
-					<a href="" id="red6"class="popup-link1" data-title1="SEDE SORACA, BOYACA"
-					data-subtitle1="Via los patriotas KM4 inversiones la bodeguita, bodega 4" data-text1="DUWEST Colombia, S.A.S.&#10;
-					Cel. +57 321 3139743&#10;PBX: +57 316 7541292"data-img1="img/soraca.jpeg">&nbsp;Soraca - Boyaca&nbsp;</a>
-					<a href="" id="red7"class="popup-link1" data-title1="SEDE IPIALES, NARIÑO"
-					data-subtitle1="Carrera 7 # 32 - 25 Barrio puenes" data-text1="DUWEST Colombia, S.A.S.&#10;
-					Cel. +57 321 3139743&#10;PBX: +57 310 8622968"data-img1="img/narino.jpeg">&nbsp;Ipiales - Nariño&nbsp;</a>
+					<a href="" id="red2" class="popup-link1" data-title1="SEDE RIONEGRO, ANTIOQUIA"
+						data-subtitle1="Cr 47 # 64 A - 163 Bodega 47 parque empresarial rionegro" data-text1="DUWEST Colombia, S.A.S.&#10;
+					Cel. +57 321 3139743&#10;PBX: +57 898 5064" data-img1="img/rionegro.jpeg">&nbsp;Rionegro - Antioquia&nbsp;</a>
+					<a href="" id="red3" class="popup-link1" data-title1="SEDE PEREIRA, RISARALDA"
+						data-subtitle1="Av 30 de agosto 94 # 14 - 73 Centro empresarial la villa - Bodega 19B"
+						data-text1="DUWEST Colombia, S.A.S.&#10;
+					Cel. +57 321 3139743&#10;PBX: +57-6 340 2573" data-img1="img/pereira.jpeg">&nbsp;Pereira - Risaralda&nbsp;</a>
+					<a href="" id="red4" class="popup-link1" data-title1="SEDE NEIVA, HUILA"
+						data-subtitle1="Carrera # 5 - 10 sur" data-text1="DUWEST Colombia, S.A.S.&#10;
+					Cel. +57 321 3139743&#10;PBX: +57 310 2655205" data-img1="img/huila.jpeg">&nbsp;Neiva - Huila&nbsp;</a>
+					<a href="" id="red5" class="popup-link1" data-title1="SEDE FLORIDABLANCA, SANTANDER"
+						data-subtitle1="Calle 31 A #24 - 15 Oficina 610 centro empresarial la florida" data-text1="DUWEST Colombia, S.A.S.&#10;
+					Cel. +57 321 3139743&#10;PBX: +57-6 187 009" data-img1="img/santander.jpeg">&nbsp;Floridablanca -
+						Santander&nbsp;</a>
+					<a href="" id="red6" class="popup-link1" data-title1="SEDE SORACA, BOYACA"
+						data-subtitle1="Via los patriotas KM4 inversiones la bodeguita, bodega 4" data-text1="DUWEST Colombia, S.A.S.&#10;
+					Cel. +57 321 3139743&#10;PBX: +57 316 7541292" data-img1="img/soraca.jpeg">&nbsp;Soraca - Boyaca&nbsp;</a>
+					<a href="" id="red7" class="popup-link1" data-title1="SEDE IPIALES, NARIÑO"
+						data-subtitle1="Carrera 7 # 32 - 25 Barrio puenes" data-text1="DUWEST Colombia, S.A.S.&#10;
+					Cel. +57 321 3139743&#10;PBX: +57 310 8622968" data-img1="img/narino.jpeg">&nbsp;Ipiales - Nariño&nbsp;</a>
 				</div>
 			</section>
 
@@ -570,8 +586,8 @@ map.invalidateSize();
 
 			<!-- section 12 -->
 			<section id="tm-section-12" onscroll="pagination()" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
-				<a href="https://wa.link/ppe5fm"target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
+				<a href="https://wa.link/ppe5fm" target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
 				<div class="products">
 					<div class="products1">
 						<div class="title-product">
@@ -635,8 +651,8 @@ map.invalidateSize();
 
 			<!-- section 13 -->
 			<section id="tm-section-13" onscroll="pagination()" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
-				<a href="https://wa.link/ppe5fm"target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
+				<a href="https://wa.link/ppe5fm" target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
 				<div class="products">
 					<div class="products12">
 						<div class="title-product hideCell">
@@ -696,8 +712,8 @@ map.invalidateSize();
 
 			<!-- section 14 -->
 			<section id="tm-section-14" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
-				<a href="https://wa.link/ppe5fm"target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
+				<a href="https://wa.link/ppe5fm" target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
 				<div class="products">
 					<div class="banner-mavuno"></div>
 					<div class="products13">
@@ -731,8 +747,8 @@ map.invalidateSize();
 
 			<!-- section 15 -->
 			<section id="tm-section-15" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
-				<a href="https://wa.link/ppe5fm"target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
+				<a href="https://wa.link/ppe5fm" target="_blank"><img src="img/Whatsappgif.gif" id="whatsmobile"></a>
 				<div class="products">
 					<div class="products14">
 						<div class="title-product">
@@ -765,16 +781,16 @@ map.invalidateSize();
 			</section>
 			<!-- section 16 -->
 			<section id="tm-section-16" onscroll="paginationNews()" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
 				<div id="newsFather">
 					<div class="nesOptions">
 						<button id="addNew" onclick="addNew()" class="btn btn-primary adminSession hide">Agregar
 							noticia</button>
-							<div class="searchCellNewDiv cell">
-								<input type="search" placeholder="Buscar noticia " name="search" class="searchcellNew cell"
-									id="searchMenu0" onkeyup="searchnews(0)">
-								<img class="cell" src="img/88bb5508e311d266d972863382f725c6.gif" alt="">
-							</div>
+						<div class="searchCellNewDiv cell">
+							<input type="search" placeholder="Buscar noticia " name="search" class="searchcellNew cell"
+								id="searchMenu0" onkeyup="searchnews(0)">
+							<img class="cell" src="img/88bb5508e311d266d972863382f725c6.gif" alt="">
+						</div>
 					</div>
 					<div class="news" id="news">
 					</div>
@@ -784,7 +800,7 @@ map.invalidateSize();
 
 			<!-- section 4 -->
 			<section id="tm-section-4" class="tm-section">
-				<img id="imgFlagMob"src="img/bandera-colombia-dispositivos.png">
+				<img id="imgFlagMob" src="img/bandera-colombia-dispositivos.png">
 				<div class="tm-bg-transparent-black tm-contact-box-pad">
 					<div class="row mb-4">
 						<div class="col-sm-12">
@@ -828,6 +844,120 @@ map.invalidateSize();
 					</div>
 				</div>
 			</section>
+
+			<section id="tm-section-17" class="tm-section">
+				<div class="adminContainer">
+					<div id="accordion">
+						<div class="card">
+							<div class="card-header" id="headingOne">
+								<h5 class="mb-0">
+									<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+										aria-expanded="true" aria-controls="collapseOne">
+										Filtros
+									</button>
+								</h5>
+							</div>
+
+							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+								data-parent="#accordion">
+								<div class="card-body">
+
+									<button class="btn btn-primary btn-lg btn-block my-2"
+										onclick="ProcessFilter(0,0)">Insertar</button>
+									<table class="table table-striped table-active">
+										<thead>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">Nombre</th>
+												<th scope="col">Acciones</th>
+											</tr>
+										</thead>
+										<tbody id="adminFilters">
+
+										</tbody>
+									</table>
+
+									<div id="FilterProcess" >
+
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingTwo">
+								<h5 class="mb-0">
+									<button class="btn btn-link collapsed" data-toggle="collapse"
+										data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										Cantidades
+									</button>
+								</h5>
+							</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+								data-parent="#accordion">
+								<div class="card-body">
+									<button class="btn btn-primary btn-lg btn-block my-2"
+										onclick="ProcessAmount(0,0)">Insertar</button>
+									<table class="table table-striped table-active">
+										<thead>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">Imagen</th>
+												<th scope="col">Nombre</th>
+												<th scope="col">Acciones</th>
+											</tr>
+										</thead>
+										<tbody id="adminAmounts">
+
+										</tbody>
+									</table>
+
+									<div id="AmountProcess" >
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+									<button class="btn btn-link collapsed" data-toggle="collapse"
+										data-target="#collapseThree" aria-expanded="false"
+										aria-controls="collapseThree">
+										usuarios
+									</button>
+								</h5>
+							</div>
+							<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+								data-parent="#accordion">
+								<div class="card-body">
+									<table class="table table-striped table-active">
+										<thead>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">Nombre</th>
+												<th scope="col">Correo</th>
+												<th scope="col">Usuario</th>
+												<th scope="col">Administrador de usuarios</th>
+												<th scope="col">Acciones</th>
+											</tr>
+										</thead>
+										<tbody id="adminUsers" >
+
+										</tbody>
+									</table>
+
+									<div id="UserProcess">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
 		</div>
 		<!-- .tm-content -->
 
@@ -841,9 +971,11 @@ map.invalidateSize();
 					<a href="#products" class="scrolly" data-bg-img="Fondo-8.png" data-page="#tm-section-2"
 						data-page-type="carousel">
 						<img src="img/Boton-nuestro-p.png" id="nuestro">
-					<img src="img/rednacionalcel.png" id="nuestromovil" class="whocel">
-					<div class="containertitlemen">
-					<h4 id="nuestromovil" class="texcel">NUESTRO PORTAFOLIO</h4></div></a>
+						<img src="img/rednacionalcel.png" id="nuestromovil" class="whocel">
+						<div class="containertitlemen">
+							<h4 id="nuestromovil" class="texcel">NUESTRO PORTAFOLIO</h4>
+						</div>
+					</a>
 
 				</nav>
 			</div>
@@ -853,40 +985,46 @@ map.invalidateSize();
 					<a href="#products" class="scrolly" data-bg-img="Fondo-2.png" data-page="#tm-section-11"
 						data-page-type="carousel">
 						<img src="img/Boton-red-N.png" id="nuestro">
-					<img src="img/ubicacioncel.png" id="nuestromovil" class="whocel">
-					<div class="containertitlemen">
-					<h4 id="nuestromovil" class="texcel">RED NACIONAL COMERCIAL</h4></div></a>
+						<img src="img/ubicacioncel.png" id="nuestromovil" class="whocel">
+						<div class="containertitlemen">
+							<h4 id="nuestromovil" class="texcel">RED NACIONAL COMERCIAL</h4>
+						</div>
+					</a>
 
 
 
 				</nav>
 			</div>
-			
+
 			<div class="whatsapp" id="whatsappmobile">
 				<nav id="tmMainNav1" class="tm-main-nav">
 					<a href="#products" class="scrolly" data-bg-img="Fondo-2.png" data-page="#tm-section-3"
-					data-page-type="carousel">
+						data-page-type="carousel">
 						<img src="img/Boton-contactanos.png" id="nuestro">
-					<img src="img/quienessomoscel.png" id="nuestromovil" class="whocel">
-					<div class="containertitlemen">
+						<img src="img/quienessomoscel.png" id="nuestromovil" class="whocel">
+						<div class="containertitlemen">
 
-					<h4 id="nuestromovil" class="texcel">¿QUIENES SOMOS?</h4></div></a>
+							<h4 id="nuestromovil" class="texcel">¿QUIENES SOMOS?</h4>
+						</div>
+					</a>
 
 
 				</nav>
 			</div>
 			<div class="contactanos">
 				<!-- <nav id="tmMainNav1" class="tm-main-nav"> -->
-					<a href="https://wa.link/ppe5fm"target="_blank">
-						<img src="img/Boton-contactanos.png" id="nuestro">
+				<a href="https://wa.link/ppe5fm" target="_blank">
+					<img src="img/Boton-contactanos.png" id="nuestro">
 					<img src="img/whatsappcel.png" id="nuestromovil" class="whocel">
 					<div class="containertitlemen">
-					<h4 id="nuestromovil1" class="texcel">¿ALGUNA PREGUNTA? CONTACTANOS</h4></div></a>
-					
+						<h4 id="nuestromovil1" class="texcel">¿ALGUNA PREGUNTA? CONTACTANOS</h4>
+					</div>
+				</a>
+
 
 				<!-- </nav> -->
-				
-		   </div>
+
+			</div>
 
 
 
@@ -908,9 +1046,11 @@ map.invalidateSize();
 		crossorigin="anonymous"></script>
 
 	<script src="js/RequestScripts/RequestScript.js"></script><!-- forms and request -->
-	<script src="js/RequestScripts/ProductRequest.js"></script><!-- forms and request -->
-	<script src="js/RequestScripts/UserRequest.js"></script><!-- forms and request -->
-	<script src="js/RequestScripts/NewsRequest.js"></script><!-- forms and request -->
+	<script src="js/RequestScripts/ProductRequest.js"></script><!-- Product requests -->
+	<script src="js/RequestScripts/UserRequest.js"></script><!-- users request -->
+	<script src="js/RequestScripts/NewsRequest.js"></script><!-- news request -->
+	<script src="js/RequestScripts/FiltersRequest.js"></script><!-- Filters admin request -->
+	<script src="js/RequestScripts/AmountsRequest.js"></script><!-- Amounts admin request -->
 	<script src="js/script.js"></script>
 	<script src="js/script22.js"></script>
 	<script src="js/script3.js"></script>

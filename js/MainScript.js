@@ -12,95 +12,95 @@ const url = new URL(location);
 console.log(url.hash);
 
 // sessionStorage.setItem("currentPageID",url.hash == ""?sessionStorage.getItem("currentPageID") == null ?  "#tm-section-1":sessionStorage.getItem("currentPageID")  == "undefined"?"#tm-section-1":sessionStorage.getItem("currentPageID") : url.hash );
-sessionStorage.setItem("currentPageID",url.hash == ""? "#tm-section-1" : url.hash );
+sessionStorage.setItem("currentPageID", url.hash == "" ? "#tm-section-1" : url.hash);
 
 //		var sessionStorage.getItem("currentPageID") = "#tm-section-1";
 
 
 
 $(function () {
-    
+
     // Reemplaza el estado actual del historial con la URL actual
-    
+
 
     // window.onpopstate = function(event)  {
     //    history.go(0);
     // };
 
 
-     // Intercepta el evento de retroceso
-        window.onpopstate = function(event) {  
-            history.go(0);
+    // Intercepta el evento de retroceso
+    window.onpopstate = function (event) {
+        history.go(0);
 
-        };
+    };
 
     // 		// Cache sections for performance
-	// 	var sections = $(".tm-section");
-	  
-	// 	// Function to handle section switching with transition
-	// 	function switchSection(sectionId, direction) {
-	// 	  var currentSection = $(sessionStorage.getItem("currentPageID"));
-	// 	  var transitionClass;
-	  
-	// 	  // Determine transition class based on direction (up or down)
-	// 	  if (direction > 0) {
-	// 		transitionClass = "slide-right"; // Right to left for ascending sections
-	// 	  } else {
-	// 		transitionClass = "slide-left"; // Left to right for descending sections
-	// 	  }
-	  
-	// 	  // Calculate direction modifier based on section numbering
-	// 	  var directionModifier = sectionId.split("-")[1] - sessionStorage.getItem("currentPageID").split("-")[1];
-	  
-	// 	  // Add transition class to current section
-	// 	  currentSection.addClass(transitionClass);
-	  
-	// 	  // Hide current section after transition
-	// 	  currentSection.on("transitionend", function() {
-	// 		currentSection.removeClass(transitionClass).hide();
-	// 		$(this).off("transitionend"); // Remove event listener after transition
-	// 	  });
-	  
-	// 	  // Show new section
-	// 	  $(sectionId).addClass(transitionClass).show();
-	  
-	// 	  // Update current page ID
-	// 	  sessionStorage.getItem("currentPageID") = sectionId;
-	  
-	// 	  // Remove transition class from new section after transition
-	// 	  $(sectionId).on("transitionend", function() {
-	// 		$(this).removeClass(transitionClass);
-	// 		$(this).off("transitionend"); // Remove event listener after transition
-	// 	  });
-	// 	}
-	  
-	// 	// Set up click event listener for navigation links
-	// 	$(".tm-main-nav a").click(function(e) {
-	// 	  e.preventDefault();
-	  
-	// 	  var clickedSection = $(this).data("page");
-	// 	  var sectionNumber = clickedSection.split("-")[1];
-	// 	  var currentNumber = sessionStorage.getItem("currentPageID").split("-")[1];
-	  
-	// 	  // Calculate direction based on section numbering difference
-	// 	  var direction = sectionNumber - currentNumber;
-	  
-	// 	  // Call switchSection function with clicked section and direction
-	// 	  switchSection(clickedSection, direction);
-	// 	});
-	  
-	// 	// Initial setup (assuming "#tm-section-1" is the starting page)
-	// 	var sessionStorage.getItem("currentPageID") = "#tm-section-1";
-	// 	$(sessionStorage.getItem("currentPageID")).show();
-	//   });
+    // 	var sections = $(".tm-section");
 
-     $('.popup-link').click(function () { 
-     	$("footer").addClass("hide");
-     });
+    // 	// Function to handle section switching with transition
+    // 	function switchSection(sectionId, direction) {
+    // 	  var currentSection = $(sessionStorage.getItem("currentPageID"));
+    // 	  var transitionClass;
 
-     $('.close-btn').click(function () { 
-     	$("footer").removeClass("hide");
-     });
+    // 	  // Determine transition class based on direction (up or down)
+    // 	  if (direction > 0) {
+    // 		transitionClass = "slide-right"; // Right to left for ascending sections
+    // 	  } else {
+    // 		transitionClass = "slide-left"; // Left to right for descending sections
+    // 	  }
+
+    // 	  // Calculate direction modifier based on section numbering
+    // 	  var directionModifier = sectionId.split("-")[1] - sessionStorage.getItem("currentPageID").split("-")[1];
+
+    // 	  // Add transition class to current section
+    // 	  currentSection.addClass(transitionClass);
+
+    // 	  // Hide current section after transition
+    // 	  currentSection.on("transitionend", function() {
+    // 		currentSection.removeClass(transitionClass).hide();
+    // 		$(this).off("transitionend"); // Remove event listener after transition
+    // 	  });
+
+    // 	  // Show new section
+    // 	  $(sectionId).addClass(transitionClass).show();
+
+    // 	  // Update current page ID
+    // 	  sessionStorage.getItem("currentPageID") = sectionId;
+
+    // 	  // Remove transition class from new section after transition
+    // 	  $(sectionId).on("transitionend", function() {
+    // 		$(this).removeClass(transitionClass);
+    // 		$(this).off("transitionend"); // Remove event listener after transition
+    // 	  });
+    // 	}
+
+    // 	// Set up click event listener for navigation links
+    // 	$(".tm-main-nav a").click(function(e) {
+    // 	  e.preventDefault();
+
+    // 	  var clickedSection = $(this).data("page");
+    // 	  var sectionNumber = clickedSection.split("-")[1];
+    // 	  var currentNumber = sessionStorage.getItem("currentPageID").split("-")[1];
+
+    // 	  // Calculate direction based on section numbering difference
+    // 	  var direction = sectionNumber - currentNumber;
+
+    // 	  // Call switchSection function with clicked section and direction
+    // 	  switchSection(clickedSection, direction);
+    // 	});
+
+    // 	// Initial setup (assuming "#tm-section-1" is the starting page)
+    // 	var sessionStorage.getItem("currentPageID") = "#tm-section-1";
+    // 	$(sessionStorage.getItem("currentPageID")).show();
+    //   });
+
+    $('.popup-link').click(function () {
+        $("footer").addClass("hide");
+    });
+
+    $('.close-btn').click(function () {
+        $("footer").removeClass("hide");
+    });
 
     $("body").on("click", function (event) {
         var dropDownBar = $("#dropDownBar");
@@ -251,7 +251,7 @@ function setupNav() {
 
 function SetInfoSection(section) {
 
-    
+
     switch (section) {
         case "#tm-section-12":
             chargeProducts(12);
@@ -265,39 +265,44 @@ function SetInfoSection(section) {
         case "#tm-section-16":
             chargeNews();
             break;
+        case "#tm-section-17":
+            chargeUsers();
+            chargeFilters();
+            chargeAmounts();
+            break;
         default:
             break;
     }
 
-$("footer").removeClass("hide");
-switch (section) {
-    case '#tm-section-8':
-    case '#tm-section-2':
-    case '#tm-section-10':
-    case '#tm-section-3':
-    case '#tm-section-11':
-    case '#tm-section-12':
-    case '#tm-section-13':
-    case '#tm-section-14':
-    case '#tm-section-15':
-    case '#tm-section-16':
-    case '#popup-container':
-        $("footer").hide();
-        break;
-    case '#loaderpage':
-    case '#loader-wrapper':
-// Hide footer (original functionality)
-        $("footer-link").hide();
-        break;
-// Hide footer2 specifically for #popup-container
-    default:
-        // if (sessionStorage.getItem("currentPageID") == "#tm-section-10" && esMovil()) {
-        //     $("footer").hide();
-        // } else {
-        //     $("footer").show();
-        // }
-        $("footer").show(); 
-}
+    $("footer").removeClass("hide");
+    switch (section) {
+        case '#tm-section-8':
+        case '#tm-section-2':
+        case '#tm-section-10':
+        case '#tm-section-3':
+        case '#tm-section-11':
+        case '#tm-section-12':
+        case '#tm-section-13':
+        case '#tm-section-14':
+        case '#tm-section-15':
+        case '#tm-section-16':
+        case '#popup-container':
+            $("footer").hide();
+            break;
+        case '#loaderpage':
+        case '#loader-wrapper':
+            // Hide footer (original functionality)
+            $("footer-link").hide();
+            break;
+        // Hide footer2 specifically for #popup-container
+        default:
+            // if (sessionStorage.getItem("currentPageID") == "#tm-section-10" && esMovil()) {
+            //     $("footer").hide();
+            // } else {
+            //     $("footer").show();
+            // }
+            $("footer").show();
+    }
 }
 
 
@@ -333,12 +338,12 @@ function changePage(currentNavItem) {
 
         // Show current page
         // sessionStorage.getItem("currentPageID") = currentNavItem.data("page");
-        sessionStorage.setItem("currentPageID",currentNavItem.data("page"));
+        sessionStorage.setItem("currentPageID", currentNavItem.data("page"));
         $(sessionStorage.getItem("currentPageID")).fadeIn(1000);
         var newSection = sessionStorage.getItem("currentPageID");
-    
-    
-    
+
+
+
         history.pushState({ page: newSection }, "", newSection);
         console.log(currentNavItem.data("page"));
     }
@@ -417,22 +422,22 @@ $(window).on("load", function () {
 
         $(sessionStorage.getItem("currentPageID")).fadeIn();
 
-         // Set up background first page
-         var bgImg = $("#tmNavLink1").data("bgImg");
+        // Set up background first page
+        var bgImg = $("#tmNavLink1").data("bgImg");
 
-         $.backstretch("img/" + bgImg, { fade: 500 });
+        $.backstretch("img/" + bgImg, { fade: 500 });
 
-         // Setup Carousel, Nav, and Nav Toggle
-         setupCarousel();
-         setupNav();
-         setupNavToggle();
-         setupFooter();
+        // Setup Carousel, Nav, and Nav Toggle
+        setupCarousel();
+        setupNav();
+        setupNavToggle();
+        setupFooter();
 
-         // Resize Carousel upon window resize
-         $(window).resize(function () {
-             setupCarousel();
-             setupFooter();
-         });
+        // Resize Carousel upon window resize
+        $(window).resize(function () {
+            setupCarousel();
+            setupFooter();
+        });
     }
 });
 
